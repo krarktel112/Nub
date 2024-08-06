@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
  
 # Creating an instance webdriver
 driver = webdriver.Firefox()  
-browser.get('https://www.twitter.com')
+driver.get('https://www.twitter.com')
  
 # Let's the user see and also load the element 
 time.sleep(2)
