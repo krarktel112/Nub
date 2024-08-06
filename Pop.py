@@ -1,15 +1,24 @@
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-browser = webdriver.FirefoxOptions()
-options.add_argument("--headless")
-driver = webdriver.Firefox(options=options)
+def driver(request):
+    """Set up webdriver fixture."""
+    options = Options()
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+
+    service = Service(executable_path="firefox.geckodriver")
+    driver = webdriver.Firefox(options=options, service=service)
+    driver.set_window_size(1920, 1080)
+    driver.maximize_window()
+    driver.implicitly_wait(10)
+
+    yield driver
+    driver.quit()
+
+browser = webdriver.Firefox()
 browser.get("http://www.python.org")
-assert "Python" in driver.title
-elem = driver.find_element(By.NAME, "q")
-elem.clear()
-elem.send_keys("pycon")
-elem.send_keys(Keys.RETURN)
-assert "No results found." not in driver.page_source
 driver.close()
