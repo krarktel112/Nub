@@ -16,6 +16,7 @@ def driver(request):
     driver = webdriver.Firefox(options=options, service=service)
     driver.set_window_size(1920, 1080)
     driver.maximize_window()
+    driver.get(www.facebook.com)
     driver.implicitly_wait(10)
 
     yield driver
