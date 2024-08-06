@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 browser = webdriver.FirefoxOptions()
+options.add_argument("--headless")
 browser.get("http://www.python.org")
 assert "Python" in driver.title
 elem = driver.find_element(By.NAME, "q")
