@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 
 browser = webdriver.FirefoxOptions()
 options.add_argument("--headless")
+driver = webdriver.Firefox(options=options)
 browser.get("http://www.python.org")
 assert "Python" in driver.title
 elem = driver.find_element(By.NAME, "q")
