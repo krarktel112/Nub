@@ -1,11 +1,11 @@
-import pytest
+
 from selenium import webdriver
 
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 
 
-@pytest.fixture(scope='session')
+
 def driver(request):
     """Set up webdriver fixture."""
     options = Options()
