@@ -1,11 +1,22 @@
+import pytest
 from selenium import webdriver
 
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service
 
-driver = webdriver.Firefox()
 
-driver.get("https://www.simplilearn.com")
+@pytest.fixture(scope='session')
+def driver(request):
+    """Set up webdriver fixture."""
+    options = Options()
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
 
-driver.find_element_by_xpath("//a[@title='Free Courses']").click()
+    service = Service(executable_path="firefox.geckodriver")
+    driver = webdriver.Firefox(options=options, service=service)
+    driver.set_window_size(1920, 1080)
+    driver.maximize_window()
+    driver.implicitly_wait(10)
 
-driver.quit()
+    yield driver
+    driver.quit()
