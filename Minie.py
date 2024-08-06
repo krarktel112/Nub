@@ -9,7 +9,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
  
 # Creating an instance webdriver
-browser = webdriver.Firefox() 
+browser = webdriver.FirefoxOptions() 
 browser.get('https://www.twitter.com')
  
 # Let's the user see and also load the element 
