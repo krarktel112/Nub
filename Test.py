@@ -19,6 +19,9 @@ def driver(request):
     driver.implicitly_wait(10)
     login_box = find_element(By.NAME, 'reset_action')
     login_box.click()
+    driver.implicitly_wait(10)
+    input = find_element(By.ID, 'recovery_code_entry')
+    
 
     yield driver
     driver.quit()
