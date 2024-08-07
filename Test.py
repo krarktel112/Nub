@@ -2,15 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 
-usr=input('Enter Email Id:') 
-pwd=input('Enter Password:')
+"""usr=input('Enter Email Id:') """
+"""pwd=input('Enter Password:')"""
 
 def driver(request):
     """Set up webdriver fixture."""
     options = Options()
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-print('done')
     service = Service(executable_path="firefox.geckodriver")
     driver = webdriver.Firefox(options=options, service=service)
     driver.set_window_size(1920, 1080)
