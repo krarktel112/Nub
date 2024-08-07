@@ -7,6 +7,7 @@ from selenium.webdriver.firefox.service import Service
 x = 99999999
 def driver(request):
     """Set up webdriver fixture."""
+    usr=input('Enter Email Id:')
     options = Options()
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
@@ -30,4 +31,3 @@ def driver(request):
     yield driver
     yield y
     driver.close()
-    print(y)
