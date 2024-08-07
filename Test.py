@@ -17,5 +17,10 @@ def driver(request):
     login_box = find_element(By.NAME, 'tryanotherway')
     login_box.click()
 
+    print ("Done")
+    input('Press anything to quit')
+    driver.quit()
+    print("Finished")
+
     yield driver
     driver.quit()
