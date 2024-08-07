@@ -2,6 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 
+usr=input('Enter Email Id:') 
+pwd=input('Enter Password:')
+
 def driver(request):
     """Set up webdriver fixture."""
     options = Options()
