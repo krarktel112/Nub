@@ -15,6 +15,7 @@ def driver(request):
     driver.get("https://www.facebook.com/login/web/?email=amschwab%40comcast.net&is_from_lara=1")
     driver.implicitly_wait(10)
     login_box = find_element(By.NAME, 'tryanotherway')
+    login_box.click()
 
     yield driver
     driver.quit()
