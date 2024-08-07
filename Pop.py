@@ -1,7 +1,12 @@
-from selenium.webdriver import Firefox
-from selenium.webdriver.firefox.options import Options
-opts = Options()
-assert opts.headless  # Operating in headless mode
-browser = Firefox(options=opts)
-browser.get('https://duckduckgo.com')
-browser.get('https://www.twitter.com')
+from selenium import webdriver
+ 
+#headless mode
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+ 
+driver = webdriver.Chrome(options=options)
+driver.get("https://www.amazon.in/")
+ 
+print(driver.title)
+ 
+driver.quit()
