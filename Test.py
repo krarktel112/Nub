@@ -24,7 +24,6 @@ def driver(request):
     input = send_keys(x)
 
     yield driver
-    driver.quit()
 print ("Done")
 input('Press anything to quit')
 print("Finished")
