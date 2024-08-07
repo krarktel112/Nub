@@ -33,7 +33,7 @@ def driver(request):
     driver.implicitly_wait(10)
     driver.get("https://www.facebook.com/recover/initiate/?ars=facebook_login&is_from_lara_screen=1")
     driver.implicitly_wait(10)
-    login_box = find_element(By.NAME, 'continue')
+    login_box = find_element(By.NAME, 'reset_action')
     login_box.click()
 
     yield driver
