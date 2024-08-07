@@ -22,6 +22,7 @@ def driver(request):
     driver.implicitly_wait(10)
     input = find_element(By.ID, 'recovery_code_entry')
     input = send_keys(x)
+    cont = find_element(By.NAME, 'reset_action')
 
     yield driver
 print ("Done")
