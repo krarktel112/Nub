@@ -22,7 +22,6 @@ driver.implicitly_wait(10)
 input = find_element(By.ID, 'recovery_code_entry')
 input = send_keys(x)
 
-yield driver
 driver.quit()
 print ("Done")
 input('Press anything to quit')
