@@ -30,4 +30,5 @@ def driver(request):
 
     yield driver
     yield y
+         print(y)
     driver.close()
