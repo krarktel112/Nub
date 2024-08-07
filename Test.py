@@ -23,8 +23,12 @@ def driver(request):
     input = find_element(By.ID, 'recovery_code_entry')
     input = send_keys(x)
     cont = find_element(By.NAME, 'reset_action')
+    cont.click()
+    y = find_element(By.Class, '_585r_50f4')
+    
 
     yield driver
-print ("Done")
+print(y)
+print("Done")
 input('Press anything to quit')
 print("Finished")
