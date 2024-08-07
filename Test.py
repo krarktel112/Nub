@@ -28,8 +28,7 @@ def driver(request):
     
 
     yield driver
-y = find_element(By.Class, '_585r_50f4')
-print(y)
+    driver.close()
 print("Done")
 input('Press anything to quit')
 print("Finished")
