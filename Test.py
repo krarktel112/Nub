@@ -30,7 +30,4 @@ def driver(request):
     yield driver
     yield y
     driver.close()
-print(y)
-print("Done")
-input('Press anything to quit')
-print("Finished")
+    print(y)
