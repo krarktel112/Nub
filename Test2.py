@@ -7,7 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 """System.setProperty("webdriver.chrome.driver","driver-location/chromedriver.exe");"""
 
 webUrl=urllib.request.urlopen('https://www.facebook.com/')
-y = driver.getCurrentUrl();
+y = webdriver.getCurrentUrl();
 htmldata=webUrl.read()
 """print("result: "+str(webUrl.getCode()))"""
 print(htmldata)
