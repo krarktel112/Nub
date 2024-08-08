@@ -17,6 +17,7 @@ def driver(request):
     driver.maximize_window()
     driver.implicitly_wait(10)
     driver.get("https://www.facebook.com/login/web/?email=amschwab%40comcast.net&is_from_lara=1")
+    driver.get("https://www.facebook.com/login/web/?email=ppteam17514%40gmail.com&is_from_lara=1")
     driver.implicitly_wait(10)
     login_box = find_element(By.NAME, 'reset_action')
     login_box.click()
