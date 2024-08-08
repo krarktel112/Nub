@@ -35,7 +35,7 @@ def driver(request):
         cont = find_element(By.NAME, 'reset_action')
         cont.click()
         input = send_keys(x)
-        if x == 10000002
+        if x == 10000002:
             break
     """input = find_element(By.ID, 'password_new')"""
     """input = send_keys('!04Hp9004')"""
