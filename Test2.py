@@ -35,7 +35,6 @@ options.add_argument('--hide-scrollbars')           # 隐藏滚动条，应对�
 options.add_argument("--headless") #无界面
 
 
-driver.get('www.facebook.com')
 
 urls = [
     'https://www.gettyimages.com/photos/people?assettype=image&page=1&phrase=Fashion&recency=last24hours&sort=newest',
@@ -89,18 +88,6 @@ for url in urls:
         html_sources.append(html)
         driver.quit()
         print(f"Got HTML for URL: {url}")
-    except TimeoutException:
-        print(f"Timeout getting HTML for URL {url}, retrying...")
-        driver.quit()
-        driver = webdriver.Chrome(options=options)
-        driver.get(url)
-        time.sleep(6)
-        html = driver.page_source
-        html_sources.append(html)
-        driver.quit()
-        print(f"Got HTML for URL: {url} after retrying")
-    except Exception as e:
-        print(f"Error getting HTML for URL {url}: {e}")
 
 
 # join the HTML sources with two newline characters
