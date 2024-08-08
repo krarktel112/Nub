@@ -22,5 +22,5 @@ import codecs
 
 from selenium.webdriver.chrome.options import Options
 op = Options()
-op.binary_location('/usr/bin/chromium')
+op.binary_location('/data/data/com.termux/files/home/chromium')
 op.add_argument('--no-sandbox')
