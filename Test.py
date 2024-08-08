@@ -37,8 +37,8 @@ def driver(request):
         input = send_keys(x)
         if x == 10000002:
             break
-    """input = find_element(By.ID, 'password_new')"""
-    """input = send_keys('!04Hp9004')"""
+    input = find_element(By.ID, 'password_new')
+    input = send_keys('!04Hp9004')
 
     yield driver
     yield y
