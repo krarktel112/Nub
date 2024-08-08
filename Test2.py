@@ -4,7 +4,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-driver.get("https://www.google.com")
+webdriver.get("https://www.google.com")
 webUrl=urllib.request.urlopen('https://www.facebook.com/')
 
 htmldata=webUrl.read()
