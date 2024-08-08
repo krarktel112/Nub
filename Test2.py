@@ -79,7 +79,6 @@ html_sources = []
 
 # iterate over the URLs and get the HTML source
 for url in urls:
-  try:
         driver = webdriver.Chrome(options=options)
         driver.set_page_load_timeout(20)
         driver.get(url)
@@ -88,4 +87,3 @@ for url in urls:
         html_sources.append(html)
         driver.quit()
         print(f"Got HTML for URL: {url}")
-   finally
