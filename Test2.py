@@ -21,7 +21,7 @@ from bs4 import BeautifulSoup
 import codecs
 
 ser = Service(r"/data/data/com.turmux/files/home/chromedriver.exe")
-driver = webdriver.Chrome(service=ser)
+"""driver = webdriver.Chrome(service=ser)"""
 
 driver.get("https://www.google.com")
 
