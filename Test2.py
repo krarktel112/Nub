@@ -34,7 +34,7 @@ options.add_argument('--disable-gpu')               # 谷歌文档提到需要�
 options.add_argument('--hide-scrollbars')           # 隐藏滚动条，应对一些特殊页面
 options.add_argument("--headless") #无界面
 
-driver = webdriver.Chrome(options=options)
+
 driver.get('www.facebook.com')
 
 urls = [
