@@ -22,6 +22,6 @@ import codecs
 
 from selenium import webdriver
 
-driver = webdriver.Firefox(r'/non_root_user/Downloads/geckodriver')
+driver = webdriver.Firefox(r'/data/data/com.termux/files/usr/bin/geckodriver')
 driver.get("http://google.com/")
 driver.quit()
