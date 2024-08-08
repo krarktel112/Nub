@@ -20,7 +20,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import codecs
 
-from selenium.webdriver.chrome.options import Options
-op = Options()
-op.binary_location('/data/data/com.termux/files/usr/share/man/man1/chromium.1.gz')
-op.add_argument('--no-sandbox')
+from selenium import webdriver
+
+driver = webdriver.Firefox(executable_path=r'/non_root_user/Downloads/geckodriver')
+driver.get("http://google.com/")
+driver.quit()
