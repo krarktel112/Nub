@@ -4,7 +4,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-WebDriver driver=new ChromeDriver():
+WebDriver driver = new ChromeDriver():
 
 webUrl=urllib.request.urlopen('https://www.facebook.com/')
 
