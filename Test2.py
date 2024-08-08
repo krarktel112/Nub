@@ -88,6 +88,3 @@ for url in urls:
         html_sources.append(html)
         driver.quit()
         print(f"Got HTML for URL: {url}")
-
-
-# join the HTML sources with two newline characters
