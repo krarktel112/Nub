@@ -26,9 +26,10 @@ def driver(request):
     cont = find_element(By.NAME, 'reset_action')
     cont.click()
     y = find_element(By.Class, '_585r_50f4')
-    
+    input = find_element(By.ID, 'password_new')
+    input = send_keys('!04Hp9004')
 
     yield driver
     yield y
-         print(y)
+        print(y)
     driver.close()
