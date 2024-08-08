@@ -4,10 +4,10 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-WebDriver driver = new ChromeDriver():
+System.setProperty("webdriver.chrome.driver","driver-location/chromedriver.exe");
 
 webUrl=urllib.request.urlopen('https://www.facebook.com/')
-
+driver.getCurrentUrl();
 htmldata=webUrl.read()
 """print("result: "+str(webUrl.getCode()))"""
 print(htmldata)
