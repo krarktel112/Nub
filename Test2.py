@@ -20,9 +20,6 @@ from selenium.webdriver.chrome.service import Service
 import time
 import re
 from datetime import datetime
-from pyvirtualdisplay import Display
-display = Display(visible=0, size=(800, 800))  
-display.start()
 
   # Check if the current version of chromedriver exists
                                       # and if it doesn't exist, download it automatically,
