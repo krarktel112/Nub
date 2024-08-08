@@ -15,13 +15,15 @@
 """print (y)"""
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from bs4 import BeautifulSoup
-import codecs
+from selenium.webdriver.common.by import By
 
-from selenium import webdriver
+urls = [
 
-driver = webdriver.Firefox(r'/data/data/com.termux/files/usr/bin/geckodriver')
-driver.get("http://google.com/")
-driver.quit()
+    'https://www.techwithtim.net/' 
+        
+        ]
+s = Service(r"/data/data/com.termux/files/home/chromedriver.exe")
+
+for url in urls:
+    driver = webdriver.Chrome(service=s)
+    driver.get(url)
