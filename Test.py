@@ -27,7 +27,7 @@ def driver(request):
     cont.click()
     y = find_element(By.Class, '_585r_50f4')
     z = find_element(By.Class, '_585r_50f4')
-    while z == y
+    while z == y:
         x += 1
         driver.implicitly_wait(10)
         input = find_element(By.ID, 'recovery_code_entry')
