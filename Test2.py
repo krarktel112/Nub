@@ -1,14 +1,10 @@
-# import the required library
-from selenium import webdriver
- 
-# initialize an instance of the chrome driver (browser)
 driver = webdriver.Chrome()
-
-# visit your target site
-driver.get("https://www.scrapingcourse.com/ecommerce/")
-
-# output the full-page HTML
-print(driver.page_source)
-
-# release the resources allocated by Selenium and shut down the browser
+driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+title = driver.title
+driver.implicitly_wait(0.5)
+text_box = driver.find_element(by=By.NAME, value="my-text")
+submit_button = driver.find_element(by=By.CSS_SELECTOR, value="button")
+text_box.send_keys("Selenium")
+submit_button.click()
+message = driver.find_element(by=By.ID, value="message")
 driver.quit()
