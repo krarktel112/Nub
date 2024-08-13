@@ -2,7 +2,7 @@ import re
 import mechanize
 
 br = mechanize.Browser()
-br.open("http://www.facebook.com/")
+br.open("m.facebook.com/login/")
 # follow second link with element text matching regular expression
 response1 = br.follow_link(text_regex=r"cheese\s*shop", nr=1)
 print(br.title())
