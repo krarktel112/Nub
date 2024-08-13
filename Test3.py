@@ -74,7 +74,7 @@ def alphabet_generator(l_start, l_end):
             yield ''.join(xs)
 
 
-email = raw_input('Email address or username to attack:')
+email = input('Email address or username to attack:')
 
 
 try:
