@@ -83,8 +83,8 @@ try:
         engine.run(email, readline_generator(fp))
 except IndexError:
     engine = FacebookBruteForceEngine()
-    min_chars = raw_input(
+    min_chars = input(
         'Minumum number of characters in password (default: 3):') or 3
-    max_chars = raw_input(
+    max_chars = input(
         'Maximum number of characters in password (default: 8):') or 8
     engine.run(email, alphabet_generator(int(min_chars), int(max_chars)))
