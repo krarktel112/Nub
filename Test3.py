@@ -4,7 +4,7 @@ from time import sleep
 
 import mechanize
 
-CHRS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+CHRS = '0123456789'
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
               'AppleWebKit/534.7 (KHTML, like Gecko) ' \
