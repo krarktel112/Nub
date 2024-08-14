@@ -52,5 +52,5 @@ cookies = mechanize.CookieJar()
 browser.set_cookiejar(cookies)
 browser.addheaders = [('User-agent', MOZILLA_UAS)]
 browser.set_handle_refresh(False)
-browser.open(self.LOGIN_URL)
+browser.open('https://mbasic.facebook.com/login/?ref=dbl&fl&login_from_aymh=1')
 
