@@ -34,3 +34,4 @@ def send_login(self, email, password):
 
 email = input('Email address or username to attack:')
 password = input('Password:')
+self.try
