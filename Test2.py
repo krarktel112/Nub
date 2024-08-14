@@ -46,4 +46,4 @@ def try_password(self, email, password):
 
 email = input('Email address or username to attack:')
 password = input('Password:')
-self.try_password(email, password)
+try_password(email, password)
