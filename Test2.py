@@ -24,15 +24,6 @@ class FacebookBruteForceEngine(object):
     def __init__(self):
         self.browser = self.setup_browser()
 
-    def setup_browser(self):
-        browser = mechanize.Browser()
-        browser.set_handle_robots(False)
-        cookies = mechanize.CookieJar()
-        browser.set_cookiejar(cookies)
-        browser.addheaders = [('User-agent', MOZILLA_UAS)]
-        browser.set_handle_refresh(False)
-        return browser
-
     def send_login(self, email, password):
         self.browser.open(self.LOGIN_URL)
         self.browser.select_form(nr=0)
