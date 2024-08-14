@@ -56,4 +56,7 @@ browser.open('https://mbasic.facebook.com/login.php?next=https%3A%2F%2Fmbasic.fa
 browser.select_form(nr=0)
 browser.form['email'] = email
 browser.form['pass'] = password 
-browser.select_form(name='login')
+respond1 = browser.submit()
+respond2 = respond1.geturl()
+print('respond2')
+
