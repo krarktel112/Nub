@@ -77,10 +77,8 @@ email = input('Email address or username to attack:')
 
 try:
     with open(sys.argv[6], 'r') as fp:
-        engine = FacebookBruteForceEngine()
         engine.run(email, readline_generator(fp))
 except IndexError:
-    engine = FacebookBruteForceEngine()
     min_chars = input(
         'Minumum number of characters in password (default: 3):') or 8
     max_chars = input(
