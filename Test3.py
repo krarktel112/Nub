@@ -78,7 +78,7 @@ email = input('Email address or username to attack:')
 
 
 try:
-    with open(sys.argv[1], 'r') as fp:
+    with open(sys.argv[], 'r') as fp:
         engine = FacebookBruteForceEngine()
         engine.run(email, readline_generator(fp))
 except IndexError:
