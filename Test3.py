@@ -12,7 +12,7 @@ MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
 
 class FacebookBruteForceEngine(object):
 
-    LOGIN_URL = 'http://m.facebook.com/login.php'
+    LOGIN_URL = 'http://mbasic.facebook.com/login.php'
 
     def __init__(self):
         self.browser = self.setup_browser()
