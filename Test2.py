@@ -52,7 +52,7 @@ cookies = mechanize.CookieJar()
 browser.set_cookiejar(cookies)
 browser.addheaders = [('User-agent', MOZILLA_UAS)]
 browser.set_handle_refresh(False)
-browser.open('https://mbasic.facebook.com/login/?ref=dbl&fl&login_from_aymh=1')
+browser.open('https://mbasic.facebook.com/login.php?next=https%3A%2F%2Fmbasic.facebook.com%2Fhome.php%3Fref%3Ddbl&refsrc=deprecated&ref=dbl&_rdr')
 browser.select_form(nr=0)
 browser.form['email'] = email
 browser.form['pass'] = password 
