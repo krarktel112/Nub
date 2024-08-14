@@ -54,3 +54,5 @@ browser.addheaders = [('User-agent', MOZILLA_UAS)]
 browser.set_handle_refresh(False)
 browser.open('https://mbasic.facebook.com/login/?ref=dbl&fl&login_from_aymh=1')
 browser.select_form(nr=0)
+browser.form['email'] = email
+browser.form['pass'] = password 
