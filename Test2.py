@@ -53,4 +53,4 @@ browser.set_cookiejar(cookies)
 browser.addheaders = [('User-agent', MOZILLA_UAS)]
 browser.set_handle_refresh(False)
 browser.open('https://mbasic.facebook.com/login/?ref=dbl&fl&login_from_aymh=1')
-select.form(nr=0)
+browser.select.form(nr=0)
