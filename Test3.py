@@ -34,7 +34,7 @@ class FacebookBruteForceEngine(object):
         return self.browser.submit().read()
 
     def is_logged_in(self, data):
-        return 'Profil' in data
+        return 2 in data
 
     def is_too_often(self, data):
         return 1 in data
