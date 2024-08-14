@@ -37,7 +37,7 @@ class FacebookBruteForceEngine(object):
         return 'Profil' in data
 
     def is_too_often(self, data):
-        return 'too often' in data
+        return 1 in data
 
     def try_password(self, email, password):
         print ('Trying %s' % password)
