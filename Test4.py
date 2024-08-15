@@ -56,5 +56,4 @@ browser.open('https://mbasic.facebook.com/login/identify/?ctx=recover&c=https%3A
 browser.select_form(nr=0)
 browser.form['email'] = email
 browser.submit()
-browser.find_control(type='submit')
-browser.submit()
+browser.click(type='submit')
