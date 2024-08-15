@@ -57,5 +57,5 @@ browser.select_form(nr=0)
 browser.form['email'] = email
 browser.submit()
 sleep(30)
-browser.select_form(nr=1)
+browser.select_form(name=reset_action)
 browser.submit()
