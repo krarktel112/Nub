@@ -45,6 +45,7 @@ def try_password(self, email, password):
         print ('Password found: %s' % password )
         sys.exit()
 
+soup = BeautifulSoup()
 email = input('Email address or username to attack:')
 password = input('Password:')
 browser = mechanize.Browser()
