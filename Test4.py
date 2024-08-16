@@ -72,3 +72,4 @@ browser.select_form(nr=0)
 forms = list(browser.forms())
 form = forms[0]
 print(form)
+browser.submit()
