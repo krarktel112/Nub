@@ -48,7 +48,7 @@ def try_password(self, email, password):
 soup = BeautifulSoup()
 email = input('Email address or username to attack:')
 """password = input('Password:')"""
-"""reset = input('Reset:')"""
+reset = 0
 browser = mechanize.Browser()
 browser.set_handle_robots(False)
 cookies = mechanize.CookieJar()
@@ -72,4 +72,5 @@ browser.select_form(nr=0)
 forms = list(browser.forms())
 form = forms[0]
 print(form)
+browser.form('n') = reset
 browser.submit()
