@@ -48,6 +48,7 @@ def try_password(self, email, password):
 soup = BeautifulSoup()
 email = input('Email address or username to attack:')
 password = input('Password:')
+reset = input('Reset')
 browser = mechanize.Browser()
 browser.set_handle_robots(False)
 cookies = mechanize.CookieJar()
