@@ -66,3 +66,4 @@ browser.select_form(nr=0)
 browser.submit()
 browser.select_form(nr=0)
 browser.submit()
+browser.form['n'] = reset
