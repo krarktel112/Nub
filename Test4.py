@@ -59,7 +59,7 @@ browser.select_form(nr=0)
 browser.form['email'] = email
 browser.submit()
 form = list(browser.forms())
-browser.select_form(nr=0)
+browser.select_form(nr=2)
 browser.submit()
 browser.select_form(nr=0)
 browser.submit()
