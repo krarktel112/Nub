@@ -60,7 +60,6 @@ browser.form['email'] = email
 browser.submit()
 browser.select_form(nr=0)
 form = list(browser.forms())
-print(form)
 browser.click()
 browser.select_form(nr=0)
 browser.click()
