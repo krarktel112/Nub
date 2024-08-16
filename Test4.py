@@ -59,12 +59,12 @@ browser.open('https://mbasic.facebook.com/login/identify/?ctx=recover&c=https%3A
 browser.select_form(nr=0)
 browser.form['email'] = email
 browser.submit()
-form = list(browser.forms())
+forms = list(browser.forms())
 form = forms[0]
 print(form)
 browser.select_form(nr=0)
 browser.submit()
-form = list(browser.forms())
+forms = list(browser.forms())
 form = forms[0]
 print(form)
 browser.select_form(nr=0)
