@@ -76,5 +76,3 @@ browser.form.set_value('999999', nr=2)
 """forms = list(browser.forms())"""
 """form = forms[0]"""
 """print(form)"""
-"""browser.select_form('n')"""
-"""browser.submit()"""
