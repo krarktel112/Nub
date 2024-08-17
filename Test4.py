@@ -72,5 +72,5 @@ browser.submit()
 """forms = list(browser.forms())"""
 """form = forms[0]"""
 """print(form)"""
-"""browser.select_form('n')
+"""browser.select_form('n')"""
 """browser.submit()"""
