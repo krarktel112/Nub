@@ -71,7 +71,7 @@ browser.select_form(nr=0)
 forms = list(browser.forms())
 form = forms[0]
 print(form)
-browser.form.set_value('999999', nr=0)
+browser.form.set_value('999999', nr=1)
 """browser.select_form(nr=0)"""
 """forms = list(browser.forms())"""
 """form = forms[0]"""
