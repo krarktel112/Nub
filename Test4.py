@@ -63,8 +63,8 @@ browser.select_form(nr=0)
 browser.submit()
 browser.select_form(nr=0)
 browser.submit()
-"""browser.select_form(nr=0)"""
-"""browser.submit()"""
+browser.select_form(nr=0)
+browser.submit()
 """forms = list(browser.forms())"""
 """form = forms[0]"""
 """print(form)"""
