@@ -84,7 +84,7 @@ browser.submit()
 forms = list(browser.forms())
 form = forms[0]
 print(form) 
-browser.form.set_value(reset, nr=1)
+browser.form.set_value(reset, nr=2)
 forms = list(browser.forms())
 form = forms[0]
 print(form)
