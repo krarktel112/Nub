@@ -82,7 +82,7 @@ browser.form.set_value(reset, nr=2)
 browser.submit()
 browser.select_form(nr=0)
 browser.select_form(nr=0)
-browser.form.set_value(reset, nr=3)
+browser.form.set_value(reset, nr=1)
 forms = list(browser.forms())
 form = forms[0]
 print(form)
