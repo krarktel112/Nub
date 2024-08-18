@@ -78,14 +78,11 @@ elif y == 2:
   reset = input('Reset:')
 else:
   y == 0
-y = input('y')
 browser.form.set_value(reset, nr=2)
 browser.submit()
+browser.select_form(nr=0)
+
 """browser.select_form(nr=0)"""
-forms = list(browser.forms())
-form = forms[0]
-print(form) 
-browser.select_form(nr=y)
 browser.form.set_value(reset, nr=3)
 forms = list(browser.forms())
 form = forms[0]
