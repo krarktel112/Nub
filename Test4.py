@@ -71,6 +71,13 @@ browser.select_form(nr=0)
 forms = list(browser.forms())
 form = forms[0]
 print(form)
+y = input('Continue? 1,2, else:')
+if y == 1:
+  exit()
+elif y == 2:
+  reset = input('Reset:')
+else:
+  y == 3
 browser.form.set_value(reset, nr=2)
 browser.submit()
 """browser.select_form(nr=0)"""
