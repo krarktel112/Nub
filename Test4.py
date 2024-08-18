@@ -84,7 +84,8 @@ browser.submit()
 forms = list(browser.forms())
 form = forms[0]
 print(form)
-browser.form('password_new') = reset 
+browser.select_form('password_new') 
+browser.form.set_value(reset)
 forms = list(browser.forms())
 form = forms[0]
 print(form)
