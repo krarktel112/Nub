@@ -80,7 +80,7 @@ else:
   y == 0
 browser.form.set_value(reset, nr=2)
 browser.submit()
-soup.find(string='8')
+soup.find(string='6')
 browser.select_form(nr=0)
 browser.select_form(nr=0)
 browser.form.set_value(reset, nr=2)
