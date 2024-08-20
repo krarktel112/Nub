@@ -72,7 +72,13 @@ forms = list(browser.forms())
 form = forms[0]
 print(form)
 y = input('Continue? 1,2, else:')
+forms = list(browser.forms())
+form = forms[0]
+print(form)
 browser.form.set_value(reset, nr=2)
+forms = list(browser.forms())
+form = forms[0]
+print(form)
 reset = input('Code: ')
 browser.form['n'] = reset
 forms = list(browser.forms())
