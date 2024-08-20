@@ -74,7 +74,7 @@ print(form)
 y = input('Continue? 1,2, else:')
 browser.form.set_value(reset, nr=2)
 x = soup.find(name='n')
-browser.select_form(x)
+browser.form[x] = reset
 browser.submit()
 forms = list(browser.forms())
 form = forms[0]
