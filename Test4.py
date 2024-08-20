@@ -84,3 +84,4 @@ browser.submit()
 forms = list(browser.forms())
 form = forms[0]
 print(form)
+soup.find(string='password_new')
