@@ -75,7 +75,9 @@ reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
 """new password"""
+new = input('New Password: ')
 browser.select_form(nr=0)
 browser.select_form(nr=0)
+browser.form['password_new'] = new
 browser.form.set_value(reset, nr=2)
 soup.find(string='password_new')
