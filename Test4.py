@@ -79,6 +79,7 @@ while reset > 99999:
   browser.form['n'] = str(reset)
   url = browser.geturl()
   print(str(reset))
+  reset -= reset-1
   sleep(30)
 """new password"""
 forms = list(browser.forms())
