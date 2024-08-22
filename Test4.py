@@ -80,17 +80,13 @@ while reset > 99999:
   url = browser.geturl()
   print(str(reset))
   sleep(30)
-  if url != url1:
-    break
-  else:
-    x -= 1
 """new password"""
 forms = list(browser.forms())
 form = forms[0]
 print(form)
 y = input('Continue/Exit? ')
 if y == 1:
-  quit()
+  exit()
 else:
   y = 1
 new = input('New Password: ')
