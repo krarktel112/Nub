@@ -13,8 +13,6 @@ MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
 
 LOGIN_URL = 'https://mbasic.facebook.com/login/?ref=dbl&fl&login_from_aymh=1'
 
-page = requests.get(sample_web_page)
-soup1 = 
 def __init__(self):
     self.browser = self.setup_browser()
 
