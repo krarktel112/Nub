@@ -82,7 +82,7 @@ browser.form['password_new'] = new
 browser.form.set_value(reset, nr=2)
 soup.find(string='password_new')
 x == 0
-while x < 2
+while x < 2:
   x += 1
   print(x)
 """browser.form['n'] = x"""
