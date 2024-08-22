@@ -76,7 +76,7 @@ browser.select_form(nr=0)
 print(browser.geturl())
 page = requests.get(browser.geturl())
 soup1 = BeautifulSoup(page.content, "html.parser")
-print(soup1.find(string="6 characters long:))
+print(soup1.find(string="6 characters long:"))
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
