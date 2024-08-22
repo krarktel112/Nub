@@ -79,7 +79,7 @@ browser.submit()
 x = 999999
 while x > 99999:
   browser.select_form(nr=0)
-  browser.form['n'] = x
+  browser.form['n'] = str(x)
   url = browser.geturl()
   if url != url1:
     break
