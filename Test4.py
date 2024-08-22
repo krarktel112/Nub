@@ -72,17 +72,17 @@ print(form)
 y = input('Continue? 1,2, else:')
 """reset code input"""
 browser.select_form(nr=0)
+print(soup.find(string='6 characters long'))
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
 """new password"""
 new = input('New Password: ')
 browser.select_form(nr=0)
-browser.select_form(nr=0)
 browser.form['password_new'] = new
 browser.form.set_value(reset, nr=2)
 soup.find(string='password_new')
-x == 0
+x = 0
 while x < 2:
   x += 1
   print(x)
