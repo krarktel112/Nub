@@ -77,6 +77,7 @@ reset = 999999
 while reset > 99999:
   browser.select_form(nr=0)
   browser.form['n'] = str(reset)
+  browser.submit()
   url = browser.geturl()
   print(str(reset))
   reset -= reset-1
