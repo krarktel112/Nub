@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 import mechanize
 
-CHRS = '0123456789'
+CHRS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
               'AppleWebKit/534.7 (KHTML, like Gecko) ' \
