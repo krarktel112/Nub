@@ -71,6 +71,7 @@ form = forms[0]
 print(form)
 y = input('Continue? 1,2, else:')
 """reset code input"""
+browser.select_form(nr=0)
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
