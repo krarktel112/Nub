@@ -82,7 +82,7 @@ while x > 99999:
   browser.form['n'] = x
   url = browser.geturl()
   if url != url1:
-    break()
+    break
   else:
     x -= 1
 """new password"""
