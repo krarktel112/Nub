@@ -89,7 +89,7 @@ forms = list(browser.forms())
 form = forms[0]
 print(form)
 y = input('Continue/Exit? ')
-if y = 1:
+if y == 1:
   quit()
 else:
   y = 1
