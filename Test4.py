@@ -72,7 +72,7 @@ print(form)
 y = input('Continue? 1,2, else:')
 """reset code input"""
 browser.select_form(nr=0)
-print(soup.find(string='6 characters long'))
+print(soup.find(string="6 characters long"))
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
