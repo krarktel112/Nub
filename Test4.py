@@ -74,8 +74,9 @@ reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
 reset = 999999
-check = soup.find(string='password_new')
-while reset > 99999 or check != str('None'):
+check = str(browser.geturl())
+test = str(browser.geturl())
+while reset > 99999 or check == test:
   browser.select_form(nr=0)
   y == reset
   browser.form['n'] = str(y)
@@ -83,7 +84,7 @@ while reset > 99999 or check != str('None'):
   url = browser.geturl()
   print(str(reset))
   reset = reset-1
-  check = soup.find(string='password_new')
+  check = str(browser.geturl())
   sleep(30)
 """new password"""
 forms = list(browser.forms())
