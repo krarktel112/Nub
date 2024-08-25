@@ -68,7 +68,7 @@ browser.submit()
 """reset code input"""
 browser.select_form(nr=0)
 check = browser.geturl()
-print check.text()
+print(check)
 response1 = browser.response()
 print(response1.text())
 soup = BeautifulSoup(response1.text, 'html.parser')
