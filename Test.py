@@ -72,14 +72,19 @@ print(check)
 response1 = browser.response()
 print(response1)
 soup = BeautifulSoup(response1, 'html.parser')
-titles = soup.find_all('h2')
-for title in titles:
-  print(title.text)
 check1 = soup.find(name="n")
 print(check1)
 check2 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
 print(check2)
 x = input('Code: ')
 browser.form['n'] = x
-print(browser.response())
+browser.submit()
+response1 = browser.response()
+print(response1)
+soup = BeautifulSoup(response1, 'html.parser')
+check1 = soup.find(name="n")
+print(check1)
+check2 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
+print(check2)
+
 
