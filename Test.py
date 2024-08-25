@@ -63,7 +63,7 @@ browser.select_form(nr=0)
 browser.submit()
 browser.select_form(nr=0)
 browser.submit()
-y = input('Continue? 1,2, else:')
+"""y = input('Continue? 1,2, else:')"""
 
 """reset code input"""
 browser.select_form(nr=0)
