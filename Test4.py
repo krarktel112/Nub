@@ -85,7 +85,7 @@ while reset > 99999 or check != str("None"):
   print(str(reset))
   reset = reset-1
   check = str(soup.find('password_new'))
-  print(soup.find('reset_action'))
+  print(soup.find("reset_action"))
   sleep(30)
 """new password"""
 forms = list(browser.forms())
