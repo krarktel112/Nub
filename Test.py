@@ -70,7 +70,7 @@ browser.select_form(nr=0)
 check = browser.geturl()
 response = requests.get(browser.geturl())
 soup = BeautifulSoup(response.text, 'html.parser')
-
+titles = soup.find_all('h2')
 for title in titles:
   print(title.text)
 check1 = soup.find(name="n")
