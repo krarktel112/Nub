@@ -76,7 +76,7 @@ browser.submit()
 reset = 999999
 check = str(browser.geturl())
 test = str(browser.geturl())
-while reset > 99999 or check == test:
+while reset > 99999 and check == test:
   browser.select_form(nr=0)
   y == reset
   browser.form['n'] = str(y)
