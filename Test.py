@@ -70,7 +70,7 @@ browser.select_form(nr=0)
 check = browser.geturl()
 print(check)
 response1 = browser.response()
-print(response1.text())
+print(response1)
 soup = BeautifulSoup(response1.text, 'html.parser')
 titles = soup.find_all('h2')
 for title in titles:
