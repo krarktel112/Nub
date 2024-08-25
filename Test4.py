@@ -76,6 +76,9 @@ browser.submit()
 reset = 999999
 check = str(browser.geturl())
 test = str(browser.geturl())
+response = request.get(browser.geturl())
+soup = BeautifulSoup(response.text, 'html.parser')
+
 while reset > 99999 or check != str("None"):
   browser.select_form(nr=0)
   y == reset
