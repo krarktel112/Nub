@@ -68,9 +68,9 @@ browser.submit()
 """reset code input"""
 browser.select_form(nr=0)
 check = browser.geturl()
-print(check.read())
+print(check.text())
 response1 = browser.response()
-print(response1.read())
+print(response1.text())
 soup = BeautifulSoup(response1.text, 'html.parser')
 titles = soup.find_all('h2')
 for title in titles:
