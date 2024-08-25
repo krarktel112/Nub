@@ -68,7 +68,7 @@ y = input('Continue? 1,2, else:')
 """reset code input"""
 browser.select_form(nr=0)
 check = browser.geturl()
-response = request.get(check)
+response = requests.get(check)
 soup = BeautifulSoup(response.text, 'html.parser')
 check1 = soup.find(string="6 characters long")
 print(check1)
