@@ -74,9 +74,6 @@ browser.select_form(nr=0)
 url1 = browser.geturl()
 print(browser.geturl())
 reset = input('Code: ')
-browser.form['n'] = reset
-browser.submit()
-reset = 999999
 check = str(browser.geturl())
 test = str(browser.geturl())
 response = request.get(browser.geturl())
