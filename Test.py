@@ -61,7 +61,7 @@ browser.submit()
 browser.select_form(nr=0)
 browser.submit()
 y = input('Continue? 1,2, else:')
-if y = "y":
+if y = 'y':
   exit()
 else:
   y =0
