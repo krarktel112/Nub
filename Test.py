@@ -71,7 +71,7 @@ check = browser.geturl()
 print(check)
 response1 = browser.response()
 print(response1)
-soup = BeautifulSoup(response1.text, 'html.parser')
+soup = BeautifulSoup(response1, 'html.parser')
 titles = soup.find_all('h2')
 for title in titles:
   print(title.text)
