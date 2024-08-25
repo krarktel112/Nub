@@ -70,6 +70,9 @@ browser.select_form(nr=0)
 check = browser.geturl()
 response = requests.get(browser.geturl())
 soup = BeautifulSoup(response.text, 'html.parser')
+
+for title in titles:
+  print(title.text)
 check1 = soup.find(name="n")
 print(check1)
 check2 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
