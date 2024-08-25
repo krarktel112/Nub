@@ -64,19 +64,11 @@ browser.submit()
 browser.select_form(nr=0)
 browser.submit()
 y = input('Continue? 1,2, else:')
-if y := 'y':
-  exit()
-else:
-  y =0
 
 """reset code input"""
 browser.select_form(nr=0)
-url1 = browser.geturl()
-print(browser.geturl())
-reset = input('Code: ')
-check = str(browser.geturl())
-test = str(browser.geturl())
-response = request.get(browser.geturl())
+check = browser.geturl()
+response = request.get(check)
 soup = BeautifulSoup(response.text, 'html.parser')
 check1 = soup.find(string="6 characters long")
 print(check1)
