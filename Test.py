@@ -68,8 +68,8 @@ y = input('Continue? 1,2, else:')
 """reset code input"""
 browser.select_form(nr=0)
 check = browser.geturl()
-print(check.read())      # the text of the page
-response1 = browser.response()  # get the response again
+print(check.read())
+response1 = browser.response()
 print(response1.read())
 soup = BeautifulSoup(response1.text, 'html.parser')
 titles = soup.find_all('h2')
