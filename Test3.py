@@ -82,7 +82,7 @@ try:
     with open(sys.argv[6], 'r') as fp:
         engine = FacebookBruteForceEngine()
         engine.run(email, readline_generator(fp))
-        if x < 41:
+        if x < 168:
           x += 1
         else:
           sleep(120)
