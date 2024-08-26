@@ -80,7 +80,6 @@ x = input('Code: ')
 browser.form['n'] = x
 browser.submit()
 response1 = browser.response()
-print(response1)
 soup = BeautifulSoup(response1, 'html.parser')
 check1 = soup.find(name="n")
 print(check1)
