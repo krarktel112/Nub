@@ -82,7 +82,7 @@ print(check1)
 check2 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
 print(check2)
 if check1 != test:
-  while check1 != test:
+  while check1 != test or reset > 999999:
     browser.select_form(nr=0)
     y == reset
     browser.form['n'] = str(y)
@@ -96,7 +96,7 @@ if check1 != test:
     sleep(30)
 elif check2 != test:
   reset = 99999999
-  while check2 != test:
+  while check2 != test or reset > 99999999:
     browser.select_form(nr=0)
     y == reset
     browser.form['n'] = str(y)
