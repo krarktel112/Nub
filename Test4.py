@@ -77,7 +77,7 @@ reset = 999999
 response1 = browser.response()
 soup = BeautifulSoup(response1, 'html.parser')
 test = soup.find(string="poop")
-check1 = soup.find(string="6 numbers long")
+check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
 print(check1)
 check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
 print(check2)
