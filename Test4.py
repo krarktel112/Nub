@@ -74,28 +74,46 @@ reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
 reset = 999999
-check = str(browser.geturl())
-test = str(browser.geturl())
-response = request.get(browser.geturl())
-soup = BeautifulSoup(response.text, 'html.parser')
-
-while reset > 99999 or check != str("None"):
-  browser.select_form(nr=0)
-  y == reset
-  browser.form['n'] = str(y)
-  browser.submit()
-  url = browser.geturl()
-  print(str(reset))
-  reset = reset-1
-  check = str(soup.find('password_new'))
-  print(soup.find("reset_action"))
-  sleep(30)
-"""new password"""
-forms = list(browser.forms())
-form = forms[0]
-print(form)
+response1 = browser.response()
+soup = BeautifulSoup(response1, 'html.parser')
+test = soup.find(string="poop")
+check1 = soup.find(string="8 numbers long")
+print(check1)
+check2 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
+print(check2)
+if check1 != test:
+  while check1 != test:
+    browser.select_form(nr=0)
+    y == reset
+    browser.form['n'] = str(y)
+    browser.submit()
+    url = browser.geturl()
+    print(str(reset))
+    reset = reset-1
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
+    sleep(30)
+elif check2 != test:
+  reset = 99999999
+  while check2 != test:
+    browser.select_form(nr=0)
+    y == reset
+    browser.form['n'] = str(y)
+    browser.submit()
+    url = browser.geturl()
+    print(str(reset))
+    reset = reset-1
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
+    sleep(30)
+else:
+  response1 = browser.response()
+  soup = BeautifulSoup(response1, 'html.parser')
+  print(soup.find(string="password_new"))
 y = input('Continue/Exit? ')
-if y == 1:
+if yes == 'n':
   exit()
 else:
   new = input('New Password: ')
