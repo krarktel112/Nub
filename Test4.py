@@ -79,7 +79,7 @@ check2 = soup.find(string="Please check your email for a message with your code.
 if check1 != test:
   print(check1)
   reset = 999999
-else
+else:
   print(check2)
   reset = 99999999
 if check1 != test:
