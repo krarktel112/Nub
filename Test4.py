@@ -120,8 +120,7 @@ else:
   yes = input('Continue/Exit? ')
   if yes == 'n':
     exit()
-  elif:
-    s
+  else:
     new = input('New Password: ')
     browser.select_form(nr=0)
     browser.form['password_new'] = new
