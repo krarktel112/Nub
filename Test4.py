@@ -71,6 +71,7 @@ reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
 reset = 999999
+url = browser.geturl()
 response1 = browser.response()
 soup = BeautifulSoup(response1, 'html.parser')
 test = soup.find(string="poop")
@@ -116,11 +117,12 @@ else:
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   print(soup.find(string="password_new"))
-y = input('Continue/Exit? ')
-if yes == 'n':
-  exit()
-else:
-  new = input('New Password: ')
-  browser.select_form(nr=0)
-  browser.form['password_new'] = new
+  yes = input('Continue/Exit? ')
+  if yes == 'n':
+    exit()
+  elif:
+    s
+    new = input('New Password: ')
+    browser.select_form(nr=0)
+    browser.form['password_new'] = new
   """browser.form['n'] = x"""
