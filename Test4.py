@@ -85,7 +85,7 @@ else:
 if check1 != test:
   while check1 != test or reset > 999999:  
     browser.select_form(nr=0)
-    y == reset
+    y = reset
     browser.form['n'] = str(y)
     browser.submit()
     print(str(reset), end='\r')
@@ -100,7 +100,7 @@ if check1 != test:
 elif check2 != test:
   while check2 != test or reset > 99999999:
     browser.select_form(nr=0)
-    y == reset
+    y = reset
     browser.form['n'] = str(y)
     browser.submit()
     print(str(reset), end='\r')
