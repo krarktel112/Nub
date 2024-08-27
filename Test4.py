@@ -65,11 +65,8 @@ browser.select_form(nr=0)
 browser.submit()
 browser.select_form(nr=0)
 browser.submit()
-y = input('Continue? 1,2, else:')
 """reset code input"""
 browser.select_form(nr=0)
-url1 = browser.geturl()
-print(browser.geturl())
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
@@ -78,16 +75,18 @@ response1 = browser.response()
 soup = BeautifulSoup(response1, 'html.parser')
 test = soup.find(string="poop")
 check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-print(check1)
 check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-print(check2)
+if check1 != test:
+  print(check1)
+else:
+  print(check2)
+
 if check1 != test:
   while check1 != test or reset > 999999:
     browser.select_form(nr=0)
     y == reset
     browser.form['n'] = str(y)
     browser.submit()
-    url = browser.geturl()
     print(str(reset))
     reset = reset-1
     response1 = browser.response()
