@@ -77,10 +77,8 @@ soup = BeautifulSoup(response1, 'html.parser')
 test = soup.find(string="poop")
 check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
 check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-if check1 != test:
-  print(check1)
-else:
-  print(check2)
+print(check1)
+print(check2)
 
 if check1 != test:
   while check1 != test or reset > 999999:
