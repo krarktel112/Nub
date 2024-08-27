@@ -66,12 +66,14 @@ browser.submit()
 browser.select_form(nr=0)
 browser.submit()
 """reset code input"""
+print(browser.geturl())
 browser.select_form(nr=0)
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
 reset = 999999
 url = browser.geturl()
+
 response1 = browser.response()
 soup = BeautifulSoup(response1, 'html.parser')
 test = soup.find(string="poop")
