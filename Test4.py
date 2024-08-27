@@ -98,7 +98,6 @@ if check1 != test:
     sleep(30)
     print(s.join(fail))
 elif check2 != test:
-  reset = 99999999
   while check2 != test or reset > 99999999:
     browser.select_form(nr=0)
     y == reset
