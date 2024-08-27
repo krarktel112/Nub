@@ -66,24 +66,24 @@ browser.submit()
 browser.select_form(nr=0)
 browser.submit()
 """reset code input"""
-print(browser.geturl())
 browser.select_form(nr=0)
 reset = input('Code: ')
 browser.form['n'] = reset
 browser.submit()
 reset = 999999
-url = browser.geturl()
-
 response1 = browser.response()
 soup = BeautifulSoup(response1, 'html.parser')
 test = soup.find(string="poop")
 check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
 check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-print(check1)
-print(check2)
-
 if check1 != test:
-  while check1 != test or reset > 999999:
+  print(check1)
+  reset = 999999
+else
+  print(check2)
+  reset = 99999999
+if check1 != test:
+  while check1 != test or reset > 999999:  
     browser.select_form(nr=0)
     y == reset
     browser.form['n'] = str(y)
