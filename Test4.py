@@ -89,7 +89,7 @@ if check1 != test:
     browser.form['n'] = str(y)
     browser.submit()
     print(str(reset), end='\r')
-    fail = (str(y), failed)
+    fail = (str(y), "failed")
     s = " "
     reset = reset-1
     response1 = browser.response()
@@ -104,7 +104,7 @@ elif check2 != test:
     browser.form['n'] = str(y)
     browser.submit()
     print(str(reset), end='\r')
-    fail = (str(y), failed)
+    fail = (str(y), "failed")
     s = " "
     reset = reset-1
     response1 = browser.response()
