@@ -89,8 +89,9 @@ while newpass = test:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     poptart = soup.find(string="n")
-    print("/", end='\r')
-    print("\", end='\r')
+    print("n", end='\r')
+    print("y", end='\r')
+    browser.close()
   browser.select_form(nr=0)
   """reset = input('Code: ')"""
   browser.form['n'] = reset
