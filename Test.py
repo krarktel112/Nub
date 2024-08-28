@@ -127,7 +127,7 @@ while newpass == test:
         print(s.join(fail))
         sleep(30)
       else:
-        print(s.join(str(y), succeeed)
+        print(s.join(succeeed))
   elif check2 != test:
     while check2 != test or reset > 99999999:
       browser.select_form(nr=0)
