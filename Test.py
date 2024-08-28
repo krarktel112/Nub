@@ -103,10 +103,10 @@ while newpass == test:
   check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-  if check1 != test and redo = 0:
+  if check1 != test and redo != 1:
     print(check1)
     reset = 999999
-  elif check2 != test and redo = 0:
+  elif check2 != test and redo != 1:
     print(check2)
     reset = 99999999
   if check1 != test:
