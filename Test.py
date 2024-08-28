@@ -51,7 +51,7 @@ redo = 0
 reset = 999999
 newpass = soup.find(string="poop")
 """password = input('Password:')"""
-while newpass = test:
+while newpass == test:
   browser = mechanize.Browser()
   browser.set_handle_robots(False)
   cookies = mechanize.CookieJar()
