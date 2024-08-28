@@ -94,6 +94,7 @@ while newpass == test:
     print("|", end='\r')
     print("-", end='\r')
     browser.close()
+    sleep(30)
   browser.select_form(nr=0)
   """reset = input('Code: ')"""
   browser.form['n'] = reset
