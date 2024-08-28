@@ -146,7 +146,7 @@ while newpass == test:
         print(s.join(fail))
         sleep(30)
       else:
-        print(s.join(str(y), succeeed)
+        print(s.join(succeeed))
   else:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
