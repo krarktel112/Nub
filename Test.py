@@ -85,7 +85,7 @@ def fb_hack():
     reset = int(reset1)
   else:
     print(check2)
-    reset = 99999999
+    reset1 = input('Code: ') or 99999999
   if check1 != test:
     while check1 != test or reset > 99999:  
       browser.select_form(nr=0)
