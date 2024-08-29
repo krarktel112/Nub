@@ -68,6 +68,7 @@ browser.submit()
 """reset code input"""
 browser.select_form(nr=0)
 reset = input('Code: ')
+print(browser.geturl())
 browser.form['n'] = reset
 browser.submit()
 reset = 999999
