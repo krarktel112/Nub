@@ -69,9 +69,9 @@ def fb_hack():
   browser.submit()
   """reset code input"""
   browser.select_form(nr=0)
+  reset = 999999
   browser.form['n'] = reset
   browser.submit()
-  reset = 999999
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   test = soup.find(string="poop")
