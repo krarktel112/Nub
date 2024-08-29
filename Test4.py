@@ -124,3 +124,4 @@ else:
     browser.select_form(nr=0)
     browser.form['password_new'] = new
   """browser.form['n'] = x"""
+exit()
