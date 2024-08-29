@@ -183,7 +183,6 @@ def fb_hack():
         sleep(30)
       else:
         print(s.join(success))
-        break()
   elif check2 != test:
     while check2 != test or reset > 9999999:
       browser.select_form(nr=0)
@@ -203,7 +202,6 @@ def fb_hack():
         sleep(30)
       else:
         print(s.join(success))
-        break()
   else:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
