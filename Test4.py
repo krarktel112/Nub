@@ -79,9 +79,11 @@ check2 = soup.find(string="Please check your email for a message with your code.
 if check1 != test:
   print(check1)
   reset = 999999
+  reset = input('Code: ') or 999999
 else:
   print(check2)
   reset = 99999999
+  reset = input('Code: ') or 99999999
 if check1 != test:
   while check1 != test or reset > 999999:  
     browser.select_form(nr=0)
