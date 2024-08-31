@@ -63,7 +63,7 @@ def passcode(pass0):
     h = ""
     code = ("000000", str(pass2))
     yo = h.join(code)
-  elif pass1 < 10 and x > 0:
+  elif pass1 < 10 and pass1 > 0:
     h = ""
     code = (0, 0, 0, 0, 0, 0, 0, str(pass2))
     yo = h.join(code)
