@@ -25,7 +25,7 @@ def setup_browser(self):
     browser.set_handle_refresh(False)
     return browser
 
-def passcode8(pass0):
+def passcode6(pass0):
   pass1 = int(pass0)
   pass2 = int(pass0)
   if pass1 < 10**5 and pass1 > 99999:
