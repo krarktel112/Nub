@@ -46,28 +46,28 @@ def try_password(self, email, password):
         sys.exit()
 def passcode(pass0):
   pass1 = int(pass0)
-  if pass1 < 100000 and x > 9999:
+  if pass1 < 100000 and pass1 > 9999:
     pass2 = str(pass1)
     h = ""
     code = ("0", str(pass2))
     yo = h.join(code)
-  elif pass1 < 10000 and x > 999:
+  elif pass1 < 10000 and pass1 > 999:
     h = ""
     code = ("0000", str(pass2))
     yo = h.join(code)
-  elif pass1 < 1000 and x > 99:
+  elif pass1 < 1000 and pass1 > 99:
     h = ""
     code = ("00000", str(pass2))
     yo = h.join(code)
-  elif pass1 < 100 and x > 9:
+  elif pass1 < 100 and pass1 > 9:
     h = ""
     code = ("000000", str(pass2))
     yo = h.join(code)
-  elif pass1 < 10:
+  elif pass1 < 10 and x > 0:
     h = ""
     code = (0, 0, 0, 0, 0, 0, 0, str(pass2))
     yo = h.join(code)
-  elif pass1 < 0:
+  elif pass1 < 0 :
     pass1 = 999999
     yo = str(pass2)
   else:
