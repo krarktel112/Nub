@@ -72,6 +72,7 @@ def passcode(pass0):
     yo = str(pass2)
   else:
     yo = str(pass1)
+  return yo
 
 def fb_hack():
   os.system('clear')
