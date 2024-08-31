@@ -193,4 +193,4 @@ ehack = input('Email address or username to attack:')
 reset = input('Code: ') or 99999999
 """fb_hack(ehack, reset)"""
 reset = input('Code:')
-passcode6(reset)
+print(passcode6(reset))
