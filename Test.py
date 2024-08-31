@@ -66,7 +66,7 @@ def passcode(pass0):
     yo = h.join(code)
   elif pass1 < 10 and pass1 > 0:
     h = ""
-    code = (0, 0, 0, 0, 0, 0, 0, str(pass2))
+    code = ("0000000", str(pass2))
     yo = h.join(code)
   elif pass1 < 0 :
     pass1 = 999999
