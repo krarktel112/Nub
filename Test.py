@@ -191,6 +191,4 @@ def fb_hack(email, codex):
 os.system('clear')
 ehack = input('Email address or username to attack:')
 reset = input('Code: ') or 99999999
-"""fb_hack(ehack, reset)"""
-reset = input('Code:')
-print(passcode6(reset))
+fb_hack(ehack, reset)
