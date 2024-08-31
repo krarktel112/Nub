@@ -44,7 +44,8 @@ def try_password(self, email, password):
     if self.is_logged_in(data):
         print ('Password found: %s' % password )
         sys.exit()
-def passcode(pass1):
+def passcode(pass0):
+  pass1 = int(pass0)
   if pass1 < 100000:
     pass2 = str(pass1)
     h = ""
