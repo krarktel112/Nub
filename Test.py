@@ -46,7 +46,7 @@ def try_password(self, email, password):
         sys.exit()
 def passcode(pass0):
   pass1 = int(pass0)
-  pass2 = str(pass0)
+  pass2 = int(pass0)
   if pass1 < 100000 and pass1 > 9999:
     pass2 = str(pass1)
     h = ""
