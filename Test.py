@@ -162,4 +162,6 @@ def fb_hack():
       new = input('New Password: ')
       browser.select_form(nr=0)
       browser.form['password_new'] = new
-fb_hack()
+"""fb_hack()"""
+reset = input('code:')
+print(passcode(reset))
