@@ -136,7 +136,6 @@ def fb_hack(email, codex):
     if int(codex) > 999999:
       reset = int(codex) - 99000000
       print(check1)
-      reset = int(codex)
     else:
       print(check1)
       reset = int(codex)
