@@ -149,7 +149,7 @@ def fb_hack(email, codex):
       fail = (y, "failed")
       success = (y, "succeded")
       s = " "
-      reset = reset-1
+      reset -= 1
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
@@ -168,7 +168,7 @@ def fb_hack(email, codex):
       fail = (y, "failed")
       success = (y, "succeded")
       s = " "
-      reset = reset-1
+      reset -= 1
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
