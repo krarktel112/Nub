@@ -105,7 +105,7 @@ elif check2 != test:
     y = reset
     browser.form['n'] = str(y)
     browser.submit()
-    print(str(reset), end='\r')
+    print(str(y), end='\r')
     fail = (str(y), "failed")
     s = " "
     reset -= 1
