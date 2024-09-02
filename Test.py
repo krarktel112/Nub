@@ -97,7 +97,6 @@ def passcode8(pass0):
     code = ("0000000", str(pass2))
     yo = h.join(code)
   else:
-    pass1 = 99999999
     yo = str(pass1)
   return yo
 
