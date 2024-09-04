@@ -120,10 +120,7 @@ def fb_hack(email, codex):
   browser.select_form(nr=0)
   browser.submit()
   """reset code input"""
-  browser.select_form(nr=0)
   y = int(codex)
-  browser.form['n'] = str(y)
-  browser.submit()
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   test = soup.find(string="poop")
