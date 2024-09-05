@@ -219,5 +219,5 @@ while True:
     else:
       break
   except:
-    browser.close()
+    sys.exit()
     fb_hack(ehack, reset)
