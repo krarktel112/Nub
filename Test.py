@@ -205,8 +205,8 @@ def fb_hack(email, codex):
       print("Passcode found!")
       print(y)
       browser.close()
-      reset = 0-1
-  return reset in reset1, y in passcoder
+      reset = int(-1)
+  return reset in reset1, y in passcoder, browser
 
 os.system('clear')
 ehack = input('Email address or username to attack:')
