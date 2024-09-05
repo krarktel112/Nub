@@ -215,6 +215,10 @@ while True:
   try:
     fb_hack(ehack, reset)
     reset = reset1
+    if int(reset1) < int(0):
+      break
+    else:
+      reset = reset1
   except:
     sys.exit()
     fb_hack(ehack, reset)
