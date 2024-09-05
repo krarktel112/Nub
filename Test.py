@@ -210,7 +210,7 @@ def fb_hack(email, codex):
 
 os.system('clear')
 ehack = input('Email address or username to attack:')
-reset = input('Code: ') or 99999999
+reset = int(input('Code: ') or 99999999)
 while True:
   try:
     if reset >= 0:
