@@ -222,4 +222,5 @@ while True:
   except:
     print("Hi")
     sys.exit()
-    fb_hack(ehack, reset)
+    ehack = input('Email address or username to attack:')
+    reset = int(input('Code: ') or 99999999)
