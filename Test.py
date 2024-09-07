@@ -220,5 +220,6 @@ while True:
     else:
       reset = reset1
   except:
+    print("Hi")
     sys.exit()
     fb_hack(ehack, reset)
