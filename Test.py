@@ -220,7 +220,8 @@ while True:
     else:
       reset = reset1
   except:
-    print("Hi")
     sys.exit()
+    f = open(emails.txt, "r")
+    lines = f.readlines()
     ehack = input('Email address or username to attack:')
     reset = int(input('Code: ') or 99999999)
