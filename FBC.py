@@ -228,8 +228,8 @@ f.write(ehack)
 f.close()
 z.write(str(reset1))
 z.close()
-starting = 1
-while starting = 1:
+starting = int(1)
+while starting = int(1):
   try:
     fb_hack(ehack, reset)
     reset = reset1
