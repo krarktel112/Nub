@@ -136,6 +136,7 @@ def fb_hack(email, codex):
   check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
+  print(browser.geturl())
   if check1 != test:
     if int(codex) > 999999:
       reset = int(codex) - 99000000
