@@ -247,4 +247,4 @@ while starting == int(1):
       z.close()
     print("Restarting")
     sleepy(30)
-    
+    fb_hack(ehack, reset)
