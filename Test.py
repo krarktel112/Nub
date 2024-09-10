@@ -124,7 +124,7 @@ def fb_hack(email, codex):
     z = open("passcoder.txt", "a")
     f.write(ehack)
     f.close()
-    z.write(str(reset1))
+    z.write(str(int(codex)))
     z.close()
     raise("Retrying")
   browser.form['email'] = email
