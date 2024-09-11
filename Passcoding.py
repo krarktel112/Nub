@@ -28,7 +28,7 @@ def passcode6(pass0):
     yo = str(pass1)
   else:
     yo = str(pass1)
-  return yo
+  return yo as zed
 
 def passcode8(pass0):
   pass1 = int(pass0)
