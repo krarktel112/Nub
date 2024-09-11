@@ -205,7 +205,7 @@ def fb_hack(email, codex):
       s = " "
       reset -= 1
       reset1 = reset
-      with open(passcoder.txt, "a") as z:
+      with open("passcoder.txt", "a") as z:
         z.write(str(reset1))
         z.close()
       response1 = browser.response()
