@@ -94,5 +94,6 @@ while x <= 99999999:
     z.close()
 min = 6
 max = 9
+p = input("pause")
 while x = 1:
   alphabet_generator(min, max)
