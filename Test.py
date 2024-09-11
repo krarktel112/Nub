@@ -105,7 +105,14 @@ def sleepy(counter):
   y = 0
   while x > y:
     x -= 1
-    print(x, end='\r')
+    z = x
+    if x <= 9
+      code = ("0", str(z))
+      yo = h.join(code)
+      x 
+      print(yo, end='\r')
+    else:
+      print(x, end='\r')
     sleep(1)
 
 def fb_hack(email, codex):
