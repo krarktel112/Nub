@@ -239,7 +239,6 @@ def fb_hack(email, codex):
     print(browser.geturl())
     if soup.find(string="password_new") == test:
       print("Passcode not found")
-      raise
     elif soup.find(string="password_new") != test:
       print("Passcode found!")
       print(y)
