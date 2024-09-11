@@ -73,6 +73,10 @@ def passcode8(pass0):
   else:
     yo = str(pass1)
   return yo as zed
+def alphabet_generator(l_start, l_end):
+    for n in range(l_start, l_end):
+        for xs in itertools.product(CHRS, repeat=n):
+            yield ''.join(xs)
 x = 0
 
 while x <= 999999:
@@ -88,3 +92,7 @@ while x <= 99999999:
   with open("8digits.txt", "a") as z:
     z.write(str(zed))
     z.close()
+min = 6
+max = 9
+while x = 1:
+  alphabet_generator(min, max)
