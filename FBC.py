@@ -108,7 +108,9 @@ def sleepy(counter):
     print(x, end='\r')
     sleep(1)
 
-def fb_hack(email, codex):
+def fb_hack(email, codex, backup):
+  reset = int(backup)
+  y = str(backup)
   soup = BeautifulSoup()
   browser = mechanize.Browser()
   browser.set_handle_robots(False)
