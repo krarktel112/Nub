@@ -126,6 +126,8 @@ def fb_hack(email, codex):
     f.close()
     z.write(str(int(codex)))
     z.close()
+    reset = int(codex)
+    y = ehack
     raise("Retrying")
   browser.form['email'] = email
   browser.submit()
@@ -139,6 +141,8 @@ def fb_hack(email, codex):
     f.close()
     z.write(str(int(codex)))
     z.close()
+    reset = int(codex)
+    y = ehack
     raise("Retrying")
   browser.submit()
   browser.select_form(nr=0)
