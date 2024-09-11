@@ -77,10 +77,14 @@ x = 0
 
 while x <= 999999:
   passcode6(int(x))
-  z.write(zed)
+  with open("6digits.txt", "a") as f:
+    f.write(str(zed))
+    f.close()
   x +=1
 x = 0
 while x <= 99999999:
   passcode8(int(x))
-  z.write(zed)
+  with open("8digits.txt", "a") as z:
+    z.write(str(zed))
+    z.close()
   x +=1
