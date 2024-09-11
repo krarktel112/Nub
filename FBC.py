@@ -120,11 +120,16 @@ def fb_hack(email, codex):
   try:
     browser.select_form(nr=0)
   except:
-    z = open("passcoder.txt", "a")
-    z.write(str(int(codex)))
-    reset = z.readlines(-1)
-    y = z.readlines(-1)
-    z.close()
+    with open("emails.txt", "a") as f:
+        f.write(str(email))
+        f.close()
+    with open("passcoder.txt", "a") as z:
+        z.write(str(reset1))
+        z.close()
+    with open("passcoder.txt", "r") as z:
+      reset = z.readlines(-1)
+      z.close()
+    y = reset
     raise
   browser.form['email'] = email
   browser.submit()
@@ -132,14 +137,16 @@ def fb_hack(email, codex):
   try:
     browser.select_form(nr=0)
   except:
-    f = open("emails.txt", "a")
-    z = open("passcoder.txt", "a")
-    f.write(ehack)
-    f.close()
-    z.write(str(int(codex)))
-    reset = z.readlines(-1)
-    y = z.readlines(-1)
-    z.close()
+    with open("emails.txt", "a") as f:
+        f.write(str(email))
+        f.close()
+    with open("passcoder.txt", "a") as z:
+        z.write(str(reset1))
+        z.close()
+    with open("passcoder.txt", "r") as z:
+      reset = z.readlines(-1)
+      z.close()
+    y = reset
     raise
   browser.submit()
   browser.select_form(nr=0)
@@ -205,7 +212,7 @@ def fb_hack(email, codex):
       s = " "
       reset -= 1
       reset1 = reset
-      with open(passcoder.txt, "a") as z:
+      with open("passcoder.txt", "a") as z:
         z.write(str(reset1))
         z.close()
       response1 = browser.response()
