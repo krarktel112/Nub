@@ -17,3 +17,5 @@ for combination in itertools.product(range(10), repeat=8):
     f.write(''.join(map(str, combination)))
 z.close()
 print("Done 2")
+"""for combination in itertools.product([0,8], repeat=6):
+    print(''.join(map(str, combination)))"""
