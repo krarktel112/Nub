@@ -6,8 +6,11 @@ import requests
 import mechanize
 import os
 
-for combination in itertools.product(range(10), repeat=6):
-    print(''.join(map(str, combination)))import math
+os.clear()
+for combination in itertools.product([0,8], repeat=6):
+    print(''.join(map(str, combination)))
+
+
 def passcode6(pass0):
   pass1 = int(pass0)
   pass2 = int(pass0)
