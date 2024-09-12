@@ -1,4 +1,7 @@
-import math
+import itertools
+
+for combination in itertools.product(range(10), repeat=6):
+    print(''.join(map(str, combination)))import math
 def passcode6(pass0):
   pass1 = int(pass0)
   pass2 = int(pass0)
@@ -79,7 +82,7 @@ def alphabet_generator(l_start, l_end):
             yield ''.join(xs)
 x = 0
 
-while x <= 999999:
+"""while x <= 999999:
   x += 1
   passcode6(int(x))
   with open("6digits.txt", "a") as f:
@@ -96,4 +99,4 @@ min = 6
 max = 9
 p = input("pause")
 while x = 1:
-  alphabet_generator(min, max)
+  alphabet_generator(min, max)"""
