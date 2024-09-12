@@ -10,7 +10,7 @@ os.system('clear')
 f = open("6digits.txt", "a")
 for combination in itertools.product(range(10), repeat=6):
     f.write(''.join(map(str, combination)))
-
+print("done")
 
 def passcode6(pass0):
   pass1 = int(pass0)
