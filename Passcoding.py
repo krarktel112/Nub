@@ -1,4 +1,10 @@
 import itertools
+import sys
+from time import sleep
+from bs4 import BeautifulSoup
+import requests
+import mechanize
+import os
 
 for combination in itertools.product(range(10), repeat=6):
     print(''.join(map(str, combination)))import math
