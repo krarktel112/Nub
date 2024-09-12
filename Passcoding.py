@@ -7,7 +7,7 @@ import mechanize
 import os
 
 os.system('clear')
-for combination in itertools.product([0,8], repeat=6):
+for combination in itertools.product(range(10), repeat=6):
     print(''.join(map(str, combination)))
 
 
