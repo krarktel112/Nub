@@ -25,4 +25,4 @@ except:
     for combination in itertools.product(range(10), repeat=6):
         f.write(''.join(map(str, combination)))
         counter += 1
-        print(counter, end='\r')
+        print(counter)
