@@ -7,8 +7,9 @@ import mechanize
 import os
 
 os.system('clear')
+f = open("6digits.txt", "a")
 for combination in itertools.product(range(10), repeat=6):
-    print(''.join(map(str, combination)))
+    f.write(''.join(map(str, combination)))
 
 
 def passcode6(pass0):
