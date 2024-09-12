@@ -40,7 +40,7 @@ def passcode6(pass0):
     yo = str(pass1)
   else:
     yo = str(pass1)
-  return yo as zed
+  return yo
 
 def passcode8(pass0):
   pass1 = int(pass0)
@@ -84,7 +84,7 @@ def passcode8(pass0):
     yo = h.join(code)
   else:
     yo = str(pass1)
-  return yo as zed
+  return yo
 def alphabet_generator(l_start, l_end):
     for n in range(l_start, l_end):
         for xs in itertools.product(CHRS, repeat=n):
