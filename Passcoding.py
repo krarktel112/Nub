@@ -17,7 +17,7 @@ except:
     z = open("8digits.txt", "a+")
     for combination in itertools.product(range(10), repeat=6):
         z.write(''.join(map(str, combination)))"""
-counter == 0
+counter = 0
 try:
     x = open("passing.txt", "a")
 except:
