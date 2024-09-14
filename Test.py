@@ -68,6 +68,7 @@ def fb_hack(email, codex):
   try:
     browser.select_form(nr=0)
   except:
+    print(browser.response())
     sys.exit()
     print("poop")
   browser.form['email'] = email
