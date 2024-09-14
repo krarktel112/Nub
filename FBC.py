@@ -89,7 +89,7 @@ def fb_hack(email, codex):
         f.write(str(email))
         f.close()
     with open("passcoder.txt", "a") as z:
-        z.write(str(reset1))
+        z.write(str(codex))
         z.close()
     with open("passcoder.txt", "r") as z:
       reset = z.readlines(-1)
