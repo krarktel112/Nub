@@ -10,6 +10,12 @@
     browser.select_form(nr=0)
   except:
     print(browser.geturl())
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    with open("soupa.txt", "a+") as f:
+      f.write(soup)
+      f.close()
+    print(soup)
     sys.exit()
   try:
     browser.form['email'] = email
