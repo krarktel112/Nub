@@ -68,7 +68,8 @@ def fb_hack(email, codex):
   try:
     browser.select_form(nr=0)
   except:
-    raise
+    sys.exit()
+    print("poop")
   browser.form['email'] = email
   browser.submit()
   """selection confirmation"""
