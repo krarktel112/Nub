@@ -47,7 +47,7 @@ def sleepy(counter):
   while x > y:
     x -= 1
     z = x
-    if x <= 9
+    if x <= 9:
       code = ("0", str(z))
       yo = h.join(code)
       x 
