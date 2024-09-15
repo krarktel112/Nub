@@ -68,10 +68,9 @@ def fb_hack(email, codex):
   try:
     browser.select_form(nr=0)
   except:
-    print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    print(soup.find(string("Facebook is not available on this browser")))
+    print("1")
     with open("output1.html", "w") as file:
       file.write(str(soup))
     sys.exit()
@@ -85,9 +84,9 @@ def fb_hack(email, codex):
     print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    print(soup.find(string("Facebook is not available on this browser")))
     with open("output2.html", "w") as file:
       file.write(str(soup))
+    print("2")
     sys.exit()
   try:
     browser.select_form(nr=0)
@@ -95,20 +94,20 @@ def fb_hack(email, codex):
   except:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    print(soup.find(string("Facebook is not available on this browser")))
     with open("output3.html", "w") as file:
-      file.write(unicode(soup))
+      file.write(string(soup))
+    print("3")
     sys.exit()
   try:
     browser.select_form(nr=0)
     browser.submit()
   except:
-    print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     Iprint(soup.find(string("Facebook is not available on this browser")))
     with open("output4.html", "w") as file:
       file.write(str(soup))
+    print("4")
     sys.exit()
   """reset code input"""
   y = int(codex)
