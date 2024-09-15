@@ -71,10 +71,8 @@ def fb_hack(email, codex):
     print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    with open("soupa.txt", "a+") as f:
-      f.write(soup)
-      f.close()
-    print(soup)
+    with open("output1.html", "w") as file:
+      file.write(unicode(soup))
     sys.exit()
   browser.form['email'] = email
   browser.submit()
@@ -86,10 +84,12 @@ def fb_hack(email, codex):
     print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    with open("soupa.txt", "a+") as f:
-      f.write(soup)
-      f.close()
-    print(soup)
+  except:
+    print(browser.geturl())
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    with open("output2.html", "w") as file:
+      file.write(unicode(soup))
     sys.exit()
   try:
     browser.select_form(nr=0)
@@ -98,10 +98,8 @@ def fb_hack(email, codex):
     print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    with open("soupa.txt", "a+") as f:
-      f.write(soup)
-      f.close()
-    print(soup)
+    with open("output3.html", "w") as file:
+      file.write(unicode(soup))
     sys.exit()
   try:
     browser.select_form(nr=0)
@@ -110,10 +108,8 @@ def fb_hack(email, codex):
     print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    with open("soupa.txt", "a+") as f:
-      f.write(soup)
-      f.close()
-    print(soup)
+    with open("output4.html", "w") as file:
+      file.write(unicode(soup))
     sys.exit()
   """reset code input"""
   y = int(codex)
