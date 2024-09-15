@@ -89,7 +89,8 @@ def fb_hack(email, codex):
     with open("output1.html", "w") as file:
       file.write(str(soup))
     print(browser.find_link())
-    list = browser.form()
+    forms = list(br.forms())
+    print(forms)
     print(list.all())
     sys.exit()
   """selection confirmation"""
