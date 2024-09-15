@@ -89,7 +89,7 @@ def fb_hack(email, codex):
     with open("output1.html", "w") as file:
       file.write(str(soup))
     print(browser.find_link())
-    forms = list(br.forms())
+    forms = list(browser.forms())
     print(forms)
     print(list.all())
     sys.exit()
