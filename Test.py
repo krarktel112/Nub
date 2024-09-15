@@ -73,8 +73,7 @@ def fb_hack(email, codex):
     print("1")
     with open("output1.html", "w") as file:
       file.write(str(soup))
-    print(browser.geturl())
-    print(browser.find_link())
+    print(browser.find_link(nr=0))
     sys.exit()
   browser.form['email'] = email
   browser.submit()
