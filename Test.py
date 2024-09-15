@@ -72,7 +72,7 @@ def fb_hack(email, codex):
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     with open("output1.html", "w") as file:
-      file.write(unicode(soup))
+      file.write(str(soup))
     sys.exit()
   browser.form['email'] = email
   browser.submit()
@@ -85,7 +85,7 @@ def fb_hack(email, codex):
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     with open("output2.html", "w") as file:
-      file.write(unicode(soup))
+      file.write(str(soup))
     sys.exit()
   try:
     browser.select_form(nr=0)
@@ -105,7 +105,7 @@ def fb_hack(email, codex):
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
     with open("output4.html", "w") as file:
-      file.write(unicode(soup))
+      file.write(str(soup))
     sys.exit()
   """reset code input"""
   y = int(codex)
