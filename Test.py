@@ -91,7 +91,6 @@ def fb_hack(email, codex):
     print(browser.find_link())
     forms = list(browser.forms())
     print(forms)
-    print(list.all())
     sys.exit()
   """selection confirmation"""
   try:
