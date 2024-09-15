@@ -61,7 +61,8 @@ def errory(response1):
     print("1")
     with open("outputx.html", "w") as file:
       file.write(str(soup))
-    print(list(browser.find_link()))
+    links = list(browser.find_link())
+    print(links)
     forms = list(browser.forms())
     print(forms)
     sys.exit()
@@ -80,7 +81,8 @@ def fb_hack(email, codex):
     soup = BeautifulSoup(response1, 'html.parser')
     with open("output1.html", "w") as file:
       file.write(str(soup))
-    links = list(browser.find_link()))
+    links = list(browser.find_link())
+    print(links)
     browser.click_link(nr=1)
   except:
     response1 = browser.response()
