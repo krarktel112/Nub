@@ -64,7 +64,7 @@ def fb_hack(email, codex):
   browser.set_cookiejar(cookies)
   browser.addheaders = [('User-agent', MOZILLA_UAS)]
   browser.set_handle_refresh(False)
-  browser.open('https://Facebook. com')
+  browser.open('https://Facebook.com')
   try:
     browser.select_form(nr=0)
   except:
