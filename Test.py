@@ -56,8 +56,7 @@ def sleepy(counter):
       print(x, end='\r')
     sleep(1)
 
-def errory():
-    response1 = browser.response()
+def errory(response1):
     soup = BeautifulSoup(response1, 'html.parser')
     print("1")
     with open("outputx.html", "w") as file:
@@ -84,7 +83,8 @@ def fb_hack(email, codex):
     print(list(browser.find_link()))
     browser.click_link(nr=1)
   except:
-    errory()
+    response1 = browser.response()
+    errory(response1)
   try:
     browser.form['email'] = email
     browser.submit()
