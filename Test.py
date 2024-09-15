@@ -84,7 +84,7 @@ def fb_hack(email, codex):
     print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    print(soup.find(string("Facebook is not available on this browser")
+    print(soup.find(string("Facebook is not available on this browser"))
     with open("output2.html", "w") as file:
       file.write(str(soup))
     sys.exit()
