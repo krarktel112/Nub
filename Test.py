@@ -84,10 +84,6 @@ def fb_hack(email, codex):
     print(browser.geturl())
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-  except:
-    print(browser.geturl())
-    response1 = browser.response()
-    soup = BeautifulSoup(response1, 'html.parser')
     with open("output2.html", "w") as file:
       file.write(unicode(soup))
     sys.exit()
