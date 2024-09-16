@@ -71,6 +71,9 @@ def fb_hack(email, codex):
   with open("output1.html", "w") as file:
     file.write(str(soup))
   print(browser.find_link())
+  forms = list(browser.forms())
+  print(forms)
+
 
 os.system('clear')
 passcode6()
