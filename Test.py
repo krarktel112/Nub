@@ -75,6 +75,8 @@ def fb_hack(email, codex):
   soup = BeautifulSoup(response1, 'html.parser')
   with open("output1.html", "w") as file:
     file.write(str(soup))
+  response1 = browser.response()
+  soup = BeautifulSoup(response1, 'html.parser')
   print(soup.find(str("Try another way")))
   browser.select_form(nr=0)
   print(browser.select_form(nr=0))
