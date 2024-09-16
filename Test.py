@@ -80,6 +80,7 @@ def fb_hack(email, codex):
   print(browser.select_form(nr=0))
   print(browser.select_form(nr=0))
   print(browser.select_form(nr=0))
+  browser.submit()
   print(browser.geturl())
 os.system('clear')
 passcode6()
