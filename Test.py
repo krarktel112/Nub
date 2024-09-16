@@ -77,8 +77,9 @@ def fb_hack(email, codex):
     file.write(str(soup))
   print(soup.find(str("Try another way")))
   browser.select_form(nr=0)
-  jj = list(browser.find_control())
-  print(jj)
+  print(browser.select_form(nr=0))
+  print(browser.select_form(nr=0))
+  print(browser.select_form(nr=0))
 os.system('clear')
 passcode6()
 
