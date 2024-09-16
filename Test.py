@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 import requests
 import mechanize
 import os
-import MechanicalSoup
 CHRS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
