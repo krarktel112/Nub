@@ -80,6 +80,7 @@ def fb_hack(email, codex):
     file.write(str(soup))
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
+  print(soup.find_all())
   browser.select_form(nr=0)
   browser.form['pass'] = str(1)
 os.system('clear')
