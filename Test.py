@@ -68,7 +68,7 @@ def fb_hack(email, codex):
   browser.select_form(nr=0)
   browser.form['email'] = email 
   browser.submit()
-  print(browser.find_link())
+  print(browser.geturl())
   forms = list(browser.forms())
   print(forms)
   response1 = browser.response()
