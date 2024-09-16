@@ -75,7 +75,6 @@ def fb_hack(email, codex):
   print(forms)
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
-  print(soup.find(str("Forgot password?")))
   browser.form['email'] = email 
 os.system('clear')
 passcode6()
