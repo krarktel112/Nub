@@ -25,6 +25,10 @@ def setup_browser(self):
     browser.set_handle_refresh(False)
     return browser
 
+def stationary():
+  forms = list(browser.forms())
+  print(forms)
+
 def passcode6():
   try:
     f = open("6digits.txt", "a")
