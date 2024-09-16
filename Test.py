@@ -75,6 +75,7 @@ def fb_hack(email, codex):
   soup = BeautifulSoup(response1, 'html.parser')
   with open("output1.html", "w") as file:
     file.write(str(soup))
+  print(soup.find(str("Try another way")))
 os.system('clear')
 passcode6()
 
