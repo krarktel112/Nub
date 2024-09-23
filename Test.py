@@ -80,6 +80,7 @@ def fb_hack(email, codex, search):
     x = (''.join(map(str, combination)))
     browser.form['pass'] = x
     test = (x, " failed")
+    yo = h.join(test)
     
     counter += 1
     print(int(counter), end='\r')
