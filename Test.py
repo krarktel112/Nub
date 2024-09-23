@@ -89,7 +89,7 @@ def fb_hack(email, codex):
         yo = h.join(test)
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
-        z = soup.find(string("Try another way")
+        z = soup.find(str("Try another way")
         if z == "None":
           raise
         else:
