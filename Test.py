@@ -88,12 +88,7 @@ def fb_hack(email, codex):
         counter += 1
         yo = h.join(test)
         response1 = browser.response()
-        soup = BeautifulSoup(response1, 'html.parser')
-        z = soup.find(str("Try another way")
-        if z == "None":
-          raise
-        else:
-          z ==1         
+        soup = BeautifulSoup(response1, 'html.parser')  
       except:
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
