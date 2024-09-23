@@ -95,7 +95,7 @@ def fb_hack(email, codex):
         with open("output1.html", "w") as file:
           file.write(str(soup))
         with open("output1.txt", "w") as file:
-        file.write(str(soup))
+          file.write(str(soup))
         print(counter)
 
 os.system('clear')
