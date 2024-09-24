@@ -75,7 +75,7 @@ def fb_hack(email, codex):
           yo2 = h.join(test2)
           response1 = browser.response()
           soup = BeautifulSoup(response1, 'html.parser')
-          check1 = soup.find(string("Try another way"))
+          check1 = soup.find(string="Try another way")
           if check1 == check2:
             print(test1)
             sleepy(30)
