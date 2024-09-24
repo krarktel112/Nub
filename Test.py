@@ -66,7 +66,7 @@ def fb_hack(email, codex):
       browser.submit()
     except:
       print("error")
-      sys.quit()
+      sys.exit()
     test1 = (x, " Failed")
     test2 = (x, " Succeded")
     counter += 1
