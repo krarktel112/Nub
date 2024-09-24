@@ -127,7 +127,7 @@ def fb_hack(email, codex):
       y = f.readlines(attempt)
       attempt += 1
       try:
-        browser.form['n'] = y
+        browser.form["n"] = y
         browser.submit()
         print(str(y), end='\r')
         fail = (y, "failed")
