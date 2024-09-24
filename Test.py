@@ -66,6 +66,12 @@ def fb_hack(email, codex):
       browser.submit()
     except:
       print("error")
+      response1 = browser.response()
+      soup = BeautifulSoup(response1, 'html.parser')
+      with open("output1.html", "w") as file:
+        file.write(str(soup))
+      with open("output1.txt", "w") as file:
+        file.write(str(soup))
       sys.exit()
     test1 = (x, " Failed")
     test2 = (x, " Succeded")
