@@ -188,7 +188,7 @@ def fb_hack(email, codex):
       print(y)
       browser.close()
       reset = int(-1)
-  return reset
+  return
   
   
   
