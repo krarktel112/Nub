@@ -114,9 +114,6 @@ def fb_hack(email, codex):
           file.write(str(soup))
         with open("output1.txt", "w") as file:
           file.write(str(soup))
-        with open("passcoder.txt", "a+") as z:
-          f.write(str(attempt))
-          f.close()
         print("error")
         sys.exit()
       response1 = browser.response()
