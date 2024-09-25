@@ -169,6 +169,7 @@ def fb_hack(email, codex):
           file.write(str(soup))
         with open("output1.txt", "w") as file:
           file.write(str(soup))
+        print(attempt)
         print("error")
         sys.exit()
   else:
