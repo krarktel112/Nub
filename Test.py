@@ -94,7 +94,7 @@ def fb_hack(email, codex):
         s = " "
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
-        check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
+        check2 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
         if check2 != test:
           print(s.join(fail))
           attempt += 1
