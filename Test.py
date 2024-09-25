@@ -138,7 +138,7 @@ def fb_hack(email, codex):
         fail = (str(y), "failed")
         success = (str(y), "succeded")
         s = " "
-        print(s.join(fail, end='\r')
+        print(s.join(fail, end='\r'))
         reset1 = attempt
         sleepy(30)
       except:
