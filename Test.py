@@ -130,7 +130,10 @@ def fb_hack(email, codex):
       form = forms[0]
       print(form)
       browser.select_form(nr=0)
-      browser.set_value(str(y), nr=1)
+      browser.set_value(str(y), nr=5)
+      forms = list(browser.forms())
+      form = forms[0]
+      print(form)
       try:
         browser.form['n'] = y
         browser.submit()
