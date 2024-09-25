@@ -73,7 +73,7 @@ def fb_hack(email, codex):
   test = soup.find(string='poop')
   check1 = soup.find(string=("Please check your email for a message with your code. Your code is 6 numbers long."))
   """soup.find(string=re.compile("Please check your email for a message with your code. Your code is 6 numbers long."))"""
-  check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long."))
+  check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   if check1 == "Please check your email for a message with your code. Your code is 6 numbers long.":
