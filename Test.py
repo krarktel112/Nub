@@ -126,6 +126,9 @@ def fb_hack(email, codex):
       browser.select_form(nr=0)
       y = f.readlines(attempt)
       attempt += 1
+      forms = list(browser.forms())
+      form = forms[0]
+      print(form)
       try:
         browser.form[name=='n'] = y
         browser.submit()
