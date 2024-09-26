@@ -69,6 +69,8 @@ def fb_hack(email, codex):
       y = str(''.join(map(str, combination)))
       if attempt1 <= attempt2:
         attempt1 += 1
+        print("working -", end='\r')
+        print("working +", end='\r')
       else:
         print(y)
         browser.select_form(nr=0)
@@ -90,6 +92,8 @@ def fb_hack(email, codex):
       y = str(''.join(map(str, combination)))
       if attempt1 <= attempt2:
         attempt1 += 1
+        print("working -", end='\r')
+        print("working +", end='\r')
       else:
         print(y)
         browser.select_form(nr=0)
