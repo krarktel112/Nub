@@ -83,7 +83,8 @@ def fb_hack(email, codex):
         else:
           break
   else:
-    attempt = int(codex)
+    attempt1 = 0
+    attempt2 = int(codex)
     print(check2)
     for combination in itertools.product(range(10), repeat=8):
       y = str(''.join(map(str, combination)))
