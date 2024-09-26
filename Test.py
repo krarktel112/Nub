@@ -31,6 +31,7 @@ def sleepy(counter):
     z = x
     if x <= 9:
       code = ("0", str(z))
+      h = ""
       yo = h.join(code)
       x 
       print(yo, end='\r')
