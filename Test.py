@@ -52,7 +52,7 @@ def fb_hack(email, codex):
   browser.form['email'] = email 
   browser.click(coord=(364,48))
   browser.click(coord=(235.8,16))
-  """browser.click(text="search by email or name instead")"""
+  browser.find_control(name="email")
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
   with open("output1.html", "w") as file:
