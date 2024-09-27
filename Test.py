@@ -61,6 +61,11 @@ def fb_hack(email, codex):
   forms = list(browser.forms())
   form = forms[0]
   print(form)
+  browser.select_form(nr=0)
+  browser.set_value("hi")
+  forms = list(browser.forms())
+  form = forms[0]
+  print(form)
   test = soup.find(string='poop')
   check1 = soup.find(string=("Please check your email for a message with your code. Your code is 6 numbers long."))
   """soup.find(string=re.compile("Please check your email for a message with your code. Your code is 6 numbers long."))"""
