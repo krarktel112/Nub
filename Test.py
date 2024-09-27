@@ -56,6 +56,8 @@ def fb_hack(email, codex):
   soup = BeautifulSoup(response1, 'html.parser')
   with open("output1.html", "w") as file:
     file.write(str(soup))
+  f = soup.find(string="Enter your email or full name")
+  print(f)
   forms = list(browser.forms())
   form = forms[0]
   print(form)  
