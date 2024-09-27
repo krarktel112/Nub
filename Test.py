@@ -56,7 +56,7 @@ def fb_hack(email, codex):
   soup = BeautifulSoup(response1, 'html.parser')
   with open("output1.html", "w") as file:
     file.write(str(soup))
-  forms = list(br.forms())
+  forms = list(browser.forms())
   form = forms[0]
   print(form)  
   """test = soup.find(string='poop')
