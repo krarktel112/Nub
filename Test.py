@@ -49,6 +49,13 @@ def fb_hack(email, codex):
   browser.set_handle_refresh(False)
   browser.open('https://facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0&_fb_noscript=l')
   browser.select_form(nr=0)
+  response1 = browser.response()
+  soup = BeautifulSoup(response1, 'html.parser')
+  with open("output1.html", "w") as file:
+    file.write(str(soup))
+  forms = list(browser.forms())
+  form = forms[0]
+  print(form)
   """browser.form['email'] = email 
   browser.click(coord=(364,48))
   browser.click(coord=(236,17))
