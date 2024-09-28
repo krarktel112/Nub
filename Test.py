@@ -40,7 +40,6 @@ def sleepy(counter):
     sleep(1)
 
 def fb_hack(email, codex):
-  setup_browser(self)
   soup = BeautifulSoup()
   browser = mechanize.Browser()
   browser.set_handle_robots(False)
