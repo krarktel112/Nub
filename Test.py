@@ -56,8 +56,9 @@ def fb_hack(email, codex):
   browser.form['email'] = email
   browser.submit()
   browser.select_form(nr=0)
+  browser.select_form(nr=0)
   """try another way"""
-  browser.click(coord=(420,36))
+  browser.click(coord=(107,24))
   
   response1 = browser.response()
   soup = BeautifulSoup(response1, 'html.parser')
