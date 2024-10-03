@@ -67,8 +67,9 @@ def fb_hack(email, codex):
       soup = BeautifulSoup(response1, 'html.parser')
       with open("output1.html", "w") as file:
         file.write(str(soup))
-    code1 = (int(counter), str(p), "failed")
-    code2 = (int(counter), str(p), "check")
+    could = int(counter)
+    code1 = (str(could), str(p), "failed")
+    code2 = (str(could), str(p), "check")
     h = " "
     yo = h.join(code1)
     yot = h.join(code2)
